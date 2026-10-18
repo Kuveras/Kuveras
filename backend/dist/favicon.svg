@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="100%" height="100%">
+  <rect width="160" height="160" rx="24" fill="#000000"/>
+  <!-- Bhupura Outer Temple Steps -->
+  <rect x="25" y="25" width="110" height="110" fill="#146E38" stroke="#E7C982" stroke-width="2.5" />
+  <rect x="65" y="10" width="30" height="15" fill="#146E38" stroke="#E7C982" stroke-width="2" />
+  <rect x="65" y="135" width="30" height="15" fill="#146E38" stroke="#E7C982" stroke-width="2" />
+  <rect x="10" y="65" width="15" height="30" fill="#146E38" stroke="#E7C982" stroke-width="2" />
+  <rect x="135" y="65" width="15" height="30" fill="#146E38" stroke="#E7C982" stroke-width="2" />
+  
+  <!-- Rings -->
+  <circle cx="80" cy="80" r="48" fill="#C84B31" stroke="#E7C982" stroke-width="2" />
+  <circle cx="80" cy="80" r="40" fill="#16376D" stroke="#E7C982" stroke-width="2" />
+  <circle cx="80" cy="80" r="34" fill="#146E38" stroke="#E7C982" stroke-width="1.5" />
+  
+  <!-- Triangles -->
+  <polygon points="80,48 110,96 50,96" fill="none" stroke="#E7C982" stroke-width="2.5" />
+  <polygon points="80,112 110,64 50,64" fill="none" stroke="#E7C982" stroke-width="2.5" />
+  <polygon points="80,56 102,90 58,90" fill="none" stroke="#E7C982" stroke-width="2" />
+  <polygon points="80,104 102,70 58,70" fill="none" stroke="#E7C982" stroke-width="2" />
+  
+  <!-- Central Lotus & Bindu -->
+  <circle cx="80" cy="80" r="12" fill="#E5A853" stroke="#FFFDF8" stroke-width="1.5" />
+  <circle cx="80" cy="80" r="4.5" fill="#7A1010" />
+</svg>
