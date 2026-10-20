@@ -13,7 +13,7 @@ export const KuverasLogo: React.FC<KuverasLogoProps> = ({
   return (
     <div className={`flex items-center justify-center select-none shrink-0 ${className}`}>
       <img
-        src="/kuveras-logo.png"
+        src="/5.png"
         alt="KUVERAS Fine Jewellery"
         className="w-full h-auto block object-contain"
       />
