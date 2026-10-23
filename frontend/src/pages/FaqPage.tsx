@@ -56,7 +56,7 @@ const ALL_FAQS: FaqItem[] = [
   {
     id: 'faq-10',
     question: 'How can I contact KUVERAS?',
-    answer: 'Our luxury customer concierge is available 7 days a week (9 AM – 9 PM IST) via WhatsApp / Call at +91 99102 04680 or via email at kuverasoverseas@gmail.com.',
+    answer: 'Our luxury customer concierge is available 7 days a week (9 AM – 9 PM IST) via WhatsApp / Call at +91 88104 61628 or via email at kuverasoverseas@gmail.com.',
   },
 ];
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, MessageCircle, Sparkles, RefreshCw, Truck, Lock } from 'lucide-react';
+import { ShieldCheck, MessageCircle, Sparkles, RefreshCw, Truck, Lock, MapPin, Globe } from 'lucide-react';
 import { Accordion } from '../components/common/Accordion';
 
 export const RentInfoPage: React.FC = () => {
@@ -37,7 +37,7 @@ export const RentInfoPage: React.FC = () => {
     {
       step: '06',
       title: 'Hassle-Free Return Pickup',
-      description: 'Place items back in box. Our courier team picks up from your doorstep on day 4. Deposit refunded upon inspection.',
+      description: 'Place items back in box. Our courier team picks up from your doorstep on day 2. Deposit refunded upon inspection.',
       icon: ShieldCheck,
     },
   ];
@@ -46,7 +46,7 @@ export const RentInfoPage: React.FC = () => {
     {
       id: 'r1',
       title: 'What is the standard rental duration?',
-      content: 'Our standard rental period is 3 calendar days (Day 1: Delivery, Day 2: Occasion, Day 3: Pickup). Extended rental periods can be arranged via WhatsApp.',
+      content: 'Our standard rental period is 1 Day (₹1,199). Extended rental periods can be arranged via WhatsApp.',
     },
     {
       id: 'r2',
@@ -65,6 +65,8 @@ export const RentInfoPage: React.FC = () => {
     },
   ];
 
+  const rentalLocations = ['Delhi', 'Dwarka', 'Gurgaon', 'Faridabad'];
+
   return (
     <div className="py-12 bg-[#FAF8F5] min-h-screen animate-fade-in">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -80,9 +82,73 @@ export const RentInfoPage: React.FC = () => {
             <span className="italic font-normal text-[#C5A059]">Doorstep Delivery Across Delhi & Pan-India</span>
           </h1>
 
+          {/* Rental Price Badge */}
+          <div className="inline-flex items-center gap-3 bg-[#0B5D3B] text-[#FFFDF8] px-6 py-3 rounded-none shadow-md border border-[#E7C982]/40 mt-2">
+            <Sparkles className="w-5 h-5 text-[#E7C982]" />
+            <span className="font-serif text-xl font-bold tracking-wide">₹1,199 <span className="text-[#E7C982]">/</span> 1 Day</span>
+            <span className="text-xs font-sans text-[#cbddcb] border-l border-[#E7C982]/30 pl-3">Flat Rental Price</span>
+          </div>
+
           <p className="text-sm text-[#7A736E] leading-relaxed font-sans">
             Adorn heirloom Kundan, Rajwadi, and Bridal sets at a fraction of retail prices. Seamless WhatsApp booking, doorstep delivery across Delhi NCR, and 100% medical-grade UV-C sanitization.
           </p>
+        </div>
+
+        {/* ── Rental Locations + Pan-India Delivery ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          {/* Jewellery Rentals Available In */}
+          <div className="bg-[#FFFDF9] border border-[#E8E2D9] p-8 shadow-sm">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-10 h-10 bg-[#0B5D3B]/10 border border-[#0B5D3B]/30 rounded-full flex items-center justify-center text-[#0B5D3B]">
+                <MapPin className="w-5 h-5" />
+              </div>
+              <h2 className="font-serif text-xl font-bold text-[#111111]">Jewellery Rentals Available In</h2>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {rentalLocations.map((city) => (
+                <div
+                  key={city}
+                  className="flex items-center gap-2.5 bg-[#FAF8F5] border border-[#E8E2D9] px-4 py-3 text-sm font-semibold text-[#111111] hover:border-[#D4AF37] hover:bg-[#FFF9ED] transition-colors"
+                >
+                  <MapPin className="w-4 h-4 text-[#D4AF37] flex-shrink-0" />
+                  {city}
+                </div>
+              ))}
+            </div>
+            <p className="mt-4 text-xs text-[#7A736E] leading-relaxed">
+              Free doorstep delivery & pickup within these locations. Contact us on WhatsApp to confirm your area pincode.
+            </p>
+          </div>
+
+          {/* Pan-India Delivery */}
+          <div className="bg-[#111111] text-white p-8 shadow-sm border border-[#D4AF37]/30 flex flex-col justify-between">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-10 h-10 bg-[#D4AF37]/20 border border-[#D4AF37]/40 rounded-full flex items-center justify-center text-[#D4AF37]">
+                <Globe className="w-5 h-5" />
+              </div>
+              <h2 className="font-serif text-xl font-bold text-white">Delivery Available Across India 🇮🇳</h2>
+            </div>
+            <p className="text-sm text-[#cbddcb] leading-relaxed mb-6">
+              Customers from across India can contact us to enquire about jewellery availability, delivery charges, and rental arrangements. We ship via insured courier (Bluedart/Delhivery) to all major cities.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href="https://wa.me/919910204680?text=Hi%20Kuveras!%20I%20want%20to%20enquire%20about%20jewellery%20rental%20delivery%20to%20my%20city%20across%20India."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold uppercase tracking-widest transition-colors"
+              >
+                <MessageCircle className="w-4 h-4" />
+                Enquire on WhatsApp
+              </a>
+              <a
+                href="tel:+918810461628"
+                className="inline-flex items-center gap-2 px-5 py-3 bg-transparent border border-[#D4AF37]/50 hover:border-[#D4AF37] text-[#D4AF37] text-xs font-bold uppercase tracking-widest transition-colors"
+              >
+                📞 +91 88104 61628
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* 6 Step Grid */}
@@ -118,7 +184,7 @@ export const RentInfoPage: React.FC = () => {
           <MessageCircle className="w-12 h-12 text-[#25D366] mx-auto animate-pulse" />
           <h2 className="font-serif text-3xl font-bold">Have Questions About Delivery Across Delhi or Rental Dates?</h2>
           <p className="text-xs sm:text-sm text-[#7A736E] max-w-lg mx-auto leading-relaxed">
-            Chat directly with Kuveras Jewellery Concierge on WhatsApp for instant date availability checks, delivery across Delhi NCR, and custom bridal styling support.
+            Chat directly with Kuveras Jewellery Concierge on WhatsApp for instant date availability checks, delivery across Delhi NCR (Dwarka, Gurgaon, Faridabad), and custom bridal styling support.
           </p>
 
           <a

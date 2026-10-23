@@ -53,7 +53,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     product.rentalPrice,
     'rental',
     '919910204680',
-    product.rentalPeriod || '3 Days'
+    product.rentalPeriod || '1 Day'
   );
 
   return (
@@ -163,7 +163,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             className="w-full py-2 bg-[#FFFDF8] border border-[#C89B3C] text-[#2B2723] hover:bg-[#C89B3C] hover:text-[#FFFFFF] text-[11px] font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
           >
             <MessageCircle className="w-3.5 h-3.5" />
-            Rent Via WhatsApp ({formatINR(product.rentalPrice)}{product.rentalPeriod ? `/${product.rentalPeriod}` : ''})
+            Rent Via WhatsApp — {formatINR(product.rentalPrice)} / {product.rentalPeriod || '1 Day'}
           </a>
         </div>
       </div>

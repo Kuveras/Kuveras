@@ -100,13 +100,13 @@ export const Footer: React.FC = () => {
           <div className="kv-footer-col kv-contact">
             <h3 className="kv-heading">Contact Us</h3>
 
-            <a className="kv-crow" href="tel:+919910204680">
+            <a className="kv-crow" href="tel:+918810461628">
               <span className="kv-crow-ic">
                 <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11 21 3 13 3 3.9c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1L6.6 10.8Z"></path></svg>
               </span>
               <span className="kv-crow-tx">
                 <small>CALL US</small>
-                <b>+91 99102 04680</b>
+                <b>+91 88104 61628</b>
               </span>
             </a>
 
@@ -116,7 +116,7 @@ export const Footer: React.FC = () => {
               </span>
               <span className="kv-crow-tx">
                 <small>CHAT ON WHATSAPP</small>
-                <b>+91 99102 04680</b>
+                <b>+91 88104 61628</b>
               </span>
             </a>
 

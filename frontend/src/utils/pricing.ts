@@ -34,7 +34,7 @@ export const generateWhatsAppLink = (
   rentalPrice: number,
   type: 'rental' | 'general' = 'rental',
   whatsappNumber: string = '919910204680',
-  rentalPeriod: string = '3 days'
+  rentalPeriod: string = '1 Day'
 ): string => {
   const text = type === 'rental'
     ? `Hi Kuveras! I am interested in renting the *${productName}* (Rental Fee: ${formatINR(rentalPrice)}/${rentalPeriod}, Retail: ${formatINR(salePrice)}) with doorstep delivery across Delhi. Please share rental availability, security deposit details, and booking procedure.`
