@@ -68,7 +68,7 @@ export const Navigation: React.FC = () => {
     { id: 'bridal', label: 'Bridal', path: '/shop?category=Bridal' },
     { id: 'temple', label: 'Temple', path: '/shop?category=Temple' },
     { id: 'bracelets', label: 'Bracelets', path: '/shop?category=Bracelets' },
-    { id: 'rent', label: 'Product Info', path: '/rent-info' },
+    { id: 'rent', label: 'Rent Info', path: '/rent-info' },
     { id: 'about', label: 'ABOUT US', path: '/about', isDirect: true },
     { id: 'faqs', label: 'FAQS', path: '/faqs', isDirect: true },
   ];
