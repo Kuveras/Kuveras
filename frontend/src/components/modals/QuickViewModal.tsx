@@ -59,7 +59,7 @@ export const QuickViewModal: React.FC = () => {
 
   const whatsappUrl = generateWhatsAppLink(
     quickViewProduct.name,
-    quickViewProduct.salePrice,
+    quickViewProduct.price,
     quickViewProduct.rentalPrice,
     'rental',
     '919910204680',
@@ -208,13 +208,11 @@ export const QuickViewModal: React.FC = () => {
                 <MessageCircle className="w-4 h-4" />
                 Rent via WhatsApp
               </span>
-              <span className="flex items-center gap-2 flex-wrap justify-center">
-                <span className="bg-[#8B0000] text-white text-[10px] font-bold px-2 py-0.5 tracking-wider">30% OFF</span>
+              <span className="flex items-center gap-2 flex-wrap justify-center text-xs">
+                <span className="bg-[#0B5D3B] text-white text-[10px] font-bold px-2 py-0.5 tracking-wider">30% RENTAL</span>
                 <span className="font-bold">{formatINR(quickViewProduct.rentalPrice)}</span>
-                {quickViewProduct.originalRentalPrice && (
-                  <span className="line-through text-[10px] opacity-60">{formatINR(quickViewProduct.originalRentalPrice)}</span>
-                )}
-                <span className="opacity-80">/{quickViewProduct.rentalPeriod || '3 Days'}</span>
+                <span className="opacity-80 text-[11px]">(Actual: {formatINR(quickViewProduct.price)})</span>
+                <span className="opacity-80">/{quickViewProduct.rentalPeriod || '1 Day'}</span>
               </span>
             </a>
 

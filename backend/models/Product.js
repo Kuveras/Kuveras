@@ -18,7 +18,16 @@ const productSchema = new mongoose.Schema(
     weight: { type: String },
     purity: { type: String, default: '916 Hallmark' }
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true }
+  }
 );
+
+// Virtual for dynamic rental price: exactly 30% of actual jewellery price
+productSchema.virtual('rentalPrice').get(function () {
+  return Math.round(this.price * 0.30);
+});
 
 export default mongoose.model('Product', productSchema);

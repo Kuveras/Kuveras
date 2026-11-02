@@ -49,7 +49,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   const whatsappUrl = generateWhatsAppLink(
     product.name,
-    product.salePrice,
+    product.price,
     product.rentalPrice,
     'rental',
     '919910204680',
@@ -130,16 +130,23 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             <StarRating rating={product.rating} count={product.reviewCount} />
           </div>
 
-          {/* Price */}
-          <div className="flex items-center justify-center gap-2 mb-3">
-            <span className="font-sans text-base font-bold text-[#2B2723]">
-              {formatINR(product.salePrice)}
-            </span>
-            {product.price > product.salePrice && (
-              <span className="font-sans text-xs text-[#6F6860] line-through">
-                {formatINR(product.price)}
+          {/* Price Block: Keeps original/actual jewellery price visible and clearly displays rental price next to it */}
+          <div className="flex flex-col items-center justify-center gap-0.5 mb-2.5">
+            <div className="flex items-center justify-center gap-2">
+              <span className="font-sans text-base font-bold text-[#2B2723]">
+                {formatINR(product.salePrice)}
               </span>
-            )}
+              {product.price > product.salePrice && (
+                <span className="font-sans text-xs text-[#6F6860] line-through">
+                  {formatINR(product.price)}
+                </span>
+              )}
+            </div>
+            <div className="text-[11px] font-medium text-[#0B5D3B] flex items-center justify-center gap-1">
+              <span className="text-[#6F6860]">Rent (30%):</span>
+              <span className="font-bold text-[#0B5D3B]">{formatINR(product.rentalPrice)}</span>
+              <span className="text-[10px] text-[#6F6860]">/ {product.rentalPeriod || '1 Day'}</span>
+            </div>
           </div>
         </div>
 
@@ -166,12 +173,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               <MessageCircle className="w-3.5 h-3.5" />
               Rent Via WhatsApp
             </span>
-            <span className="flex items-center gap-1.5 flex-wrap justify-center">
-              <span className="text-[10px] font-bold text-[#8B0000] bg-[#8B0000]/10 px-1.5 py-0.5 tracking-wider">30% OFF</span>
+            <span className="flex items-center gap-1.5 flex-wrap justify-center text-[10px]">
+              <span className="font-bold text-[#0B5D3B] bg-[#0B5D3B]/10 px-1.5 py-0.5 tracking-wider">30% RENTAL</span>
               <span className="font-bold">{formatINR(product.rentalPrice)}</span>
-              {product.originalRentalPrice && (
-                <span className="line-through text-[10px] opacity-60">{formatINR(product.originalRentalPrice)}</span>
-              )}
+              <span className="opacity-75">(Actual: {formatINR(product.price)})</span>
               <span className="opacity-80">/ {product.rentalPeriod || '1 Day'}</span>
             </span>
           </a>

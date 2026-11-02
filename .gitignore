@@ -40,3 +40,8 @@ Thumbs.db
 *.njsproj
 *.sln
 *.sw?
+
+# Raw asset source archives
+/03/
+/04/
+/05/

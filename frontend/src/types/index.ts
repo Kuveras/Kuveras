@@ -5,9 +5,9 @@ export interface Product {
   category: 'Kundan' | 'Rajwadi' | 'Temple' | 'Cubic Zirconia' | 'Bridal' | 'Matha Patti' | 'Bracelets' | 'Choker' | 'Rani Haar';
   subcategory?: string;
   occasion: 'Daily Wear' | 'Festive' | 'Bridal' | 'Party Wear' | 'Office Wear' | 'Date Night' | 'Day Out';
-  price: number; // Original price INR
-  salePrice: number; // Discounted price INR
-  discount: number; // Percentage off (e.g., 20, 35, 50)
+  price: number; // Original/Actual jewellery price INR
+  salePrice: number; // Discounted purchase price INR
+  discount: number; // Percentage off for purchase (e.g., 20, 35, 50)
   rating: number;
   reviewCount: number;
   description: string;
@@ -15,8 +15,8 @@ export interface Product {
   images: string[];
   tags: string[];
   specifications: Record<string, string>;
-  rentalPrice: number;
-  originalRentalPrice?: number; // Pre-discount rental price for strikethrough display
+  rentalPrice: number; // Rental price: exactly 30% of actual jewellery price (price * 0.30)
+  originalRentalPrice?: number; // Original actual jewellery price INR (for rental reference)
   rentalPeriod?: string;
   stock: number;
   featured?: boolean;

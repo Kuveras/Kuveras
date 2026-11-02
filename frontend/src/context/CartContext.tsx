@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import type { CartItem, Product, Coupon } from '../types';
 import { AVAILABLE_COUPONS } from '../data/products';
-import { calculateDiscount } from '../utils/pricing';
+import { calculateDiscount, calculateRentalPrice } from '../utils/pricing';
 
 interface CartContextType {
   cart: CartItem[];
@@ -30,7 +30,23 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [cart, setCart] = useState<CartItem[]>(() => {
     try {
       const saved = localStorage.getItem(CART_STORAGE_KEY);
-      return saved ? JSON.parse(saved) : [];
+      if (!saved) return [];
+      const parsed: CartItem[] = JSON.parse(saved);
+      // Auto-recalculate rental prices for all rental items in stored cart
+      return parsed.map((item) => {
+        if (item.isRental && item.product) {
+          const rentalPrice = calculateRentalPrice(item.product.price);
+          return {
+            ...item,
+            product: {
+              ...item.product,
+              rentalPrice,
+              originalRentalPrice: item.product.price,
+            },
+          };
+        }
+        return item;
+      });
     } catch (e) {
       return [];
     }
@@ -66,14 +82,24 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, [activeCoupon]);
 
   const addToCart = (product: Product, quantity: number = 1, isRental: boolean = false) => {
+    const rentalPrice = calculateRentalPrice(product.price);
+    const enrichedProduct: Product = {
+      ...product,
+      rentalPrice,
+      originalRentalPrice: product.price,
+    };
+
     setCart((prevCart) => {
-      const existingIndex = prevCart.findIndex((item) => item.product.id === product.id && item.isRental === isRental);
+      const existingIndex = prevCart.findIndex(
+        (item) => item.product.id === product.id && item.isRental === isRental
+      );
       if (existingIndex > -1) {
         const updated = [...prevCart];
         updated[existingIndex].quantity += quantity;
+        updated[existingIndex].product = enrichedProduct;
         return updated;
       }
-      return [...prevCart, { product, quantity, isRental }];
+      return [...prevCart, { product: enrichedProduct, quantity, isRental }];
     });
   };
 
@@ -111,7 +137,9 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const subtotal = cart.reduce((acc, item) => {
-    const itemPrice = item.isRental ? item.product.rentalPrice : item.product.salePrice;
+    const itemPrice = item.isRental
+      ? calculateRentalPrice(item.product.price)
+      : item.product.salePrice;
     return acc + itemPrice * item.quantity;
   }, 0);
 

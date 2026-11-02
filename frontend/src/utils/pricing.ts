@@ -1,6 +1,21 @@
 import type { Coupon } from '../types';
 
 /**
+ * Standard Jewellery Rental Percentage: 30% of the actual jewellery price
+ */
+export const RENTAL_PERCENTAGE = 0.30;
+
+/**
+ * Calculate jewellery rental price: exactly 30% of the original/actual jewellery price.
+ * Formula: Rental Price = Actual Jewellery Price × 0.30
+ * Example: Actual Price ₹11,500 -> Rental Price ₹3,450
+ */
+export const calculateRentalPrice = (actualPrice: number): number => {
+  if (!actualPrice || isNaN(actualPrice)) return 0;
+  return Math.round(actualPrice * RENTAL_PERCENTAGE);
+};
+
+/**
  * Format a number as Indian Rupee currency (e.g. ₹12,499)
  */
 export const formatINR = (amount: number): string => {
@@ -30,15 +45,16 @@ export const calculateDiscount = (subtotal: number, coupon: Coupon | null): numb
  */
 export const generateWhatsAppLink = (
   productName: string,
-  salePrice: number,
+  actualPrice: number,
   rentalPrice: number,
   type: 'rental' | 'general' = 'rental',
   whatsappNumber: string = '919910204680',
   rentalPeriod: string = '1 Day'
 ): string => {
+  const calculatedRental = rentalPrice || calculateRentalPrice(actualPrice);
   const text = type === 'rental'
-    ? `Hi Kuveras! I am interested in renting the *${productName}* (Rental Fee: ${formatINR(rentalPrice)}/${rentalPeriod}, Retail: ${formatINR(salePrice)}) with doorstep delivery across Delhi. Please share rental availability, security deposit details, and booking procedure.`
-    : `Hi Kuveras! I have an inquiry regarding *${productName}* (Price: ${formatINR(salePrice)}) with doorstep delivery across Delhi. Could you please assist me with more details?`;
+    ? `Hi Kuveras! I am interested in renting the *${productName}* (Rental Price: ${formatINR(calculatedRental)}/${rentalPeriod} [30% of Actual: ${formatINR(actualPrice)}]) with doorstep delivery across Delhi. Please share rental availability, security deposit details, and booking procedure.`
+    : `Hi Kuveras! I have an inquiry regarding *${productName}* (Price: ${formatINR(actualPrice)}) with doorstep delivery across Delhi. Could you please assist me with more details?`;
 
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
 };

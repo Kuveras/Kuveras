@@ -120,9 +120,14 @@ export const SearchModal: React.FC = () => {
                     <h4 className="font-serif text-base font-medium text-[#111111] group-hover:text-[#C5A059] transition-colors">
                       {product.name}
                     </h4>
-                    <span className="text-xs font-bold text-[#111111]">
-                      {formatINR(product.salePrice)}
-                    </span>
+                    <div className="flex items-center gap-2 mt-0.5 font-sans">
+                      <span className="text-xs font-bold text-[#111111]">
+                        {formatINR(product.salePrice)}
+                      </span>
+                      <span className="text-[11px] font-semibold text-[#0B5D3B]">
+                        Rent (30%): {formatINR(product.rentalPrice)}
+                      </span>
+                    </div>
                   </div>
                 </div>
 
