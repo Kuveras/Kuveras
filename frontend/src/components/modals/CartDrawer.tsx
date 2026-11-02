@@ -156,7 +156,17 @@ export const CartDrawer: React.FC = () => {
                     )}
 
                     <div className="text-xs font-semibold text-[#171512] mt-1">
-                      {formatINR(item.isRental ? item.product.rentalPrice : item.product.salePrice)}
+                      {item.isRental ? (
+                        <span className="flex items-center gap-1.5 flex-wrap">
+                          <span className="text-[10px] font-bold text-[#8B0000] bg-[#8B0000]/10 px-1.5 py-0.5 tracking-wider">30% OFF</span>
+                          <span>{formatINR(item.product.rentalPrice)}</span>
+                          {item.product.originalRentalPrice && (
+                            <span className="line-through text-[10px] text-[#6F675E] font-normal">{formatINR(item.product.originalRentalPrice)}</span>
+                          )}
+                        </span>
+                      ) : (
+                        formatINR(item.product.salePrice)
+                      )}
                     </div>
                   </div>
 

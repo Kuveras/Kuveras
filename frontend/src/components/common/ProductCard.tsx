@@ -160,10 +160,20 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="w-full py-2 bg-[#FFFDF8] border border-[#C89B3C] text-[#2B2723] hover:bg-[#C89B3C] hover:text-[#FFFFFF] text-[11px] font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+            className="w-full py-2 bg-[#FFFDF8] border border-[#C89B3C] text-[#2B2723] hover:bg-[#C89B3C] hover:text-[#FFFFFF] text-[11px] font-bold uppercase tracking-wider transition-colors flex flex-col items-center justify-center gap-0.5 cursor-pointer"
           >
-            <MessageCircle className="w-3.5 h-3.5" />
-            Rent Via WhatsApp — {formatINR(product.rentalPrice)} / {product.rentalPeriod || '1 Day'}
+            <span className="flex items-center gap-1.5">
+              <MessageCircle className="w-3.5 h-3.5" />
+              Rent Via WhatsApp
+            </span>
+            <span className="flex items-center gap-1.5 flex-wrap justify-center">
+              <span className="text-[10px] font-bold text-[#8B0000] bg-[#8B0000]/10 px-1.5 py-0.5 tracking-wider">30% OFF</span>
+              <span className="font-bold">{formatINR(product.rentalPrice)}</span>
+              {product.originalRentalPrice && (
+                <span className="line-through text-[10px] opacity-60">{formatINR(product.originalRentalPrice)}</span>
+              )}
+              <span className="opacity-80">/ {product.rentalPeriod || '1 Day'}</span>
+            </span>
           </a>
         </div>
       </div>

@@ -202,10 +202,20 @@ export const QuickViewModal: React.FC = () => {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-2.5 border border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white text-xs font-semibold uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
+              className="w-full py-2.5 border border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white text-xs font-semibold uppercase tracking-wider transition-colors flex flex-col items-center justify-center gap-1"
             >
-              <MessageCircle className="w-4 h-4" />
-              Rent via WhatsApp ({formatINR(quickViewProduct.rentalPrice)}/{quickViewProduct.rentalPeriod || '3 Days'})
+              <span className="flex items-center gap-2">
+                <MessageCircle className="w-4 h-4" />
+                Rent via WhatsApp
+              </span>
+              <span className="flex items-center gap-2 flex-wrap justify-center">
+                <span className="bg-[#8B0000] text-white text-[10px] font-bold px-2 py-0.5 tracking-wider">30% OFF</span>
+                <span className="font-bold">{formatINR(quickViewProduct.rentalPrice)}</span>
+                {quickViewProduct.originalRentalPrice && (
+                  <span className="line-through text-[10px] opacity-60">{formatINR(quickViewProduct.originalRentalPrice)}</span>
+                )}
+                <span className="opacity-80">/{quickViewProduct.rentalPeriod || '3 Days'}</span>
+              </span>
             </a>
 
             <button

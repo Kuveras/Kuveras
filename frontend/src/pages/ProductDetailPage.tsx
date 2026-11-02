@@ -441,11 +441,20 @@ export const ProductDetailPage: React.FC = () => {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 border border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
+                className="w-full py-3 border border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white text-xs font-bold uppercase tracking-wider transition-colors flex flex-col items-center justify-center gap-1"
               >
-                <MessageCircle className="w-4 h-4" />
-                Rent Via WhatsApp — {formatINR(product.rentalPrice)} /{' '}
-                {product.rentalPeriod || '1 Day'}
+                <span className="flex items-center gap-2">
+                  <MessageCircle className="w-4 h-4" />
+                  Rent Via WhatsApp
+                </span>
+                <span className="flex items-center gap-2 flex-wrap justify-center">
+                  <span className="bg-[#8B0000] text-white text-[10px] font-bold px-2 py-0.5 tracking-wider">30% OFF</span>
+                  <span className="font-bold text-sm">{formatINR(product.rentalPrice)}</span>
+                  {product.originalRentalPrice && (
+                    <span className="line-through text-xs opacity-60">{formatINR(product.originalRentalPrice)}</span>
+                  )}
+                  <span className="opacity-80">/ {product.rentalPeriod || '1 Day'}</span>
+                </span>
               </a>
 
               <a

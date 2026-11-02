@@ -93,7 +93,17 @@ export const CartPage: React.FC = () => {
                         <h3 className="font-serif text-lg font-bold text-[#111111]">{item.product.name}</h3>
                         <span className="text-xs text-[#7A736E] block mb-1">{item.product.category}</span>
                         <span className="text-sm font-bold text-[#111111]">
-                          {formatINR(item.isRental ? item.product.rentalPrice : item.product.salePrice)}
+                          {item.isRental ? (
+                            <span className="flex items-center gap-1.5 flex-wrap">
+                              <span className="text-[10px] font-bold text-[#8B0000] bg-[#8B0000]/10 px-1.5 py-0.5 tracking-wider">30% OFF</span>
+                              <span>{formatINR(item.product.rentalPrice)}</span>
+                              {item.product.originalRentalPrice && (
+                                <span className="line-through text-xs text-[#7A736E] font-normal">{formatINR(item.product.originalRentalPrice)}</span>
+                              )}
+                            </span>
+                          ) : (
+                            formatINR(item.product.salePrice)
+                          )}
                         </span>
                       </div>
                     </div>

@@ -16,6 +16,7 @@ export interface Product {
   tags: string[];
   specifications: Record<string, string>;
   rentalPrice: number;
+  originalRentalPrice?: number; // Pre-discount rental price for strikethrough display
   rentalPeriod?: string;
   stock: number;
   featured?: boolean;
