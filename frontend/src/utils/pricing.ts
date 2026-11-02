@@ -53,7 +53,7 @@ export const generateWhatsAppLink = (
 ): string => {
   const calculatedRental = rentalPrice || calculateRentalPrice(actualPrice);
   const text = type === 'rental'
-    ? `Hi Kuveras! I am interested in renting the *${productName}* (Rental Price: ${formatINR(calculatedRental)}/${rentalPeriod} [30% of Actual: ${formatINR(actualPrice)}]) with doorstep delivery across Delhi. Please share rental availability, security deposit details, and booking procedure.`
+    ? `Hi Kuveras! I am interested in renting the *${productName}* (Rental Price: ${formatINR(calculatedRental)}) with doorstep delivery across Delhi. Please share rental availability, security deposit details, and booking procedure.`
     : `Hi Kuveras! I have an inquiry regarding *${productName}* (Price: ${formatINR(actualPrice)}) with doorstep delivery across Delhi. Could you please assist me with more details?`;
 
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;

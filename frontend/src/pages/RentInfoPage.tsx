@@ -149,7 +149,6 @@ export const RentInfoPage: React.FC = () => {
                 <p className="text-[#9E9990] text-xs mb-0.5">Rental Price (30% Calculation Formula)</p>
                 <div className="flex items-baseline gap-2">
                   <span className="font-serif text-3xl font-bold text-[#C89B3C]">{formatINR(EXAMPLE_RENTAL_PRICE)}</span>
-                  <span className="text-[#9E9990] text-sm">(Actual Price: {formatINR(EXAMPLE_ACTUAL_PRICE)})</span>
                 </div>
               </div>
             </div>

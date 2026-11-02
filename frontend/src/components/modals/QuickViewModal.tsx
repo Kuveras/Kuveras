@@ -208,11 +208,9 @@ export const QuickViewModal: React.FC = () => {
                 <MessageCircle className="w-4 h-4" />
                 Rent via WhatsApp
               </span>
-              <span className="flex items-center gap-2 flex-wrap justify-center text-xs">
+              <span className="flex items-center gap-2 justify-center text-xs">
                 <span className="bg-[#0B5D3B] text-white text-[10px] font-bold px-2 py-0.5 tracking-wider">30% RENTAL</span>
                 <span className="font-bold">{formatINR(quickViewProduct.rentalPrice)}</span>
-                <span className="opacity-80 text-[11px]">(Actual: {formatINR(quickViewProduct.price)})</span>
-                <span className="opacity-80">/{quickViewProduct.rentalPeriod || '1 Day'}</span>
               </span>
             </a>
 

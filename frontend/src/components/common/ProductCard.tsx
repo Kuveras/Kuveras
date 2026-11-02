@@ -145,7 +145,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             <div className="text-[11px] font-medium text-[#0B5D3B] flex items-center justify-center gap-1">
               <span className="text-[#6F6860]">Rent (30%):</span>
               <span className="font-bold text-[#0B5D3B]">{formatINR(product.rentalPrice)}</span>
-              <span className="text-[10px] text-[#6F6860]">/ {product.rentalPeriod || '1 Day'}</span>
             </div>
           </div>
         </div>
@@ -173,11 +172,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               <MessageCircle className="w-3.5 h-3.5" />
               Rent Via WhatsApp
             </span>
-            <span className="flex items-center gap-1.5 flex-wrap justify-center text-[10px]">
+            <span className="flex items-center gap-1.5 justify-center text-[10px]">
               <span className="font-bold text-[#0B5D3B] bg-[#0B5D3B]/10 px-1.5 py-0.5 tracking-wider">30% RENTAL</span>
-              <span className="font-bold">{formatINR(product.rentalPrice)}</span>
-              <span className="opacity-75">(Actual: {formatINR(product.price)})</span>
-              <span className="opacity-80">/ {product.rentalPeriod || '1 Day'}</span>
+              <span className="font-bold text-xs">{formatINR(product.rentalPrice)}</span>
             </span>
           </a>
         </div>

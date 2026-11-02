@@ -380,20 +380,14 @@ export const ProductDetailPage: React.FC = () => {
                 </span>
               </div>
 
-              {/* Rental Price Banner: Clearly displays Rental Price (30%) next to Actual Price */}
-              <div className="flex flex-wrap items-center justify-between gap-3 p-3.5 bg-[#FAF8F5] border border-[#C89B3C]/40 mb-4">
-                <div className="flex items-center gap-2.5">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#0B5D3B] bg-[#0B5D3B]/10 px-2 py-0.5 border border-[#0B5D3B]/20">
-                    Rental Price (30%)
-                  </span>
-                  <span className="font-sans text-2xl font-bold text-[#111111]">
-                    {formatINR(product.rentalPrice)}
-                  </span>
-                  <span className="text-xs text-[#7A736E]">/ {product.rentalPeriod || '1 Day'}</span>
-                </div>
-                <div className="text-xs text-[#7A736E] font-sans">
-                  Actual Jewellery Price: <strong className="text-[#111111] font-semibold">{formatINR(product.price)}</strong>
-                </div>
+              {/* Rental Price Banner */}
+              <div className="flex items-center gap-3 p-3 bg-[#FAF8F5] border border-[#C89B3C]/40 mb-4">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#0B5D3B] bg-[#0B5D3B]/10 px-2 py-0.5 border border-[#0B5D3B]/20">
+                  Rental Price (30%)
+                </span>
+                <span className="font-sans text-2xl font-bold text-[#111111]">
+                  {formatINR(product.rentalPrice)}
+                </span>
               </div>
 
               <p className="text-xs sm:text-sm text-[#7A736E] leading-relaxed mb-6 font-sans">
@@ -463,11 +457,9 @@ export const ProductDetailPage: React.FC = () => {
                   <MessageCircle className="w-4 h-4" />
                   Rent Via WhatsApp
                 </span>
-                <span className="flex items-center gap-2 flex-wrap justify-center text-xs">
+                <span className="flex items-center gap-2 justify-center text-xs">
                   <span className="bg-[#0B5D3B] text-white text-[10px] font-bold px-2 py-0.5 tracking-wider">30% RENTAL</span>
                   <span className="font-bold text-sm">{formatINR(product.rentalPrice)}</span>
-                  <span className="opacity-80">(Actual: {formatINR(product.price)})</span>
-                  <span className="opacity-80">/ {product.rentalPeriod || '1 Day'}</span>
                 </span>
               </a>
 

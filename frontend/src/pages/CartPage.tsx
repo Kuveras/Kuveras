@@ -97,7 +97,6 @@ export const CartPage: React.FC = () => {
                             <span className="flex items-center gap-1.5 flex-wrap">
                               <span className="text-[10px] font-bold text-[#0B5D3B] bg-[#0B5D3B]/10 px-1.5 py-0.5 tracking-wider">Rental (30%)</span>
                               <span>{formatINR(item.product.rentalPrice)}</span>
-                              <span className="text-xs text-[#7A736E] font-normal">(Actual: {formatINR(item.product.price)})</span>
                             </span>
                           ) : (
                             formatINR(item.product.salePrice)
