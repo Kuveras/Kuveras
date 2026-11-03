@@ -111,7 +111,7 @@ export const ProductDetailPage: React.FC = () => {
 
   const whatsappUrl = generateWhatsAppLink(
     product.name,
-    product.price,
+    product.salePrice,
     product.rentalPrice,
     'rental',
     '919910204680',
@@ -383,7 +383,7 @@ export const ProductDetailPage: React.FC = () => {
               {/* Rental Price Banner */}
               <div className="flex items-center gap-3 p-3 bg-[#FAF8F5] border border-[#C89B3C]/40 mb-4">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#0B5D3B] bg-[#0B5D3B]/10 px-2 py-0.5 border border-[#0B5D3B]/20">
-                  Rental Price (30%)
+                  Rent (30%):
                 </span>
                 <span className="font-sans text-2xl font-bold text-[#111111]">
                   {formatINR(product.rentalPrice)}

@@ -25,9 +25,10 @@ const productSchema = new mongoose.Schema(
   }
 );
 
-// Virtual for dynamic rental price: exactly 30% of actual jewellery price
+// Virtual for dynamic rental price: exactly 30% of bold discounted/selling price
 productSchema.virtual('rentalPrice').get(function () {
-  return Math.round(this.price * 0.30);
+  const base = this.salePrice !== undefined && this.salePrice !== null ? this.salePrice : this.price;
+  return Math.round(base * 0.30);
 });
 
 export default mongoose.model('Product', productSchema);

@@ -1,8 +1,8 @@
 /**
- * Updates each product's rentalPrice = Math.round(price * 0.30)
- * and originalRentalPrice = price (the original/actual jewellery MRP).
- * Formula: Rental Price = Actual Jewellery Price × 0.30
- * Example: Actual Price ₹11,500 -> Rental Price (30%) ₹3,450
+ * Updates each product's rentalPrice = Math.round(salePrice * 0.30)
+ * where salePrice is the bold discounted/selling price displayed on the product page.
+ * Formula: Rental Price = Bold Selling Price × 0.30
+ * Example: Original MRP ₹11,710, Bold Selling Price ₹8,197 -> Rental Price (30%) ₹2,459
  */
 const fs = require('fs');
 const path = require('path');
@@ -18,37 +18,38 @@ if (!content.includes("import { calculateRentalPrice }")) {
   );
 }
 
-// Rename `export const PRODUCTS: Product[] = [` to `const RAW_PRODUCTS: Product[] = [`
+// Rename `export const PRODUCTS: Product[] = [` to `const RAW_PRODUCTS: Product[] = [` if needed
 if (content.includes("export const PRODUCTS: Product[] = [")) {
   content = content.replace("export const PRODUCTS: Product[] = [", "const RAW_PRODUCTS: Product[] = [");
 }
 
 let updatedCount = 0;
 
-// Replace each product's rentalPrice with Math.round(price * 0.30)
+// Match each product block between { and } in RAW_PRODUCTS
+// and compute rentalPrice from salePrice
 content = content.replace(
-  /"price":\s*(\d+),([\s\S]*?)"originalRentalPrice":\s*\d+,\s*"rentalPrice":\s*\d+,/g,
-  (match, priceStr, middle) => {
-    const price = parseInt(priceStr, 10);
-    const newRental = Math.round(price * 0.30);
+  /("salePrice":\s*(\d+),[\s\S]*?"originalRentalPrice":\s*)\d+(,\s*"rentalPrice":\s*)\d+/g,
+  (match, prefix, salePriceStr, middle) => {
+    const salePrice = parseInt(salePriceStr, 10);
+    const newRental = Math.round(salePrice * 0.30);
     updatedCount++;
-    return `"price": ${price},${middle}"originalRentalPrice": ${price}, "rentalPrice": ${newRental},`;
+    return `${prefix}${salePrice}${middle}${newRental}`;
   }
 );
 
-// If dynamic PRODUCTS wrapper is not yet present, insert it before AVAILABLE_COUPONS
-if (!content.includes("export const PRODUCTS: Product[] = RAW_PRODUCTS.map")) {
-  const dynamicWrapper = `
-/**
- * Automatically calculate rental price (Rental Price = Actual Price × 0.30)
- * for all products, ensuring that whenever a product's actual price changes,
+// Update or ensure the dynamic PRODUCTS getter uses salePrice
+const dynamicGetterPattern = /\/\*\*[\s\S]*?export const PRODUCTS: Product\[\] = RAW_PRODUCTS\.map\([\s\S]*?\n\}\);\n/m;
+const dynamicWrapper = `/**
+ * Automatically calculate rental price (Rental Price = Bold Selling Price × 0.30)
+ * for all products, ensuring that whenever a product's bold selling price changes,
  * its rental price automatically updates.
  */
 export const PRODUCTS: Product[] = RAW_PRODUCTS.map((product) => {
   const p = { ...product };
   Object.defineProperty(p, 'rentalPrice', {
     get() {
-      return calculateRentalPrice(this.price);
+      const selling = this.salePrice !== undefined && this.salePrice !== null ? this.salePrice : this.price;
+      return calculateRentalPrice(selling);
     },
     set(v: number) {
       Object.defineProperty(this, 'rentalPrice', {
@@ -63,13 +64,16 @@ export const PRODUCTS: Product[] = RAW_PRODUCTS.map((product) => {
   });
   return p;
 });
-
 `;
+
+if (dynamicGetterPattern.test(content)) {
+  content = content.replace(dynamicGetterPattern, dynamicWrapper);
+} else {
   content = content.replace(
     /\n\s*export const AVAILABLE_COUPONS: Coupon\[\] = \[/,
-    `${dynamicWrapper}export const AVAILABLE_COUPONS: Coupon[] = [`
+    `\n${dynamicWrapper}\nexport const AVAILABLE_COUPONS: Coupon[] = [`
   );
 }
 
 fs.writeFileSync(filePath, content, 'utf8');
-console.log(`Updated ${updatedCount} products to 30% rental price.`);
+console.log(`Updated ${updatedCount} products to 30% rental price based on bold selling price.`);

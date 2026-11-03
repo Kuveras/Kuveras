@@ -49,7 +49,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   const whatsappUrl = generateWhatsAppLink(
     product.name,
-    product.price,
+    product.salePrice,
     product.rentalPrice,
     'rental',
     '919910204680',

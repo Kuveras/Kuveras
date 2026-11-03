@@ -35,13 +35,14 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       // Auto-recalculate rental prices for all rental items in stored cart
       return parsed.map((item) => {
         if (item.isRental && item.product) {
-          const rentalPrice = calculateRentalPrice(item.product.price);
+          const selling = item.product.salePrice ?? item.product.price;
+          const rentalPrice = calculateRentalPrice(selling);
           return {
             ...item,
             product: {
               ...item.product,
               rentalPrice,
-              originalRentalPrice: item.product.price,
+              originalRentalPrice: selling,
             },
           };
         }
@@ -82,11 +83,12 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, [activeCoupon]);
 
   const addToCart = (product: Product, quantity: number = 1, isRental: boolean = false) => {
-    const rentalPrice = calculateRentalPrice(product.price);
+    const selling = product.salePrice ?? product.price;
+    const rentalPrice = calculateRentalPrice(selling);
     const enrichedProduct: Product = {
       ...product,
       rentalPrice,
-      originalRentalPrice: product.price,
+      originalRentalPrice: selling,
     };
 
     setCart((prevCart) => {
@@ -138,7 +140,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const subtotal = cart.reduce((acc, item) => {
     const itemPrice = item.isRental
-      ? calculateRentalPrice(item.product.price)
+      ? calculateRentalPrice(item.product.salePrice ?? item.product.price)
       : item.product.salePrice;
     return acc + itemPrice * item.quantity;
   }, 0);

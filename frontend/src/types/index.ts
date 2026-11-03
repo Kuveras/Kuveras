@@ -15,8 +15,8 @@ export interface Product {
   images: string[];
   tags: string[];
   specifications: Record<string, string>;
-  rentalPrice: number; // Rental price: exactly 30% of actual jewellery price (price * 0.30)
-  originalRentalPrice?: number; // Original actual jewellery price INR (for rental reference)
+  rentalPrice: number; // Rental price: exactly 30% of bold discounted/selling price (salePrice * 0.30)
+  originalRentalPrice?: number; // Bold selling price INR (for rental reference)
   rentalPeriod?: string;
   stock: number;
   featured?: boolean;

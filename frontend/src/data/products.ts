@@ -34,7 +34,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 11710, "rentalPrice": 3513,
+    "originalRentalPrice": 8197, "rentalPrice": 2459,
     "rentalPeriod": "1 Day",
     "stock": 15,
     "featured": true,
@@ -82,7 +82,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 12500, "rentalPrice": 3750,
+    "originalRentalPrice": 8750, "rentalPrice": 2625,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -128,7 +128,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 5000, "rentalPrice": 1500,
+    "originalRentalPrice": 3500, "rentalPrice": 1050,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -174,7 +174,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 5000, "rentalPrice": 1500,
+    "originalRentalPrice": 3500, "rentalPrice": 1050,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -221,7 +221,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 4700, "rentalPrice": 1410,
+    "originalRentalPrice": 3240, "rentalPrice": 972,
     "stock": 15,
     "featured": true,
     "bestseller": true,
@@ -267,7 +267,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 7700, "rentalPrice": 2310,
+    "originalRentalPrice": 5390, "rentalPrice": 1617,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -310,7 +310,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 6000, "rentalPrice": 1800,
+    "originalRentalPrice": 4200, "rentalPrice": 1260,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -356,7 +356,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 6800, "rentalPrice": 2040,
+    "originalRentalPrice": 4760, "rentalPrice": 1428,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -401,7 +401,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 9000, "rentalPrice": 2700,
+    "originalRentalPrice": 6300, "rentalPrice": 1890,
     "stock": 15,
     "featured": true,
     "bestseller": true,
@@ -447,7 +447,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 11750, "rentalPrice": 3525,
+    "originalRentalPrice": 8225, "rentalPrice": 2468,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -492,7 +492,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 2775, "rentalPrice": 833,
+    "originalRentalPrice": 1942, "rentalPrice": 583,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -540,7 +540,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 17500, "rentalPrice": 5250,
+    "originalRentalPrice": 12250, "rentalPrice": 3675,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -584,7 +584,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 21000, "rentalPrice": 6300,
+    "originalRentalPrice": 14700, "rentalPrice": 4410,
     "stock": 15,
     "featured": true,
     "bestseller": true,
@@ -676,7 +676,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 9000, "rentalPrice": 2700,
+    "originalRentalPrice": 6300, "rentalPrice": 1890,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -721,7 +721,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 6025, "rentalPrice": 1808,
+    "originalRentalPrice": 4217, "rentalPrice": 1265,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -769,7 +769,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 19385, "rentalPrice": 5816,
+    "originalRentalPrice": 13569, "rentalPrice": 4071,
     "stock": 15,
     "featured": true,
     "bestseller": true,
@@ -814,7 +814,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 3270, "rentalPrice": 981,
+    "originalRentalPrice": 2289, "rentalPrice": 687,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -861,7 +861,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 3125, "rentalPrice": 938,
+    "originalRentalPrice": 2187, "rentalPrice": 656,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -908,7 +908,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 16000, "rentalPrice": 4800,
+    "originalRentalPrice": 11200, "rentalPrice": 3360,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -954,7 +954,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 2775, "rentalPrice": 833,
+    "originalRentalPrice": 1942, "rentalPrice": 583,
     "stock": 15,
     "featured": true,
     "bestseller": true,
@@ -1001,7 +1001,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 5525, "rentalPrice": 1658,
+    "originalRentalPrice": 3867, "rentalPrice": 1160,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -1047,7 +1047,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 6025, "rentalPrice": 1808,
+    "originalRentalPrice": 4217, "rentalPrice": 1265,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -1092,7 +1092,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 4000, "rentalPrice": 1200,
+    "originalRentalPrice": 2800, "rentalPrice": 840,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -1183,7 +1183,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 7500, "rentalPrice": 2250,
+    "originalRentalPrice": 5250, "rentalPrice": 1575,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -1228,7 +1228,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 4600, "rentalPrice": 1380,
+    "originalRentalPrice": 3220, "rentalPrice": 966,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -1274,7 +1274,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 4250, "rentalPrice": 1275,
+    "originalRentalPrice": 2975, "rentalPrice": 893,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -1319,7 +1319,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 11250, "rentalPrice": 3375,
+    "originalRentalPrice": 7875, "rentalPrice": 2363,
     "stock": 15,
     "featured": true,
     "bestseller": true,
@@ -1365,7 +1365,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 2250, "rentalPrice": 675,
+    "originalRentalPrice": 1575, "rentalPrice": 473,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -1410,7 +1410,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 2000, "rentalPrice": 600,
+    "originalRentalPrice": 1400, "rentalPrice": 420,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -1454,7 +1454,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 2625, "rentalPrice": 788,
+    "originalRentalPrice": 1838, "rentalPrice": 551,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -1499,7 +1499,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 3290, "rentalPrice": 987,
+    "originalRentalPrice": 2303, "rentalPrice": 691,
     "stock": 15,
     "featured": true,
     "bestseller": true,
@@ -1546,7 +1546,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 3060, "rentalPrice": 918,
+    "originalRentalPrice": 2142, "rentalPrice": 643,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -1591,7 +1591,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 3270, "rentalPrice": 981,
+    "originalRentalPrice": 2289, "rentalPrice": 687,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -1636,7 +1636,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 2250, "rentalPrice": 675,
+    "originalRentalPrice": 1575, "rentalPrice": 473,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -1681,7 +1681,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 6000, "rentalPrice": 1800,
+    "originalRentalPrice": 4000, "rentalPrice": 1200,
     "stock": 15,
     "featured": true,
     "bestseller": true,
@@ -1724,7 +1724,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 4500, "rentalPrice": 1350,
+    "originalRentalPrice": 3150, "rentalPrice": 945,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -1770,7 +1770,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 4000, "rentalPrice": 1200,
+    "originalRentalPrice": 2800, "rentalPrice": 840,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -1816,7 +1816,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 3280, "rentalPrice": 984,
+    "originalRentalPrice": 2296, "rentalPrice": 689,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -1859,7 +1859,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 4075, "rentalPrice": 1223,
+    "originalRentalPrice": 2853, "rentalPrice": 856,
     "stock": 15,
     "featured": true,
     "bestseller": true,
@@ -1903,7 +1903,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 7800, "rentalPrice": 2340,
+    "originalRentalPrice": 5460, "rentalPrice": 1638,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -1946,7 +1946,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 11129, "rentalPrice": 3339,
+    "originalRentalPrice": 7791, "rentalPrice": 2337,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -1989,7 +1989,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 12000, "rentalPrice": 3600,
+    "originalRentalPrice": 7200, "rentalPrice": 2160,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -2032,7 +2032,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 11350, "rentalPrice": 3405,
+    "originalRentalPrice": 7945, "rentalPrice": 2384,
     "stock": 15,
     "featured": true,
     "bestseller": true,
@@ -2076,7 +2076,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 9500, "rentalPrice": 2850,
+    "originalRentalPrice": 6650, "rentalPrice": 1995,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -2122,7 +2122,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 10299, "rentalPrice": 3090,
+    "originalRentalPrice": 7210, "rentalPrice": 2163,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -2169,7 +2169,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 14525, "rentalPrice": 4358,
+    "originalRentalPrice": 10168, "rentalPrice": 3050,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -2213,7 +2213,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 12399, "rentalPrice": 3720,
+    "originalRentalPrice": 8680, "rentalPrice": 2604,
     "stock": 15,
     "featured": true,
     "bestseller": true,
@@ -2257,7 +2257,7 @@ const RAW_PRODUCTS: Product[] = [
       "Care Instructions": "Keep away from moisture, perfume, and direct spray.",
       "Origin": "Handcrafted in India"
     },
-    "originalRentalPrice": 10549, "rentalPrice": 3165,
+    "originalRentalPrice": 7385, "rentalPrice": 2216,
     "stock": 15,
     "featured": true,
     "bestseller": false,
@@ -2273,15 +2273,16 @@ const RAW_PRODUCTS: Product[] = [
   }
 ];
 /**
- * Automatically calculate rental price (Rental Price = Actual Price × 0.30)
- * for all products, ensuring that whenever a product's actual price changes,
+ * Automatically calculate rental price (Rental Price = Bold Selling Price × 0.30)
+ * for all products, ensuring that whenever a product's bold selling price changes,
  * its rental price automatically updates.
  */
 export const PRODUCTS: Product[] = RAW_PRODUCTS.map((product) => {
   const p = { ...product };
   Object.defineProperty(p, 'rentalPrice', {
     get() {
-      return calculateRentalPrice(this.price);
+      const selling = this.salePrice !== undefined && this.salePrice !== null ? this.salePrice : this.price;
+      return calculateRentalPrice(selling);
     },
     set(v: number) {
       Object.defineProperty(this, 'rentalPrice', {

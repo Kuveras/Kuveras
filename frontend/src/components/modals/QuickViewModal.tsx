@@ -59,11 +59,11 @@ export const QuickViewModal: React.FC = () => {
 
   const whatsappUrl = generateWhatsAppLink(
     quickViewProduct.name,
-    quickViewProduct.price,
+    quickViewProduct.salePrice,
     quickViewProduct.rentalPrice,
     'rental',
     '919910204680',
-    quickViewProduct.rentalPeriod || '3 Days'
+    quickViewProduct.rentalPeriod || '1 Day'
   );
 
   return (
@@ -136,7 +136,7 @@ export const QuickViewModal: React.FC = () => {
             </div>
 
             {/* Pricing */}
-            <div className="flex items-baseline gap-3 mb-4 border-b border-[#F5F0EB] pb-4">
+            <div className="flex items-baseline gap-3 mb-2">
               <span className="font-sans text-2xl font-bold text-[#111111]">
                 {formatINR(quickViewProduct.salePrice)}
               </span>
@@ -145,6 +145,16 @@ export const QuickViewModal: React.FC = () => {
                   {formatINR(quickViewProduct.price)}
                 </span>
               )}
+            </div>
+
+            {/* Rental Price banner */}
+            <div className="flex items-center gap-2 mb-4 border-b border-[#F5F0EB] pb-3">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-[#0B5D3B] bg-[#0B5D3B]/10 px-2 py-0.5 border border-[#0B5D3B]/20">
+                Rent (30%):
+              </span>
+              <span className="font-sans text-base font-bold text-[#111111]">
+                {formatINR(quickViewProduct.rentalPrice)}
+              </span>
             </div>
 
             {/* Short Description */}

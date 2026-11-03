@@ -25,9 +25,10 @@ import { KuverasLogo } from '../components/common/KuverasLogo';
 const formatINR = (n: number) =>
   new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(n);
 
-const EXAMPLE_ACTUAL_PRICE = 11500;
+const EXAMPLE_ORIGINAL_PRICE = 11710;
+const EXAMPLE_SELLING_PRICE = 8197;
 const RENTAL_RATE_PCT = 30;
-const EXAMPLE_RENTAL_PRICE = Math.round(EXAMPLE_ACTUAL_PRICE * 0.30); // 3450
+const EXAMPLE_RENTAL_PRICE = Math.round(EXAMPLE_SELLING_PRICE * 0.30); // 2459
 
 /* ─────────────── Section Card ─────────────── */
 interface SectionCardProps {
@@ -143,12 +144,18 @@ export const RentInfoPage: React.FC = () => {
           <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-[#1A1508] border border-[#C89B3C]/50 px-8 py-5 shadow-[0_0_30px_rgba(200,155,60,0.12)]">
             <div className="flex items-center gap-3">
               <span className="bg-[#0B5D3B] text-white text-xs font-bold uppercase tracking-widest px-3 py-1">
-                {RENTAL_RATE_PCT}% OF ACTUAL PRICE
+                {RENTAL_RATE_PCT}% OF SELLING PRICE
               </span>
               <div className="text-left">
                 <p className="text-[#9E9990] text-xs mb-0.5">Rental Price (30% Calculation Formula)</p>
                 <div className="flex items-baseline gap-2">
                   <span className="font-serif text-3xl font-bold text-[#C89B3C]">{formatINR(EXAMPLE_RENTAL_PRICE)}</span>
+                  <span className="text-[#9E9990] text-xs line-through font-sans">
+                    MRP {formatINR(EXAMPLE_ORIGINAL_PRICE)}
+                  </span>
+                  <span className="text-white/80 text-xs font-sans font-medium">
+                    (Selling {formatINR(EXAMPLE_SELLING_PRICE)})
+                  </span>
                 </div>
               </div>
             </div>
@@ -290,8 +297,8 @@ export const RentInfoPage: React.FC = () => {
             <div className="flex items-center gap-3 bg-[#0B5D3B] text-white px-4 py-3 mb-5">
               <BadgePercent className="w-5 h-5 text-[#E7C982] flex-shrink-0" />
               <div>
-                <p className="text-xs font-bold uppercase tracking-widest text-[#E7C982]">Rental Price Rule: Exactly 30% of Actual Jewellery Price</p>
-                <p className="text-[11px] text-white/90 mt-0.5 font-sans">Formula: <strong>Rental Price = Actual Jewellery Price × 0.30</strong>. No discount applied—the rental price is exactly 30% of the actual jewellery value.</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-[#E7C982]">Rental Price Rule: Exactly 30% of Bold Selling Price</p>
+                <p className="text-[11px] text-white/90 mt-0.5 font-sans">Formula: <strong>Rental Price = Bold Selling Price × 0.30</strong>. Calculated on the displayed bold selling price (not the original strikethrough price).</p>
               </div>
             </div>
 
@@ -301,7 +308,7 @@ export const RentInfoPage: React.FC = () => {
                 <thead>
                   <tr className="bg-[#171512] text-white">
                     <th className="text-left px-4 py-3 font-sans font-semibold uppercase tracking-wider border border-[#C89B3C]/30">Particulars</th>
-                    <th className="text-right px-4 py-3 font-sans font-semibold uppercase tracking-wider border border-[#C89B3C]/30">Actual Jewellery MRP</th>
+                    <th className="text-right px-4 py-3 font-sans font-semibold uppercase tracking-wider border border-[#C89B3C]/30">Bold Selling Price</th>
                     <th className="text-right px-4 py-3 font-sans font-semibold uppercase tracking-wider border border-[#C89B3C]/30">Calculation Formula</th>
                     <th className="text-right px-4 py-3 font-sans font-semibold uppercase tracking-wider border border-[#C89B3C]/30 text-[#C89B3C]">Rental Price (30%)</th>
                   </tr>
@@ -312,9 +319,12 @@ export const RentInfoPage: React.FC = () => {
                     <td className="px-4 py-3 font-medium text-[#171512]">
                       Jewellery Rental Fee <span className="text-[10px] font-normal text-[#6F675E]">(per day / 1 occasion)</span>
                     </td>
-                    <td className="px-4 py-3 text-right font-semibold text-[#171512]">{formatINR(EXAMPLE_ACTUAL_PRICE)}</td>
+                    <td className="px-4 py-3 text-right font-semibold text-[#171512]">
+                      <span className="font-bold">{formatINR(EXAMPLE_SELLING_PRICE)}</span>{' '}
+                      <span className="text-[10px] text-[#6F675E] line-through">({formatINR(EXAMPLE_ORIGINAL_PRICE)})</span>
+                    </td>
                     <td className="px-4 py-3 text-right">
-                      <span className="bg-[#0B5D3B] text-white text-[10px] font-bold px-2 py-0.5 tracking-wider">30% OF ACTUAL</span>
+                      <span className="bg-[#0B5D3B] text-white text-[10px] font-bold px-2 py-0.5 tracking-wider">30% OF SELLING</span>
                     </td>
                     <td className="px-4 py-3 text-right font-bold text-[#C89B3C] text-base">{formatINR(EXAMPLE_RENTAL_PRICE)}</td>
                   </tr>
@@ -350,7 +360,7 @@ export const RentInfoPage: React.FC = () => {
                     <td className="px-4 py-3.5 font-bold font-serif text-sm">
                       Example Total <span className="text-[11px] font-sans font-normal text-[#9E9990]">(Delhi NCR, 1 Day Rental)</span>
                     </td>
-                    <td className="px-4 py-3.5 text-right text-[#9E9990] text-xs">{formatINR(EXAMPLE_ACTUAL_PRICE)} MRP</td>
+                    <td className="px-4 py-3.5 text-right text-[#9E9990] text-xs">{formatINR(EXAMPLE_SELLING_PRICE)}</td>
                     <td className="px-4 py-3.5 text-right">
                       <span className="text-[#C89B3C] text-[10px] font-bold px-2 py-0.5 tracking-wider">30% CALCULATION</span>
                     </td>
@@ -361,7 +371,7 @@ export const RentInfoPage: React.FC = () => {
             </div>
 
             <p className="text-[11px] text-[#6F675E] mt-3 italic font-sans">
-              * Rental price is calculated automatically for every product as exactly 30% of its actual jewellery price (Formula: Rental Price = Actual Price × 0.30). Security deposit is product-specific and 100% refundable upon return.
+              * Rental price is calculated automatically for every product as exactly 30% of its bold selling price (Formula: Rental Price = Bold Selling Price × 0.30). Security deposit is product-specific and 100% refundable upon return.
             </p>
           </SectionCard>
 
@@ -439,7 +449,7 @@ export const RentInfoPage: React.FC = () => {
 
           <div className="space-y-2">
             <AccItem q="What is the standard rental duration?">
-              Our standard rental period is <strong>1 Day</strong> at exactly <strong>30% of the actual jewellery price</strong> (for example: Actual Price <span className="text-[#171512] font-semibold">{formatINR(EXAMPLE_ACTUAL_PRICE)}</span> → Rental Price <span className="text-[#C89B3C] font-bold">{formatINR(EXAMPLE_RENTAL_PRICE)}</span>). The full window is 3 calendar days — delivery, occasion, pickup. Extended rental periods can be arranged via WhatsApp.
+              Our standard rental period is <strong>1 Day</strong> at exactly <strong>30% of the bold selling price</strong> (for example: Bold Selling Price <span className="text-[#171512] font-semibold">{formatINR(EXAMPLE_SELLING_PRICE)}</span> [Original MRP <span className="text-[#6F675E] line-through">{formatINR(EXAMPLE_ORIGINAL_PRICE)}</span>] → Rental Price <span className="text-[#C89B3C] font-bold">{formatINR(EXAMPLE_RENTAL_PRICE)}</span>). The full window is 3 calendar days — delivery, occasion, pickup. Extended rental periods can be arranged via WhatsApp.
             </AccItem>
             <AccItem q="How does the refundable security deposit work?">
               A refundable deposit (usually 30–50% of retail price) is held during the rental window. Once our inspection team verifies the returned set within 48 hours, the full deposit is released back to your bank account or UPI.

@@ -1,18 +1,21 @@
 import type { Coupon } from '../types';
 
 /**
- * Standard Jewellery Rental Percentage: 30% of the actual jewellery price
+ * Standard Jewellery Rental Percentage: 30% of the bold discounted/selling price
  */
 export const RENTAL_PERCENTAGE = 0.30;
 
 /**
- * Calculate jewellery rental price: exactly 30% of the original/actual jewellery price.
- * Formula: Rental Price = Actual Jewellery Price × 0.30
- * Example: Actual Price ₹11,500 -> Rental Price ₹3,450
+ * Calculate jewellery rental price: exactly 30% of the bold discounted/selling price.
+ * Formula: Rental Price = Bold Selling Price × 0.30
+ * Example:
+ *   Original MRP (strikethrough): ₹11,710
+ *   Bold Selling Price: ₹8,197
+ *   Rental Price: ₹8,197 × 0.30 = ₹2,459.10 -> ₹2,459 (rounded to nearest rupee)
  */
-export const calculateRentalPrice = (actualPrice: number): number => {
-  if (!actualPrice || isNaN(actualPrice)) return 0;
-  return Math.round(actualPrice * RENTAL_PERCENTAGE);
+export const calculateRentalPrice = (sellingPrice: number): number => {
+  if (!sellingPrice || isNaN(sellingPrice)) return 0;
+  return Math.round(sellingPrice * RENTAL_PERCENTAGE);
 };
 
 /**
@@ -45,16 +48,16 @@ export const calculateDiscount = (subtotal: number, coupon: Coupon | null): numb
  */
 export const generateWhatsAppLink = (
   productName: string,
-  actualPrice: number,
+  sellingPrice: number,
   rentalPrice: number,
   type: 'rental' | 'general' = 'rental',
   whatsappNumber: string = '919910204680',
   rentalPeriod: string = '1 Day'
 ): string => {
-  const calculatedRental = rentalPrice || calculateRentalPrice(actualPrice);
+  const calculatedRental = rentalPrice || calculateRentalPrice(sellingPrice);
   const text = type === 'rental'
     ? `Hi Kuveras! I am interested in renting the *${productName}* (Rental Price: ${formatINR(calculatedRental)}) with doorstep delivery across Delhi. Please share rental availability, security deposit details, and booking procedure.`
-    : `Hi Kuveras! I have an inquiry regarding *${productName}* (Price: ${formatINR(actualPrice)}) with doorstep delivery across Delhi. Could you please assist me with more details?`;
+    : `Hi Kuveras! I have an inquiry regarding *${productName}* (Price: ${formatINR(sellingPrice)}) with doorstep delivery across Delhi. Could you please assist me with more details?`;
 
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
 };
