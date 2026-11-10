@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { PRODUCTS } from '../data/products';
 import { ProductCard } from '../components/common/ProductCard';
 import { SafeImage } from '../components/common/SafeImage';
+import { ProductLightboxModal } from '../components/modals/ProductLightboxModal';
 import { Accordion } from '../components/common/Accordion';
 import { StarRating } from '../components/common/StarRating';
 import { formatINR, generateWhatsAppLink } from '../utils/pricing';
@@ -20,7 +21,6 @@ import {
   Minus,
   CheckCircle2,
   Share2,
-  X,
   ZoomIn,
   Images,
 } from 'lucide-react';
@@ -36,6 +36,18 @@ export const ProductDetailPage: React.FC = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [pdpHoverZoom, setPdpHoverZoom] = useState({ isHovered: false, x: 50, y: 50 });
+
+  const handlePdpMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
+    const y = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
+    setPdpHoverZoom({ isHovered: true, x, y });
+  };
+
+  const handlePdpMouseLeave = () => {
+    setPdpHoverZoom({ isHovered: false, x: 50, y: 50 });
+  };
 
   useEffect(() => {
     if (
@@ -239,12 +251,25 @@ export const ProductDetailPage: React.FC = () => {
             <div
               className="aspect-[4/5] w-full bg-[#FAF8F5] border border-[#E8E2D9] overflow-hidden relative group cursor-zoom-in select-none"
               onClick={() => setLightboxOpen(true)}
+              onMouseMove={handlePdpMouseMove}
+              onMouseLeave={handlePdpMouseLeave}
             >
-              <SafeImage
-                src={product.images[selectedImageIndex] || product.images[0]}
-                alt={product.name}
-                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.04]"
-              />
+              <div
+                className="w-full h-full will-change-transform"
+                style={{
+                  transformOrigin: `${pdpHoverZoom.x}% ${pdpHoverZoom.y}%`,
+                  transform: pdpHoverZoom.isHovered ? 'scale(1.7)' : 'scale(1)',
+                  transition: pdpHoverZoom.isHovered
+                    ? 'transform 0.12s ease-out, transform-origin 0.04s linear'
+                    : 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform-origin 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+                }}
+              >
+                <SafeImage
+                  src={product.images[selectedImageIndex] || product.images[0]}
+                  alt={product.name}
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
 
               {/* Discount badge */}
               {product.discount > 0 && (
@@ -515,90 +540,16 @@ export const ProductDetailPage: React.FC = () => {
         )}
       </div>
 
-      {/* ─── Lightbox Modal ─── */}
-      {lightboxOpen && (
-        <div
-          className="fixed inset-0 z-50 bg-black/96 flex items-center justify-center"
-          onClick={() => setLightboxOpen(false)}
-        >
-          {/* Close */}
-          <button
-            onClick={() => setLightboxOpen(false)}
-            className="absolute top-5 right-5 w-10 h-10 bg-white/10 hover:bg-white/25 text-white flex items-center justify-center rounded-full transition-colors z-20"
-            aria-label="Close lightbox"
-          >
-            <X className="w-5 h-5" />
-          </button>
-
-          {/* Counter */}
-          <div className="absolute top-5 left-1/2 -translate-x-1/2 text-white/60 text-sm font-sans tracking-[0.2em] z-20 select-none">
-            {selectedImageIndex + 1} &nbsp;/&nbsp; {totalImages}
-          </div>
-
-          {/* Prev arrow */}
-          {totalImages > 1 && (
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                goPrev();
-              }}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 bg-white/10 hover:bg-white/25 text-white flex items-center justify-center rounded-full transition-colors z-20"
-              aria-label="Previous image"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-          )}
-
-          {/* Main lightbox image */}
-          <div
-            className="max-w-3xl max-h-[80vh] w-full px-16 flex items-center justify-center"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <img
-              src={product.images[selectedImageIndex]}
-              alt={product.name}
-              className="max-w-full max-h-[80vh] object-contain select-none drop-shadow-2xl"
-              draggable={false}
-            />
-          </div>
-
-          {/* Next arrow */}
-          {totalImages > 1 && (
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                goNext();
-              }}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 bg-white/10 hover:bg-white/25 text-white flex items-center justify-center rounded-full transition-colors z-20"
-              aria-label="Next image"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-          )}
-
-          {/* Thumbnail strip */}
-          {totalImages > 1 && (
-            <div
-              className="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-2 max-w-[90vw] overflow-x-auto pb-1"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {product.images.map((img, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setSelectedImageIndex(idx)}
-                  className={`w-14 h-16 shrink-0 overflow-hidden border-2 transition-all duration-200 ${
-                    selectedImageIndex === idx
-                      ? 'border-[#D4AF37] opacity-100 scale-110'
-                      : 'border-white/20 opacity-40 hover:opacity-70 hover:border-white/50'
-                  }`}
-                >
-                  <img src={img} alt="" className="w-full h-full object-cover" draggable={false} />
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-      )}
+      {/* ─── Premium Lightbox Modal ─── */}
+      <ProductLightboxModal
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        images={product.images}
+        currentIndex={selectedImageIndex}
+        onIndexChange={setSelectedImageIndex}
+        productName={product.name}
+        category={product.category}
+      />
     </div>
   );
 };

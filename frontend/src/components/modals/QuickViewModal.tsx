@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { X, Heart, ShoppingBag, MessageCircle, ExternalLink, Plus, Minus } from 'lucide-react';
+import { X, Heart, ShoppingBag, MessageCircle, ExternalLink, Plus, Minus, ZoomIn } from 'lucide-react';
 import { useUI } from '../../context/UIContext';
 import { useCart } from '../../context/CartContext';
 import { useWishlist } from '../../context/WishlistContext';
 import { formatINR, generateWhatsAppLink } from '../../utils/pricing';
 import { StarRating } from '../common/StarRating';
 import { SafeImage } from '../common/SafeImage';
+import { ProductLightboxModal } from './ProductLightboxModal';
 
 export const QuickViewModal: React.FC = () => {
   const { quickViewProduct, setQuickViewProduct, showToast } = useUI();
@@ -16,6 +17,7 @@ export const QuickViewModal: React.FC = () => {
 
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   useEffect(() => {
     setSelectedImageIndex(0);
@@ -25,12 +27,14 @@ export const QuickViewModal: React.FC = () => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        setQuickViewProduct(null);
+        if (!lightboxOpen) {
+          setQuickViewProduct(null);
+        }
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [setQuickViewProduct]);
+  }, [setQuickViewProduct, lightboxOpen]);
 
   if (!quickViewProduct) return null;
 
@@ -87,17 +91,24 @@ export const QuickViewModal: React.FC = () => {
 
         {/* Left: Gallery */}
         <div className="w-full md:w-1/2 p-6 bg-[#FAF8F5] flex flex-col justify-between">
-          <div className="aspect-4/5 w-full bg-white border border-[#E8E2D9] overflow-hidden mb-4 relative">
+          <div
+            className="aspect-4/5 w-full bg-white border border-[#E8E2D9] overflow-hidden mb-4 relative cursor-zoom-in group select-none"
+            onClick={() => setLightboxOpen(true)}
+          >
             <SafeImage
               src={quickViewProduct.images[selectedImageIndex] || quickViewProduct.images[0]}
               alt={quickViewProduct.name}
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.04]"
             />
             {quickViewProduct.discount > 0 && (
-              <span className="absolute top-3 left-3 bg-[#8B0000] text-white text-xs font-bold uppercase px-2.5 py-1 tracking-wider">
+              <span className="absolute top-3 left-3 bg-[#8B0000] text-white text-xs font-bold uppercase px-2.5 py-1 tracking-wider pointer-events-none z-10">
                 {quickViewProduct.discount}% OFF
               </span>
             )}
+            <div className="absolute bottom-3 right-3 bg-black/65 backdrop-blur-sm text-white text-[11px] px-2.5 py-1.5 flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-full z-10 shadow-md">
+              <ZoomIn className="w-3.5 h-3.5 text-[#D4AF37]" />
+              <span>Full Screen Zoom</span>
+            </div>
           </div>
 
           {/* Thumbnails */}
@@ -234,6 +245,17 @@ export const QuickViewModal: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Lightbox Modal for Quick View */}
+      <ProductLightboxModal
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        images={quickViewProduct.images}
+        currentIndex={selectedImageIndex}
+        onIndexChange={setSelectedImageIndex}
+        productName={quickViewProduct.name}
+        category={quickViewProduct.category}
+      />
     </div>
   );
 };
