@@ -40,7 +40,7 @@ app.use('/api/orders', orderRoutes);
 // Determine dist directory (check backend/dist first, then ../frontend/dist)
 const localDistPath = path.join(__dirname, 'dist');
 const parentDistPath = path.join(__dirname, '../frontend/dist');
-const distPath = fs.existsSync(localDistPath) ? localDistPath : parentDistPath;
+const distPath = fs.existsSync(parentDistPath) ? parentDistPath : localDistPath;
 
 console.log(`📁 Serving static assets from: ${distPath}`);
 app.use(express.static(distPath));

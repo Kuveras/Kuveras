@@ -248,6 +248,23 @@ export const ProductLightboxModal: React.FC<ProductLightboxModalProps> = ({
     }
   };
 
+  const handlePhotoClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+    if (isTouchDevice) return;
+    if (isHovering) {
+      setIsHovering(false);
+      setZoomOrigin({ x: 50, y: 50 });
+    } else {
+      const rect = containerRef.current?.getBoundingClientRect();
+      if (rect) {
+        const x = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
+        const y = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
+        setZoomOrigin({ x, y });
+      }
+      setIsHovering(true);
+    }
+  };
+
   const resetZoom = (e: React.MouseEvent) => {
     e.stopPropagation();
     setIsHovering(false);
@@ -368,7 +385,7 @@ export const ProductLightboxModal: React.FC<ProductLightboxModalProps> = ({
         {/* Central Image Container with Interactive Hover & Touch Zoom */}
         <div
           ref={containerRef}
-          onClick={(e) => e.stopPropagation()}
+          onClick={handlePhotoClick}
           onMouseEnter={handleMouseEnter}
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
@@ -376,7 +393,7 @@ export const ProductLightboxModal: React.FC<ProductLightboxModalProps> = ({
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
           className={`relative max-w-4xl max-h-[72vh] sm:max-h-[76vh] w-auto h-auto flex items-center justify-center overflow-hidden rounded-sm shadow-2xl transition-shadow duration-300 ${
-            isDesktopZoomed ? 'cursor-crosshair shadow-2xl ring-1 ring-[#D4AF37]/50' : 'cursor-zoom-in'
+            isDesktopZoomed ? 'cursor-zoom-out shadow-2xl ring-1 ring-[#D4AF37]/50' : 'cursor-zoom-in'
           }`}
           style={{
             touchAction: mobileScale > 1 ? 'none' : 'pan-y',
