@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import { X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut, RotateCcw, Sparkles } from 'lucide-react';
 
 export interface ProductLightboxModalProps {
@@ -160,6 +161,23 @@ export const ProductLightboxModal: React.FC<ProductLightboxModalProps> = ({
     }
   };
 
+  const handlePhotoClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+    if (isTouchDevice) return;
+    if (isHovering) {
+      setIsHovering(false);
+      setZoomOrigin({ x: 50, y: 50 });
+    } else {
+      const rect = containerRef.current?.getBoundingClientRect();
+      if (rect) {
+        const x = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
+        const y = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
+        setZoomOrigin({ x, y });
+      }
+      setIsHovering(true);
+    }
+  };
+
   // Mobile Touch Gestures (Double tap & Pinch-to-zoom)
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     const now = Date.now();
@@ -248,23 +266,6 @@ export const ProductLightboxModal: React.FC<ProductLightboxModalProps> = ({
     }
   };
 
-  const handlePhotoClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.stopPropagation();
-    if (isTouchDevice) return;
-    if (isHovering) {
-      setIsHovering(false);
-      setZoomOrigin({ x: 50, y: 50 });
-    } else {
-      const rect = containerRef.current?.getBoundingClientRect();
-      if (rect) {
-        const x = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
-        const y = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
-        setZoomOrigin({ x, y });
-      }
-      setIsHovering(true);
-    }
-  };
-
   const resetZoom = (e: React.MouseEvent) => {
     e.stopPropagation();
     setIsHovering(false);
@@ -279,6 +280,7 @@ export const ProductLightboxModal: React.FC<ProductLightboxModalProps> = ({
   };
 
   if (!isOpen) return null;
+  if (typeof document === 'undefined') return null;
 
   // Active transform styles
   const isDesktopZoomed = isHovering && !isTouchDevice;
@@ -292,22 +294,22 @@ export const ProductLightboxModal: React.FC<ProductLightboxModalProps> = ({
 
   const transformOrigin = isDesktopZoomed ? `${zoomOrigin.x}% ${zoomOrigin.y}%` : '50% 50%';
 
-  return (
+  const modalContent = (
     <div
       role="dialog"
       aria-modal="true"
       aria-label="Product Image Full-Screen Preview"
-      className="fixed inset-0 z-50 flex flex-col justify-between select-none animate-fade-in"
+      className="fixed inset-0 z-[999999] flex flex-col justify-between select-none animate-fade-in"
       style={{
-        backgroundColor: 'rgba(10, 9, 8, 0.88)',
-        backdropFilter: 'blur(14px)',
-        WebkitBackdropFilter: 'blur(14px)',
+        backgroundColor: 'rgba(10, 8, 7, 0.88)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
       }}
       onClick={onClose}
     >
       {/* ─── Top Header Bar ─── */}
       <header
-        className="relative z-30 flex items-center justify-between px-4 sm:px-8 py-3.5 sm:py-4 border-b border-white/10 bg-gradient-to-b from-black/60 to-transparent backdrop-blur-xs"
+        className="relative z-50 flex items-center justify-between px-4 sm:px-8 py-3.5 sm:py-4 border-b border-white/10 bg-[#0c0a09]/95 backdrop-blur-md shadow-md"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Left: Product branding */}
@@ -323,7 +325,7 @@ export const ProductLightboxModal: React.FC<ProductLightboxModalProps> = ({
         </div>
 
         {/* Center: Angle Counter */}
-        <div className="hidden sm:flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/15 rounded-full text-xs text-white/90 tracking-widest font-sans">
+        <div className="hidden sm:flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/15 rounded-full text-xs text-white/90 tracking-widest font-sans shadow-xs">
           <span className="text-[#D4AF37] font-semibold">{activeIndex + 1}</span>
           <span className="text-white/40">/</span>
           <span>{totalImages}</span>
@@ -334,7 +336,7 @@ export const ProductLightboxModal: React.FC<ProductLightboxModalProps> = ({
           {/* Zoom Level Indicator / Toggle (Desktop) */}
           <button
             onClick={toggleZoomFactor}
-            className="hidden md:flex items-center gap-1.5 px-3 py-1.5 bg-white/10 hover:bg-white/20 border border-white/15 rounded-full text-xs text-white transition-all cursor-pointer"
+            className="hidden md:flex items-center gap-1.5 px-3 py-1.5 bg-white/10 hover:bg-white/20 border border-white/15 rounded-full text-xs text-white transition-all cursor-pointer shadow-xs"
             title="Click to toggle magnification power"
           >
             <ZoomIn className="w-3.5 h-3.5 text-[#D4AF37]" />
@@ -345,7 +347,7 @@ export const ProductLightboxModal: React.FC<ProductLightboxModalProps> = ({
           {(isHovering || mobileScale > 1) && (
             <button
               onClick={resetZoom}
-              className="flex items-center gap-1 px-2.5 py-1.5 bg-[#D4AF37]/20 hover:bg-[#D4AF37]/30 border border-[#D4AF37]/40 rounded-full text-xs text-[#D4AF37] transition-all cursor-pointer"
+              className="flex items-center gap-1 px-2.5 py-1.5 bg-[#D4AF37]/20 hover:bg-[#D4AF37]/30 border border-[#D4AF37]/40 rounded-full text-xs text-[#D4AF37] transition-all cursor-pointer shadow-xs"
               title="Reset Zoom"
             >
               <RotateCcw className="w-3 h-3" />
@@ -356,7 +358,7 @@ export const ProductLightboxModal: React.FC<ProductLightboxModalProps> = ({
           {/* Close (×) Button */}
           <button
             onClick={onClose}
-            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-[#D4AF37] text-white hover:text-[#111111] border border-white/20 hover:border-[#D4AF37] flex items-center justify-center transition-all duration-200 cursor-pointer shadow-lg group"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-[#D4AF37] text-white hover:text-[#111111] border border-white/20 hover:border-[#D4AF37] flex items-center justify-center transition-all duration-200 cursor-pointer shadow-xl group"
             aria-label="Close full-screen preview (Escape)"
             title="Close (ESC)"
           >
@@ -374,7 +376,7 @@ export const ProductLightboxModal: React.FC<ProductLightboxModalProps> = ({
         {totalImages > 1 && (
           <button
             onClick={handlePrev}
-            className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/40 hover:bg-[#D4AF37] text-white hover:text-[#111111] border border-white/20 hover:border-[#D4AF37] flex items-center justify-center backdrop-blur-md transition-all duration-200 shadow-xl cursor-pointer hover:scale-105 active:scale-95"
+            className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-[#D4AF37] text-white hover:text-[#111111] border border-white/20 hover:border-[#D4AF37] flex items-center justify-center backdrop-blur-md transition-all duration-200 shadow-2xl cursor-pointer hover:scale-105 active:scale-95"
             aria-label="View previous image (Left Arrow)"
             title="Previous (Left Arrow)"
           >
@@ -392,29 +394,23 @@ export const ProductLightboxModal: React.FC<ProductLightboxModalProps> = ({
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
-          className={`relative max-w-4xl max-h-[72vh] sm:max-h-[76vh] w-auto h-auto flex items-center justify-center overflow-hidden rounded-sm shadow-2xl transition-shadow duration-300 ${
-            isDesktopZoomed ? 'cursor-zoom-out shadow-2xl ring-1 ring-[#D4AF37]/50' : 'cursor-zoom-in'
+          className={`relative max-w-4xl max-h-[66vh] sm:max-h-[72vh] w-auto h-auto flex items-center justify-center overflow-hidden rounded-md border border-[#D4AF37]/35 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.95)] transition-all duration-300 ${
+            isDesktopZoomed ? 'cursor-zoom-out ring-2 ring-[#D4AF37]/60' : 'cursor-zoom-in'
           }`}
           style={{
+            backgroundColor: '#181512',
+            backgroundImage:
+              'radial-gradient(circle at center, rgba(212, 175, 55, 0.15) 0%, rgba(20, 17, 14, 0.98) 85%)',
             touchAction: mobileScale > 1 ? 'none' : 'pan-y',
           }}
         >
-          {/* Subtle Ambient Jewelry Glow Behind Image */}
-          <div
-            className="absolute inset-0 pointer-events-none opacity-20 -z-10"
-            style={{
-              background:
-                'radial-gradient(circle at center, rgba(212, 175, 55, 0.25) 0%, transparent 70%)',
-            }}
-          />
-
           {/* Product Image */}
           <img
             ref={imageRef}
             src={currentImage}
             alt={`${productName} - Angle ${activeIndex + 1}`}
             draggable={false}
-            className="max-w-full max-h-[70vh] sm:max-h-[75vh] w-auto h-auto object-contain select-none will-change-transform"
+            className="max-w-full max-h-[64vh] sm:max-h-[70vh] w-auto h-auto object-contain select-none will-change-transform drop-shadow-2xl"
             style={{
               transform: imageTransform,
               transformOrigin: transformOrigin,
@@ -433,13 +429,13 @@ export const ProductLightboxModal: React.FC<ProductLightboxModalProps> = ({
                 : 'opacity-100 translate-y-0'
             }`}
           >
-            <div className="flex items-center gap-2 px-3.5 py-1.5 bg-black/70 hover:bg-black/80 backdrop-blur-md border border-[#D4AF37]/40 rounded-full text-white text-[11px] font-sans shadow-lg">
+            <div className="flex items-center gap-2 px-3.5 py-1.5 bg-black/80 hover:bg-black/90 backdrop-blur-md border border-[#D4AF37]/50 rounded-full text-white text-[11px] font-sans shadow-xl">
               <Sparkles className="w-3.5 h-3.5 text-[#D4AF37] animate-pulse" />
-              <span className="hidden sm:inline text-white/90 font-medium">
-                Move mouse over image to inspect stones & craftsmanship
+              <span className="hidden sm:inline text-white/95 font-medium">
+                Hover or click photo to inspect intricate jewellery craftsmanship
               </span>
-              <span className="sm:hidden text-white/90 font-medium">
-                Double-tap or pinch to inspect stones & details
+              <span className="sm:hidden text-white/95 font-medium">
+                Tap or pinch to inspect stones & details
               </span>
             </div>
           </div>
@@ -449,7 +445,7 @@ export const ProductLightboxModal: React.FC<ProductLightboxModalProps> = ({
         {totalImages > 1 && (
           <button
             onClick={handleNext}
-            className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/40 hover:bg-[#D4AF37] text-white hover:text-[#111111] border border-white/20 hover:border-[#D4AF37] flex items-center justify-center backdrop-blur-md transition-all duration-200 shadow-xl cursor-pointer hover:scale-105 active:scale-95"
+            className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-[#D4AF37] text-white hover:text-[#111111] border border-white/20 hover:border-[#D4AF37] flex items-center justify-center backdrop-blur-md transition-all duration-200 shadow-2xl cursor-pointer hover:scale-105 active:scale-95"
             aria-label="View next image (Right Arrow)"
             title="Next (Right Arrow)"
           >
@@ -460,7 +456,7 @@ export const ProductLightboxModal: React.FC<ProductLightboxModalProps> = ({
 
       {/* ─── Bottom Footer & Thumbnails Strip ─── */}
       <footer
-        className="relative z-30 px-4 py-3 sm:py-4 border-t border-white/10 bg-gradient-to-t from-black/70 via-black/40 to-transparent backdrop-blur-xs flex flex-col items-center gap-2"
+        className="relative z-50 px-4 py-3 sm:py-3.5 border-t border-white/10 bg-[#0c0a09]/95 backdrop-blur-md shadow-md flex flex-col items-center gap-1.5"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Mobile angle counter indicator */}
@@ -504,14 +500,16 @@ export const ProductLightboxModal: React.FC<ProductLightboxModalProps> = ({
         )}
 
         {/* Subtle Keyboard & Accessibility Note */}
-        <div className="hidden md:flex items-center gap-4 text-[11px] text-white/50 tracking-wider font-sans">
+        <div className="hidden md:flex items-center gap-4 text-[11px] text-white/60 tracking-wider font-sans">
           <span>Use &larr; &rarr; arrows to switch angles</span>
           <span>•</span>
-          <span>Hover to magnify jewellery details</span>
+          <span>Hover or click photo to magnify</span>
           <span>•</span>
           <span>Press ESC or click backdrop to exit</span>
         </div>
       </footer>
     </div>
   );
+
+  return createPortal(modalContent, document.body);
 };
