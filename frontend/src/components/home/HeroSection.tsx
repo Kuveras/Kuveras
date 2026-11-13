@@ -1,86 +1,83 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight, Sparkles, ShieldCheck, Repeat, ShoppingBag } from 'lucide-react';
 
 interface HeroSlide {
   id: string;
   eyebrow: string;
   headline: string;
+  tagline: string;
   description: string;
-  ctaText: string;
-  ctaLink: string;
+  rentCtaText: string;
+  rentCtaLink: string;
+  buyCtaText: string;
+  buyCtaLink: string;
   imageDesktop: string;
   imageMobile: string;
   position: 'left' | 'right';
-  objectPositionDesktop?: string;
-  objectPositionMobile?: string;
+  badge?: string;
 }
 
 const HERO_SLIDES: HeroSlide[] = [
   {
-    id: 'rajwadi',
-    eyebrow: 'ROYAL RAJWADI',
-    headline: 'Royalty,\nReimagined',
-    description: 'Discover timeless Indian craftsmanship through the KUVERAS lens.',
-    ctaText: 'EXPLORE COLLECTION',
-    ctaLink: '/shop?category=Rajwadi',
+    id: 'bridal-heritage',
+    eyebrow: 'ROYAL BRIDAL SUITE',
+    headline: 'Crafted for\nEternal Elegance',
+    tagline: 'Jewellery that Carries a Legacy',
+    description: 'Adorn breathtaking Kundan & Polki bridal suites for your wedding day — available to Rent at 30% or Buy to cherish forever.',
+    rentCtaText: 'RENT FOR BRIDAL',
+    rentCtaLink: '/shop?category=Bridal',
+    buyCtaText: 'BUY & OWN HEIRLOOM',
+    buyCtaLink: '/shop?category=Bridal',
     imageDesktop: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=2000&q=90',
     imageMobile: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1000&q=90',
     position: 'left',
-    objectPositionDesktop: 'center 20%',
-    objectPositionMobile: 'center top',
+    badge: '3-Day Rental Available',
   },
   {
-    id: 'polki',
-    eyebrow: 'MUGHAL POLKI',
-    headline: 'The Art of\nPolki',
-    description: 'Heritage-inspired jewellery crafted for unforgettable occasions.',
-    ctaText: 'DISCOVER POLKI',
-    ctaLink: '/shop?category=Kundan',
+    id: 'polki-legacy',
+    eyebrow: 'MUGHAL KUNDAN & POLKI',
+    headline: 'Jewellery that\nCarries a Legacy',
+    tagline: 'Where Heritage Meets Royalty',
+    description: 'Intricately set uncut gemstones and royal meenakari work crafted for memories that transcend generations.',
+    rentCtaText: 'EXPLORE RENTAL',
+    rentCtaLink: '/shop?category=Kundan',
+    buyCtaText: 'SHOP THE COLLECTION',
+    buyCtaLink: '/shop?category=Kundan',
     imageDesktop: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=2000&q=90',
     imageMobile: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1000&q=90',
     position: 'right',
-    objectPositionDesktop: 'center center',
-    objectPositionMobile: 'center center',
+    badge: 'Authentic 22K Polish',
   },
   {
-    id: 'temple',
-    eyebrow: 'TEMPLE COLLECTION',
-    headline: 'Inspired by\nHeritage',
-    description: "A celebration of India's timeless artistry.",
-    ctaText: 'EXPLORE TEMPLE',
-    ctaLink: '/shop?category=Temple',
+    id: 'rajwadi-grandeur',
+    eyebrow: 'HERITAGE RAJWADI',
+    headline: 'Majesty,\nReimagined',
+    tagline: 'Crafted for Eternal Elegance',
+    description: 'Celebrate the royal spirit with antique-gold finishes and commanding silhouettes suited for modern gala evenings.',
+    rentCtaText: 'RENT THIS LOOK',
+    rentCtaLink: '/shop?category=Rajwadi',
+    buyCtaText: 'BUY RAJWADI',
+    buyCtaLink: '/shop?category=Rajwadi',
     imageDesktop: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=2000&q=90',
     imageMobile: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1000&q=90',
     position: 'left',
-    objectPositionDesktop: 'center 30%',
-    objectPositionMobile: 'center top',
+    badge: 'Doorstep Delivery Delhi NCR',
   },
   {
-    id: 'bridal',
-    eyebrow: 'BRIDAL',
-    headline: 'Made for Your\nForever',
-    description: 'Statement jewellery for moments that become memories.',
-    ctaText: 'EXPLORE BRIDAL',
-    ctaLink: '/shop?category=Bridal',
+    id: 'temple-divinity',
+    eyebrow: 'SACRED TEMPLE ART',
+    headline: 'Divine Artistry,\nSacred Blessings',
+    tagline: 'Lord Kubera Inspired Prosperity',
+    description: 'Imbued with sacred motifs of wealth and protection, our Temple collection crowns every auspicious moment.',
+    rentCtaText: 'RENT TEMPLE SETS',
+    rentCtaLink: '/shop?category=Temple',
+    buyCtaText: 'BUY COLLECTION',
+    buyCtaLink: '/shop?category=Temple',
     imageDesktop: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=2000&q=90',
     imageMobile: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1000&q=90',
     position: 'right',
-    objectPositionDesktop: 'center 25%',
-    objectPositionMobile: 'center top',
-  },
-  {
-    id: 'modern',
-    eyebrow: 'KUVERAS COLLECTION',
-    headline: 'Tradition Meets\nTomorrow',
-    description: 'Contemporary jewellery rooted in Indian heritage.',
-    ctaText: 'EXPLORE COLLECTION',
-    ctaLink: '/shop?category=Cubic+Zirconia',
-    imageDesktop: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=2000&q=90',
-    imageMobile: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=1000&q=90',
-    position: 'left',
-    objectPositionDesktop: 'center center',
-    objectPositionMobile: 'center center',
+    badge: 'Sacred Vedic Motifs',
   },
 ];
 
@@ -88,63 +85,29 @@ export const HeroSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
-
+  // Autoplay
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setPrefersReducedMotion(mediaQuery.matches);
-    const handleChange = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, []);
-
-  // Autoplay (5.5 seconds)
-  useEffect(() => {
-    if (isPaused || prefersReducedMotion) return;
-
+    if (isPaused) return;
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 5500);
-
+    }, 6000);
     return () => clearInterval(timer);
-  }, [isPaused, prefersReducedMotion]);
+  }, [isPaused]);
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % HERO_SLIDES.length);
-  };
+  const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % HERO_SLIDES.length);
+  const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
 
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
-  };
-
-  // Keyboard navigation
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'ArrowLeft') {
-      prevSlide();
-    } else if (e.key === 'ArrowRight') {
-      nextSlide();
-    }
+    if (e.key === 'ArrowLeft') prevSlide();
+    if (e.key === 'ArrowRight') nextSlide();
   };
 
-  // Touch & Swipe handlers
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStartX(e.touches[0].clientX);
-  };
-
+  const handleTouchStart = (e: React.TouchEvent) => setTouchStartX(e.touches[0].clientX);
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (touchStartX === null) return;
-    const touchEndX = e.changedTouches[0].clientX;
-    const diff = touchStartX - touchEndX;
-
+    const diff = touchStartX - e.changedTouches[0].clientX;
     if (Math.abs(diff) > 40) {
       if (diff > 0) nextSlide();
       else prevSlide();
@@ -152,91 +115,110 @@ export const HeroSection: React.FC = () => {
     setTouchStartX(null);
   };
 
+  const currentSlide = HERO_SLIDES[currentIndex];
+
   return (
     <section
       ref={containerRef}
-      aria-label="Editorial Jewellery Hero Carousel"
+      aria-label="Kuveras Luxury Jewellery Showcase"
       tabIndex={0}
       onKeyDown={handleKeyDown}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
-      className="relative w-full max-w-none m-0 p-0 bg-[#FFFDF8] overflow-hidden select-none outline-none"
+      className="relative w-full bg-[#FFFDF8] overflow-hidden select-none outline-none border-b border-[#E8E1D8]"
     >
-      {/* Full Width Hero Frame - Height: Desktop 560-680px, Mobile 4:5 aspect */}
-      <div className="relative w-full h-[520px] sm:h-[580px] lg:h-[640px] xl:h-[680px] overflow-hidden">
+      {/* ─── Hero Frame ─── */}
+      <div className="relative w-full h-[560px] sm:h-[620px] lg:h-[680px] overflow-hidden">
         {HERO_SLIDES.map((slide, idx) => {
           const isActive = idx === currentIndex;
           return (
             <div
               key={slide.id}
-              className={`absolute inset-0 w-full h-full transition-all duration-800 ease-out ${
-                isActive
-                  ? 'opacity-100 translate-x-0 z-10 pointer-events-auto'
-                  : 'opacity-0 translate-x-4 pointer-events-none z-0'
+              className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-out ${
+                isActive ? 'opacity-100 translate-x-0 z-10 pointer-events-auto' : 'opacity-0 translate-x-6 pointer-events-none z-0'
               }`}
             >
-              {/* Background Campaign Photography */}
+              {/* Background Photography */}
               <picture className="w-full h-full block">
                 <source media="(max-width: 767px)" srcSet={slide.imageMobile} />
                 <img
                   src={slide.imageDesktop}
                   alt={slide.headline.replace('\n', ' ')}
                   loading={idx === 0 ? 'eager' : 'lazy'}
-                  style={{
-                    objectPosition: isMobile
-                      ? slide.objectPositionMobile || 'center top'
-                      : slide.objectPositionDesktop || 'center center',
-                  }}
-                  className="w-full h-full object-cover transform scale-[1.01] transition-transform duration-1000 ease-out"
+                  className="w-full h-full object-cover object-center transform scale-[1.02] transition-transform duration-1000 ease-out"
                 />
               </picture>
 
-              {/* Localized Warm Ivory Editorial Gradient Overlay (No dark masks!) */}
+              {/* Editorial Warm Ivory & Blush Gradient Overlay */}
               <div
                 className={`absolute inset-0 hidden lg:block ${
                   slide.position === 'left'
-                    ? 'bg-gradient-to-r from-[#FFFDF8]/95 via-[#FFFDF8]/70 to-transparent w-[60%]'
-                    : 'bg-gradient-to-l from-[#FFFDF8]/95 via-[#FFFDF8]/70 to-transparent left-auto right-0 w-[60%]'
+                    ? 'bg-gradient-to-r from-[#FFFDF8] via-[#FFFDF8]/85 to-transparent w-[62%]'
+                    : 'bg-gradient-to-l from-[#FFFDF8] via-[#FFFDF8]/85 to-transparent left-auto right-0 w-[62%]'
                 }`}
               />
 
-              {/* Mobile Warm Ivory Bottom Gradient */}
-              <div className="absolute inset-0 lg:hidden bg-gradient-to-t from-[#FFFDF8] via-[#FFFDF8]/85 to-transparent" />
+              {/* Mobile Gradient Overlay */}
+              <div className="absolute inset-0 lg:hidden bg-gradient-to-t from-[#FFFDF8] via-[#FFFDF8]/90 to-black/20" />
 
-              {/* Editorial HTML Content Overlay */}
-              <div className="relative max-w-[1380px] mx-auto h-full px-6 sm:px-10 lg:px-16 flex items-end lg:items-center pb-12 lg:pb-0">
+              {/* Content Box */}
+              <div className="relative max-w-[1360px] mx-auto h-full px-6 sm:px-10 lg:px-16 flex items-end lg:items-center pb-12 lg:pb-0">
                 <div
-                  className={`w-full max-w-xl text-[#2B2723] space-y-3 sm:space-y-4 ${
-                    slide.position === 'right'
-                      ? 'ml-auto text-left lg:text-left'
-                      : 'mr-auto text-left'
+                  className={`w-full max-w-xl text-[#171512] space-y-4 ${
+                    slide.position === 'right' ? 'ml-auto text-left' : 'mr-auto text-left'
                   }`}
                 >
-                  {/* Eyebrow Label */}
-                  <span className="text-[11px] sm:text-[13px] font-sans font-semibold tracking-[0.25em] uppercase text-[#C89B3C] block">
-                    {slide.eyebrow}
-                  </span>
+                  {/* Brand Identity Eyebrow */}
+                  <div className="flex items-center gap-2">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#FAF0F0] border border-[#7A1010]/30 text-[#7A1010] text-[11px] font-sans font-bold tracking-[0.2em] uppercase rounded-full">
+                      <Sparkles className="w-3 h-3 text-[#C89B3C]" />
+                      {slide.eyebrow}
+                    </span>
+                    {slide.badge && (
+                      <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 bg-[#FAF7F0] border border-[#C89B3C]/40 text-[#9A7019] text-[10px] font-semibold uppercase tracking-wider">
+                        <ShieldCheck className="w-3 h-3 text-[#0B5D3B]" />
+                        {slide.badge}
+                      </span>
+                    )}
+                  </div>
 
-                  {/* Serif Headline */}
-                  <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-[#2B2723] font-normal leading-[1.12] tracking-tight whitespace-pre-line">
+                  {/* Headline */}
+                  <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-[#171512] font-normal leading-[1.1] tracking-tight whitespace-pre-line">
                     {slide.headline}
                   </h1>
 
-                  {/* Supporting Description */}
-                  <p className="font-sans text-xs sm:text-sm md:text-base text-[#524A42] font-normal leading-relaxed max-w-md">
+                  {/* Slogan Subtitle */}
+                  <div className="text-xs sm:text-sm font-serif italic text-[#7A1010] tracking-wide font-medium flex items-center gap-2">
+                    <span className="w-8 h-px bg-[#C89B3C]" />
+                    <span>"{slide.tagline}"</span>
+                  </div>
+
+                  {/* Description */}
+                  <p className="font-sans text-xs sm:text-sm md:text-base text-[#6F675E] leading-relaxed max-w-lg">
                     {slide.description}
                   </p>
 
-                  {/* Minimal Luxury CTA Button */}
-                  <div className="pt-2 sm:pt-4">
+                  {/* Dual Rent and Buy Showcase Actions */}
+                  <div className="pt-2 sm:pt-4 flex flex-wrap items-center gap-3">
+                    {/* Rent Action */}
                     <Link
-                      to={slide.ctaLink}
-                      className="inline-flex items-center gap-3 px-6 sm:px-8 py-3 sm:py-3.5 border border-[#C89B3C] bg-transparent text-[#2B2723] hover:bg-[#C89B3C] hover:text-white text-xs sm:text-sm font-sans font-medium uppercase tracking-[0.2em] transition-all duration-300 rounded-[0px] shadow-2xs group"
+                      to={slide.rentCtaLink}
+                      className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 bg-[#7A1010] hover:bg-[#540808] text-white text-xs sm:text-sm font-sans font-bold uppercase tracking-[0.18em] transition-all duration-300 shadow-md group"
                     >
-                      <span>{slide.ctaText}</span>
-                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
+                      <Repeat className="w-3.5 h-3.5 text-[#E7C982]" />
+                      <span>{slide.rentCtaText}</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+
+                    {/* Buy Action */}
+                    <Link
+                      to={slide.buyCtaLink}
+                      className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 bg-[#FFFDF8] hover:bg-[#FAF7F0] border border-[#C89B3C] text-[#171512] hover:text-[#7A1010] text-xs sm:text-sm font-sans font-bold uppercase tracking-[0.18em] transition-all duration-300 shadow-xs group"
+                    >
+                      <ShoppingBag className="w-3.5 h-3.5 text-[#C89B3C]" />
+                      <span>{slide.buyCtaText}</span>
                     </Link>
                   </div>
                 </div>
@@ -246,12 +228,12 @@ export const HeroSection: React.FC = () => {
         })}
       </div>
 
-      {/* Side Navigation Arrows (Minimal Thin Chevrons - Gold Hover) */}
+      {/* Side Navigation Chevrons */}
       <button
         type="button"
         onClick={prevSlide}
         aria-label="Previous slide"
-        className="absolute top-1/2 left-3 sm:left-6 lg:left-8 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#C89B3C]/30 bg-[#FFFDF8]/80 text-[#2B2723] hover:bg-[#C89B3C] hover:text-white hover:border-[#C89B3C] transition-all duration-300 flex items-center justify-center backdrop-blur-md shadow-sm"
+        className="absolute top-1/2 left-3 sm:left-6 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#C89B3C]/40 bg-[#FFFDF8]/90 text-[#171512] hover:bg-[#7A1010] hover:text-white hover:border-[#7A1010] transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
       >
         <ChevronLeft className="w-5 h-5 stroke-[1.5]" />
       </button>
@@ -260,28 +242,36 @@ export const HeroSection: React.FC = () => {
         type="button"
         onClick={nextSlide}
         aria-label="Next slide"
-        className="absolute top-1/2 right-3 sm:right-6 lg:right-8 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#C89B3C]/30 bg-[#FFFDF8]/80 text-[#2B2723] hover:bg-[#C89B3C] hover:text-white hover:border-[#C89B3C] transition-all duration-300 flex items-center justify-center backdrop-blur-md shadow-sm"
+        className="absolute top-1/2 right-3 sm:right-6 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#C89B3C]/40 bg-[#FFFDF8]/90 text-[#171512] hover:bg-[#7A1010] hover:text-white hover:border-[#7A1010] transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
       >
         <ChevronRight className="w-5 h-5 stroke-[1.5]" />
       </button>
 
-      {/* Editorial Progress Indicator (Bottom Left/Right) */}
-      <div className="absolute bottom-5 right-5 sm:right-12 lg:right-16 z-20 flex items-center gap-3 text-[#2B2723] text-xs font-sans select-none bg-[#FFFDF8]/90 backdrop-blur-md px-3.5 py-1.5 rounded-[0px] border border-[#E8DFD1] shadow-2xs">
-        <span className="font-semibold tracking-wider text-[#C89B3C]">
-          0{currentIndex + 1}
-        </span>
-        <span className="text-[#8C827A]">/</span>
-        <span className="text-[#6E665E] font-medium tracking-wider">
-          0{HERO_SLIDES.length}
-        </span>
-        <div className="w-12 sm:w-20 h-[2px] bg-[#E8DFD1] rounded-full overflow-hidden ml-1">
-          <div
-            className="h-full bg-[#C89B3C] transition-all duration-500 ease-out"
-            style={{ width: `${((currentIndex + 1) / HERO_SLIDES.length) * 100}%` }}
-          />
+      {/* Bottom Rent & Buy Quick Highlights Strip */}
+      <div className="relative z-20 bg-gradient-to-r from-[#FAF0F0] via-[#FFFDF8] to-[#FAF0F0] border-t border-[#E8E1D8] px-4 py-3 sm:py-3.5">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4 text-xs">
+          <div className="flex items-center gap-6 divide-x divide-[#E8E1D8]">
+            <div className="flex items-center gap-2 text-[#7A1010] font-semibold uppercase tracking-wider">
+              <Repeat className="w-4 h-4 text-[#C89B3C]" />
+              <span>Rent for Events: 30% Price · 3-Day Window</span>
+            </div>
+            <div className="hidden sm:flex items-center gap-2 pl-6 text-[#0B5D3B] font-semibold uppercase tracking-wider">
+              <ShieldCheck className="w-4 h-4 text-[#0B5D3B]" />
+              <span>100% Medical UV-C Sanitization &amp; Doorstep Delivery</span>
+            </div>
+            <div className="hidden lg:flex items-center gap-2 pl-6 text-[#171512] font-semibold uppercase tracking-wider">
+              <Sparkles className="w-4 h-4 text-[#C89B3C]" />
+              <span>Buy &amp; Cherish Forever: Handcrafted Heirloom</span>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span className="text-[#6F675E]">Slide</span>
+            <span className="font-bold text-[#7A1010]">0{currentIndex + 1}</span>
+            <span className="text-[#6F675E]">/ 0{HERO_SLIDES.length}</span>
+          </div>
         </div>
       </div>
     </section>
   );
 };
-

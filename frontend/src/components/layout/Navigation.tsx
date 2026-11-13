@@ -65,10 +65,10 @@ export const Navigation: React.FC = () => {
 
   const navItems = [
     { id: 'jewellery', label: 'All Jewellery', path: '/shop' },
-    { id: 'bridal', label: 'Bridal', path: '/shop?category=Bridal' },
+    { id: 'bridal', label: 'Bridal Suite', path: '/shop?category=Bridal' },
     { id: 'temple', label: 'Temple', path: '/shop?category=Temple' },
     { id: 'bracelets', label: 'Bracelets', path: '/shop?category=Bracelets' },
-    { id: 'rent', label: 'Rent Info', path: '/rent-info' },
+    { id: 'rent', label: 'Rent Info & Policies', path: '/rent-info' },
     { id: 'about', label: 'ABOUT US', path: '/about', isDirect: true },
     { id: 'faqs', label: 'FAQS', path: '/faqs', isDirect: true },
   ];
@@ -78,10 +78,10 @@ export const Navigation: React.FC = () => {
       ref={navRef}
       role="navigation"
       aria-label="Kuveras Main Navigation"
-      className="hidden lg:block bg-[#FFFDF8] border-b border-[#E8E1D8] relative z-30 font-sans text-[12px] xl:text-[13px] tracking-[0.14em] uppercase font-medium text-[#2B2723]"
+      className="hidden lg:block bg-[#FFFDF8] border-b border-[#E8E1D8] relative z-30 font-sans text-[12px] xl:text-[13px] tracking-[0.14em] uppercase font-medium text-[#171512]"
     >
-      <div className="max-w-[1340px] mx-auto px-6 h-[48px] flex items-center justify-center">
-        <ul className="flex items-center gap-6 xl:gap-9 h-full">
+      <div className="max-w-[1340px] mx-auto px-6 h-[46px] flex items-center justify-center">
+        <ul className="flex items-center gap-6 xl:gap-8 h-full">
           {navItems.map((item) => {
             const isActive = isPathActive(item.path) || activeMenu === (item.id as MegaMenuType);
 
@@ -91,14 +91,13 @@ export const Navigation: React.FC = () => {
                   <Link
                     to={item.path}
                     className={`group relative h-full flex items-center gap-1 transition-colors duration-180 cursor-pointer whitespace-nowrap ${
-                      isActive ? 'text-[#0B5D3B] font-semibold' : 'text-[#2B2723] hover:text-[#C89B3C]'
+                      isActive ? 'text-[#7A1010] font-semibold' : 'text-[#171512] hover:text-[#7A1010]'
                     }`}
                   >
                     <span>{item.label}</span>
-                    {/* Animated Underline */}
                     <span
-                      className={`absolute bottom-0 left-0 w-full h-[2px] bg-[#C89B3C] transition-transform duration-250 ease-out origin-left ${
-                        isActive ? 'scale-x-100 bg-[#0B5D3B]' : 'scale-x-0 group-hover:scale-x-100'
+                      className={`absolute bottom-0 left-0 w-full h-[2px] bg-[#7A1010] transition-transform duration-250 ease-out origin-left ${
+                        isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                       }`}
                     />
                   </Link>
@@ -119,14 +118,13 @@ export const Navigation: React.FC = () => {
                   aria-haspopup="true"
                   onClick={() => handleItemClick(item.id as MegaMenuType, item.path)}
                   className={`group relative h-full flex items-center gap-1 transition-colors duration-180 cursor-pointer whitespace-nowrap ${
-                    isActive ? 'text-[#0B5D3B] font-semibold' : 'text-[#2B2723] hover:text-[#C89B3C]'
+                    isActive ? 'text-[#7A1010] font-semibold' : 'text-[#171512] hover:text-[#7A1010]'
                   }`}
                 >
                   <span>{item.label}</span>
-                  {/* Animated Underline */}
                   <span
-                    className={`absolute bottom-0 left-0 w-full h-[2px] bg-[#C89B3C] transition-transform duration-250 ease-out origin-left ${
-                      isActive ? 'scale-x-100 bg-[#0B5D3B]' : 'scale-x-0 group-hover:scale-x-100'
+                    className={`absolute bottom-0 left-0 w-full h-[2px] bg-[#7A1010] transition-transform duration-250 ease-out origin-left ${
+                      isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                     }`}
                   />
                 </button>

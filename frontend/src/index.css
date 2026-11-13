@@ -15,6 +15,9 @@
   --color-kuveras-blue: #173B7A;
   --color-kuveras-blue-deep: #0B214A;
   --color-kuveras-maroon: #7A1010;
+  --color-kuveras-maroon-deep: #540808;
+  --color-kuveras-blush: #FAF0F0;
+  --color-kuveras-blush-accent: #E8C5C8;
   --color-kuveras-white: #FFFFFF;
 
   --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
@@ -67,6 +70,11 @@ h1, h2, h3, h4, .font-serif {
   50% { box-shadow: 0 0 25px rgba(200, 155, 60, 0.5); }
 }
 
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
 .animate-fade-in {
   animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
@@ -75,19 +83,19 @@ h1, h2, h3, h4, .font-serif {
   animation: slideInRight 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-@keyframes fadeInSlide {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .glow-gold {
   animation: pulseGlow 3s infinite ease-in-out;
+}
+
+/* Luxury Indian Filigree & Card styling */
+.border-gold-gradient {
+  border-image: linear-gradient(to right, #C89B3C, #F5EFE5, #C89B3C) 1;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #B8860B 0%, #D4AF37 50%, #8C6D23 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Global Interactive Element Pointer & Focus Rule (KUVERAS Standard) */
