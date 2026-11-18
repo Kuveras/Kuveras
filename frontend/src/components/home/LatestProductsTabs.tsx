@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
-import { PRODUCTS } from '../../data/products';
+import { useProducts } from '../../context/ProductContext';
 import { ProductCard } from '../common/ProductCard';
 import { Sparkles } from 'lucide-react';
 
 type TabType = 'latest' | 'new' | 'popular' | 'bestseller';
 
 export const LatestProductsTabs: React.FC = () => {
+  const { products } = useProducts();
   const [activeTab, setActiveTab] = useState<TabType>('latest');
 
   const getFilteredProducts = () => {
     switch (activeTab) {
       case 'new':
-        return PRODUCTS.filter((p) => p.newArrival).slice(0, 8);
+        return products.filter((p) => p.newArrival).slice(0, 8);
       case 'popular':
-        return PRODUCTS.filter((p) => p.popular).slice(0, 8);
+        return products.filter((p) => p.popular).slice(0, 8);
       case 'bestseller':
-        return PRODUCTS.filter((p) => p.bestseller).slice(0, 8);
+        return products.filter((p) => p.bestseller).slice(0, 8);
       case 'latest':
       default:
-        return PRODUCTS.slice(0, 8);
+        return products.slice(0, 8);
     }
   };
 

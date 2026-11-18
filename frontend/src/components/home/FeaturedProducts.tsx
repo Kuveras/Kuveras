@@ -1,11 +1,12 @@
 import React from 'react';
-import { PRODUCTS } from '../../data/products';
+import { useProducts } from '../../context/ProductContext';
 import { ProductCard } from '../common/ProductCard';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 export const FeaturedProducts: React.FC = () => {
-  const featuredProducts = PRODUCTS.filter((p) => p.featured || p.bestseller).slice(0, 4);
+  const { products } = useProducts();
+  const featuredProducts = products.filter((p) => p.featured || p.bestseller).slice(0, 4);
 
   return (
     <section className="py-16 bg-[#FFFDF9] border-b border-[#E8E2D9]">

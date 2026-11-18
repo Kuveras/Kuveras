@@ -7,6 +7,7 @@ import { fileURLToPath } from 'url';
 import { connectDB } from './config/db.js';
 import productRoutes from './routes/productRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
+import sheetRoutes from './routes/sheetRoutes.js';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 
 dotenv.config();
@@ -36,6 +37,7 @@ app.get('/api/health', (req, res) => {
 // API Routes
 app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
+app.use('/api/sheets', sheetRoutes);
 
 // Determine dist directory (check backend/dist first, then ../frontend/dist)
 const localDistPath = path.join(__dirname, 'dist');

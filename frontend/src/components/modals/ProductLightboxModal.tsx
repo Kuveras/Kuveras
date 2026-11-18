@@ -405,7 +405,7 @@ export const ProductLightboxModal: React.FC<ProductLightboxModalProps> = ({
           }}
         >
           {/* Product Image */}
-          <img
+          <img referrerPolicy="no-referrer" referrerPolicy="no-referrer"
             ref={imageRef}
             src={currentImage}
             alt={`${productName} - Angle ${activeIndex + 1}`}

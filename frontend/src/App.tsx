@@ -4,6 +4,7 @@ import { CartProvider } from './context/CartContext';
 import { WishlistProvider } from './context/WishlistContext';
 import { UIProvider } from './context/UIContext';
 import { AuthProvider } from './context/AuthContext';
+import { ProductProvider } from './context/ProductContext';
 
 // Layout
 import { Header } from './components/layout/Header';
@@ -100,13 +101,15 @@ export default function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <UIProvider>
-          <CartProvider>
-            <WishlistProvider>
-              <AppContent />
-            </WishlistProvider>
-          </CartProvider>
-        </UIProvider>
+        <ProductProvider>
+          <UIProvider>
+            <CartProvider>
+              <WishlistProvider>
+                <AppContent />
+              </WishlistProvider>
+            </CartProvider>
+          </UIProvider>
+        </ProductProvider>
       </AuthProvider>
     </BrowserRouter>
   );

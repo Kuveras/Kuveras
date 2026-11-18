@@ -17,12 +17,9 @@ const RAW_PRODUCTS: Product[] = [
     "description": "Designed with precision and grace, this radiant collar set features rows of glimmering marquise-shaped motifs, each surrounded by delicate floral accents. The gentle fall of each element creates a soft, cascading neckline—perfectly balanced by long, coordinated earrings that mirror the design.Includes: Necklace and matching earrings.",
     "shortDescription": "An intricate diamond-look collar set with layered marquise motifs and matching drop earrings.",
     "images": [
-          "/images/05/IMG_2376-scaled-e1746799678318.jpg",
-          "/images/05/IMG_2379-scaled.jpg",
-          "/images/05/IMG_2378-scaled-e1746799648799.jpg",
-          "/images/05/IMG_2373-scaled-e1746799575543.jpg",
-          "/images/05/IMG_2377-scaled.jpg"
-    ],
+              "https://drive.google.com/thumbnail?id=1DtG5tA8yC2f2Cqz1ziIAexQyEN60IP4W&sz=w1600",
+              "https://drive.google.com/thumbnail?id=15tDoXch1gvtPbe9X-zhpWh7GyNuFxu3_&sz=w1600"
+      ],
     "tags": [
       "Necklace Set"
     ],
@@ -64,13 +61,11 @@ const RAW_PRODUCTS: Product[] = [
     "description": "This elegant collar necklace dazzles with its tightly woven diamond-like teardrops in a shimmering, symmetric layout. Paired with stunning layered jhumkas and a floral maang tikka that echoes the moon&#8217;s grace, this set speaks to timeless sophistication and poise.Includes: Necklace, matching earrings, and maang tikka.",
     "shortDescription": "A brilliant diamond-look collar set with jhumka earrings and a regal, lotus-inspired maang tikka.",
     "images": [
-          "/images/05/IMG_2391-scaled-e1746798958973.jpg",
-          "/images/05/IMG_2385-scaled-e1746798900512.jpg",
-          "/images/05/IMG_2395-scaled.jpg",
-          "/images/05/IMG_2400-scaled.jpg",
-          "/images/05/IMG_2399-scaled.jpg",
-          "/images/05/IMG_2398-scaled.jpg"
-    ],
+              "https://drive.google.com/thumbnail?id=1e1xOT3ZPqUcUb0WhRJjr3Hc9Zyh3XPOl&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1oUlrD0x1R3q_CHxMrjQOFjOEwVNm6Qtr&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1Dt07jmCzZZL9hQLBzKiqB3Sh2jzIN9Vm&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1238WMdrBku4YmZqYbEA_aD1xI88_TX_b&sz=w1600"
+      ],
     "tags": [
       "Necklace Set"
     ],
@@ -111,12 +106,8 @@ const RAW_PRODUCTS: Product[] = [
     "description": "This short necklace set features luminous green stones encircled by intricate silver detailing, finished with pointed drop accents that echo classical artistry. Matching earrings carry the same poised symmetry for a complete, refined look. Ideal for day weddings or light-toned celebrations.Includes: Necklace and matching earrings.",
     "shortDescription": "An airy composition of silver and mint tones, designed for soft, radiant sophistication.",
     "images": [
-          "/images/05/IMG_2416-scaled-e1746708501516.jpg",
-          "/images/05/IMG_2421-scaled.jpg",
-          "/images/05/IMG_2422-scaled.jpg",
-          "/images/05/IMG_2417-scaled.jpg",
-          "/images/05/IMG_2418-scaled.jpg"
-    ],
+              "https://drive.google.com/thumbnail?id=1xNMRNcGgwTzQ66fDZJVZI0D_AU_04ylT&sz=w1600"
+      ],
     "tags": [
       "Necklace Set"
     ],
@@ -157,12 +148,14 @@ const RAW_PRODUCTS: Product[] = [
     "description": "Featuring soft pink gems framed in intricate silver-toned settings, this choker brings a subtle yet captivating sparkle to any ensemble. The tiered hanging drops add gentle movement, while the matching earrings reflect the same elegant geometry in a sleek form. Ideal for light festive occasions and evening celebrations.Includes: Necklace and matching earrings.",
     "shortDescription": "Delicate and striking, this rose-pink choker set captures the essence of refined grace.",
     "images": [
-          "/images/05/IMG_2436-scaled-e1746707707253.jpg",
-          "/images/05/IMG_2439-scaled.jpg",
-          "/images/05/IMG_2430-scaled-e1746707600173.jpg",
-          "/images/05/IMG_2438-scaled.jpg",
-          "/images/05/IMG_2440-scaled.jpg"
-    ],
+              "https://drive.google.com/thumbnail?id=1ghJgoga-ocB0abG0Ax7VEie6_i1yrBDB&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1pHpEMAgak89n19C1bpur2L3jVgEW-Ppd&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1z7u467Ojqq1wGsKGdlqU2b8NXrGfJwhJ&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1p8CgcjBaIX426Ll3QoIBg-91CZcARwDP&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1t_I0uwxBYoNPOc88wPJCxLXqFPxZwpcE&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1LIv4ioLAY1-4iZ7v04brvl8uDYoseNM3&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1n7yT_1T7rDoTJTNKifDuP983dxatVrkp&sz=w1600"
+      ],
     "tags": [
       "Necklace Set"
     ],
@@ -203,13 +196,13 @@ const RAW_PRODUCTS: Product[] = [
     "description": "This dainty necklace is a celebration of understated elegance, with alternating blush pink and mint green stones framed by luminous white florals. The structured yet feminine layout creates a fresh and graceful impression. Paired with matching earrings that echo the same pastel harmony, it’s an exquisite pick for day events or intimate gatherings.Includes: Necklace and matching earrings.",
     "shortDescription": "Delicate hues of blush and mint come together in this soft, radiant design inspired by evening starlight.",
     "images": [
-          "/images/05/IMG_2443-scaled-e1746706011294.jpg",
-          "/images/05/IMG_2442-scaled.jpg",
-          "/images/05/IMG_2446-scaled.jpg",
-          "/images/05/IMG_2441-scaled-e1746705969925.jpg",
-          "/images/05/IMG_2445-scaled.jpg",
-          "/images/05/IMG_2444-scaled.jpg"
-    ],
+              "https://drive.google.com/thumbnail?id=1dVsKZKDW-o5Whgzi-5x-jxmKbmSHGmlr&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1XyJZuA5pLYD85gRbhS1mbAf3nBT0xXTq&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1gNH6TOfRPEHUxW3lCws-OsAMsrOUc9Jz&sz=w1600",
+              "https://drive.google.com/thumbnail?id=179J-hjFqqo0uiugSaQY_X0KKj5OPXCjj&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1M71v5w4e03FrsmHV3Nu8W0lLP4BpY1Au&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1PcvISWXoYE6oixGFP25ymx-xJZWjdSIb&sz=w1600"
+      ],
     "tags": [
       "Necklace Set"
     ],
@@ -250,12 +243,11 @@ const RAW_PRODUCTS: Product[] = [
     "description": "Crafted with delicate symmetry, this necklace features alternating openwork medallions and sapphire-toned stones, creating a refined yet striking silhouette. The deep blue hints lend depth against the brilliance of white stones, while the ornate crescent-style earrings bring a graceful finishing touch. A sophisticated choice for twilight occasions or formal gatherings.Includes: Necklace and matching earrings.",
     "shortDescription": "A radiant blend of crescent motifs and deep blue accents, this necklace echoes regal charm in every curve.",
     "images": [
-          "/images/05/IMG_2449-scaled-e1746705546866.jpg",
-          "/images/05/IMG_2448-scaled.jpg",
-          "/images/05/IMG_2453-scaled.jpg",
-          "/images/05/IMG_2451-scaled.jpg",
-          "/images/05/IMG_2450-scaled.jpg"
-    ],
+              "https://drive.google.com/thumbnail?id=16-dliNcOt8zoAkyg02u4ZC1fdXA4BBoj&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1VRfKqMJsDItbEBz0ZlvR1Kt8kltebmIi&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1vIyusJVM94tx5zrEf_MAEBypKNmI1Vt_&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1ALnu_znGDD4iFLwkOKxYThjtY3ZNg5Y1&sz=w1600"
+      ],
     "tags": [
       "Necklace Set"
     ],
@@ -296,9 +288,13 @@ const RAW_PRODUCTS: Product[] = [
     "description": "Designed in a lush arrangement of teardrop and marquise-cut stones, this piece captivates with its rich red brilliance and striking symmetry. The layered sparkle of crimson and white gives it a festive grandeur, ideal for evening weddings or formal occasions. Comes with matching earrings that mirror the same elegant composition.Includes: Necklace and matching earrings.",
     "shortDescription": "A bold, gem-rich necklace in deep crimson tones, framed with shimmering white accents for a timeless statement.",
     "images": [
-          "/images/05/IMG_2455-scaled-e1746704750695.jpg",
-          "/images/05/IMG_2458-scaled.jpg"
-    ],
+              "https://drive.google.com/thumbnail?id=19RBHDYp-xh40Hzw6UDPbAUH07l6riTsD&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1LKaYhc0f2_-55exwkXw8rkb0BH0euOB5&sz=w1600",
+              "https://drive.google.com/thumbnail?id=10AZzAjmQoS10h1-8zAeX9N2upvhJwVdr&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1AvI4bwOXWf14pwnyVuCi1ayCsI7Gu1Mk&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1psBKaO0xv7_ZBWXKEAAssuo10ho9tCYv&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1wXonmeb2ckabAbS8JDFPjKVjW3dMb45Z&sz=w1600"
+      ],
     "tags": [
       "Necklace Set"
     ],
@@ -339,12 +335,12 @@ const RAW_PRODUCTS: Product[] = [
     "description": "Elegantly crafted in deep ruby red and soft gold tones, this necklace blooms with petal-like forms and teardrop highlights. The dainty symmetrical design gives it a light yet regal aura, perfect for pairing with silk sarees or festive lehengas. The matching earrings echo the floral charm for a graceful, complete look.Includes: Necklace and matching earrings.",
     "shortDescription": "A radiant ruby-toned necklace set with glistening drops and floral accents in an antique-inspired finish.",
     "images": [
-          "/images/05/IMG_2426-scaled.jpg",
-          "/images/05/IMG_2427-scaled.jpg",
-          "/images/05/IMG_2428-scaled.jpg",
-          "/images/05/IMG_2425-scaled.jpg",
-          "/images/05/IMG_2424-scaled-e1746704916868.jpg"
-    ],
+              "https://drive.google.com/thumbnail?id=1NQK-HxgB6Vn5Xj1Ku5XXRM7__El_X3No&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1GLBQWG0qSJ-sFceeeDebcvKhVIvLhnPb&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1ykq4UQyh_SkG-ZJAqvd1KFp0O-UA4N8o&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1m6KyeYOss0Ltpj1bsTO3_-SVgYCnZEhD&sz=w1600",
+              "https://drive.google.com/thumbnail?id=154ApaWxo5iH3L63O5ktxqReIPeqX5eh_&sz=w1600"
+      ],
     "tags": [
       "Necklace Set"
     ],
@@ -385,11 +381,13 @@ const RAW_PRODUCTS: Product[] = [
     "description": "Refined and graceful, this two-layered necklace features a beautiful interplay of oval and baguette-cut stones in a fresh mint hue. The soft pastel green glows against the intricate rose gold setting, while a central drop element adds length and elegance. An ideal set for daytime weddings or spring festivities.Includes: Necklace and matching earrings.",
     "shortDescription": "A delicate pastel-toned necklace set with hints of mint green and soft rose gold accents.",
     "images": [
-          "/images/05/IMG_2460-scaled-e1746704164202.jpg",
-          "/images/05/IMG_2461-scaled.jpg",
-          "/images/05/IMG_2462-scaled.jpg",
-          "/images/05/IMG_2463-scaled.jpg"
-    ],
+              "https://drive.google.com/thumbnail?id=12P2i1vqpQNyXwezb1cKzLEfQOXqu_hvd&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1MAGqZPsgUVDHVevADa-R021hjN7E4Zx2&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1yP7oTrVmUEQl1ghUB9ffPCRC_IWbxR2d&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1CWKzQWjOOeIympSqawz25pCkDHY6OttD&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1ma7FhVRT_xAAgEY--iS9Mxfy0WuQb14H&sz=w1600",
+              "https://drive.google.com/thumbnail?id=128-eNGst4l24ILVrkc6Q6GfSJj0TujA7&sz=w1600"
+      ],
     "tags": [
       "Necklace Set"
     ],
@@ -430,12 +428,12 @@ const RAW_PRODUCTS: Product[] = [
     "description": "This polished necklace set stands out with its lattice of square-cut stones framed in rose gold, each section linked seamlessly to create a bold yet graceful drape. Lustrous teardrop crystals hang from each segment, lending fluidity and sparkle to its structured form. A perfect choice for modern weddings or upscale evening soirées.Includes: Necklace and matching earrings.",
     "shortDescription": "A radiant rose gold necklace with elegant square-cut elements and shimmering teardrop stones.",
     "images": [
-          "/images/05/IMG_2470-scaled.jpg",
-          "/images/05/IMG_2473-scaled.jpg",
-          "/images/05/IMG_2472-scaled.jpg",
-          "/images/05/IMG_2471-scaled.jpg",
-          "/images/05/IMG_2469-scaled.jpg"
-    ],
+              "https://drive.google.com/thumbnail?id=1x6n3CtroEFqRVEct2AoPQDbidmnmwpm-&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1XlprkujmqIV25u-uF6KTgFrku2J-aiWQ&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1ToExVFFODCVaCNf3zKjRrjRsbmrst8oV&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1jlo-m1VHen2SBPb87xBo49FjH2_Pbvel&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1pdc86LXrDwmqs4cU23bnkimoI_StXjxi&sz=w1600"
+      ],
     "tags": [
       "Necklace Set"
     ],
@@ -475,12 +473,13 @@ const RAW_PRODUCTS: Product[] = [
     "description": "This elegant choker features intricate filigree-style craftsmanship in a gleaming silver finish, crowned by bold ruby red teardrop stones that lend a dramatic contrast. The balanced design offers a contemporary yet timeless charm, perfect for evening soirées or bridal finery with a modern twist.Includes: Choker and matching earrings.",
     "shortDescription": "A graceful silver-toned choker set with deep ruby red stones — refined, striking, and versatile.",
     "images": [
-          "/images/05/IMG_2481-scaled.jpg",
-          "/images/05/IMG_2480-scaled.jpg",
-          "/images/05/IMG_2474-scaled-e1746703220353.jpg",
-          "/images/05/IMG_2482-scaled.jpg",
-          "/images/05/IMG_2479-scaled.jpg"
-    ],
+              "https://drive.google.com/thumbnail?id=1F5yDSLsM9bt6BY90foJunmfN7BtMVXnr&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1NBMvbWd1KcoMsJKaIEDDV2lUPSy45EoQ&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1mxK2Mhv2XQhZSRKE6HQCBmwusg9g8w9H&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1-IjgVwz2pta_CfhxsgLakz0JrxIL-s6u&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1VaCo5j645xl9WtS-7qj_vsk4tPJf_T7r&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1wD1FfP-xaYdeZFULXOANXgJ9Vmhdfxj4&sz=w1600"
+      ],
     "tags": [
       "Choker Set"
     ],
@@ -521,14 +520,12 @@ const RAW_PRODUCTS: Product[] = [
     "description": "Layered with dazzling kundan stones in round and teardrop forms, this striking piece captures a deep royal elegance. Rich green bead clusters and matching drops add lush contrast, beautifully offsetting the classic gold-toned finish. Whether worn as a statement necklace or a bridal showpiece, it speaks of refined taste and timeless grandeur.Includes: Necklace and matching earrings.",
     "shortDescription": "A regal kundan necklace set adorned with emerald-green drops and fine detailing that commands a presence.",
     "images": [
-          "/images/05/IMG_2488-scaled-e1746534355806.jpg",
-          "/images/05/IMG_2495-scaled.jpg",
-          "/images/05/IMG_2493-scaled.jpg",
-          "/images/05/IMG_2494-scaled.jpg",
-          "/images/05/IMG_2492-scaled.jpg",
-          "/images/05/IMG_2489-scaled.jpg",
-          "/images/05/IMG_2497-scaled.jpg"
-    ],
+              "https://drive.google.com/thumbnail?id=1_7pWShc3iuEz0S8wczslUjqMRrQAJm3t&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1tX-DqPim3HK227F5d7MMgyKzMsZzUFSL&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1C92StqdJQMlfxAthr58GPXcB_v8s34y6&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1wb_2TPo0CRrJH0Xhu5b9lAihAC8ZxF5P&sz=w1600",
+              "https://drive.google.com/thumbnail?id=1mrYBan896Lthw8Em54ctXqEMhkrga6jh&sz=w1600"
+      ],
     "tags": [
       "kundan"
     ],
@@ -2352,3 +2349,29 @@ export const TESTIMONIALS: Testimonial[] = [
 ];
 
 
+
+
+/**
+ * Update product images dynamically (e.g. from Google Sheets synchronization)
+ */
+export function applyDynamicProductImages(
+  imagesByProductId: Record<string, string[]>,
+  imagesByProductName: Record<string, string[]>
+) {
+  let changed = false;
+  PRODUCTS.forEach((product) => {
+    const id = product.id;
+    const normName = product.name.trim().toLowerCase();
+    const newImages = imagesByProductId[id] || imagesByProductName[normName];
+    if (newImages && newImages.length > 0) {
+      // Check if different
+      const current = JSON.stringify(product.images);
+      const incoming = JSON.stringify(newImages);
+      if (current !== incoming) {
+        product.images = [...newImages];
+        changed = true;
+      }
+    }
+  });
+  return changed;
+}

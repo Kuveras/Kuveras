@@ -16,19 +16,39 @@ export const SafeImage: React.FC<SafeImageProps> = ({
   ...props
 }) => {
   const [currentSrc, setCurrentSrc] = useState<string | undefined>(src);
+  const [attemptStage, setAttemptStage] = useState<number>(0);
   const [isFailed, setIsFailed] = useState<boolean>(false);
 
   useEffect(() => {
     setCurrentSrc(src);
+    setAttemptStage(0);
     setIsFailed(false);
   }, [src]);
 
   const handleError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    // If it's a Google Drive URL, attempt alternate delivery formats before generic fallback
+    if (currentSrc && (currentSrc.includes('drive.google.com') || currentSrc.includes('googleusercontent.com'))) {
+      const idMatch = currentSrc.match(/[?&]id=([a-zA-Z0-9_-]+)/) || currentSrc.match(/\/d\/([a-zA-Z0-9_-]+)/);
+      if (idMatch && attemptStage === 0) {
+        // Try direct lh3 cdn
+        setAttemptStage(1);
+        setCurrentSrc(`https://lh3.googleusercontent.com/d/${idMatch[1]}`);
+        return;
+      } else if (idMatch && attemptStage === 1) {
+        // Try drive uc export view
+        setAttemptStage(2);
+        setCurrentSrc(`https://drive.google.com/uc?export=view&id=${idMatch[1]}`);
+        return;
+      }
+    }
+
     if (currentSrc !== fallbackSrc && fallbackSrc) {
       setCurrentSrc(fallbackSrc);
+      setAttemptStage(3);
     } else {
       setIsFailed(true);
     }
+
     if (onError) {
       onError(e);
     }
@@ -50,6 +70,7 @@ export const SafeImage: React.FC<SafeImageProps> = ({
     <img
       src={currentSrc}
       alt={alt}
+      referrerPolicy="no-referrer"
       onError={handleError}
       className={className}
       {...props}

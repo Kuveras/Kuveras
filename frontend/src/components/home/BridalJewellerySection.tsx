@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, MessageCircle, Crown, ShieldCheck } from 'lucide-react';
-import { PRODUCTS } from '../../data/products';
+import { useProducts } from '../../context/ProductContext';
 import { ProductCard } from '../common/ProductCard';
 
 export const BridalJewellerySection: React.FC = () => {
+  const { products } = useProducts();
   // Filter products for bridal or occasions
-  const bridalProducts = PRODUCTS.filter(
+  const bridalProducts = products.filter(
     (p) => p.category === 'Bridal' || p.category === 'Kundan' || p.tags.some(t => t.toLowerCase().includes('bridal'))
   ).slice(0, 4);
 

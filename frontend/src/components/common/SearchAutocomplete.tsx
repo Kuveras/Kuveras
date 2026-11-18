@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { PRODUCTS } from '../../data/products';
+import { useProducts } from '../../context/ProductContext';
 import { formatINR } from '../../utils/pricing';
 import { SafeImage } from './SafeImage';
 
@@ -23,11 +23,12 @@ export const SearchAutocomplete: React.FC<SearchAutocompleteProps> = ({
   onClose,
   onSelectQuery,
 }) => {
+  const { products } = useProducts();
   const navigate = useNavigate();
   const trimmed = query.trim().toLowerCase();
 
   const matchingProducts = trimmed.length >= 2
-    ? PRODUCTS.filter((p) => {
+    ? products.filter((p) => {
         return (
           p.name.toLowerCase().includes(trimmed) ||
           p.category.toLowerCase().includes(trimmed) ||
@@ -35,7 +36,7 @@ export const SearchAutocomplete: React.FC<SearchAutocompleteProps> = ({
           p.tags.some((t) => t.toLowerCase().includes(trimmed))
         );
       })
-    : PRODUCTS.slice(0, 4);
+    : products.slice(0, 4);
 
   const displayedProducts = matchingProducts.slice(0, 4);
 

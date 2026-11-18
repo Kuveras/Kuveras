@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { PRODUCTS } from '../data/products';
+import { useProducts } from '../context/ProductContext';
 import { ProductCard } from '../components/common/ProductCard';
 import { SafeImage } from '../components/common/SafeImage';
 import { ProductLightboxModal } from '../components/modals/ProductLightboxModal';
@@ -38,7 +38,8 @@ export const ProductDetailPage: React.FC = () => {
   const { toggleWishlist, isInWishlist } = useWishlist();
   const { showToast, openCart } = useUI();
 
-  const product = PRODUCTS.find((p) => p.slug === slug) || PRODUCTS[0];
+  const { getProductBySlug, products } = useProducts();
+  const product = getProductBySlug(slug || '') || products[0];
 
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
@@ -139,7 +140,7 @@ export const ProductDetailPage: React.FC = () => {
     product.rentalPeriod || '1 Day'
   );
 
-  const relatedProducts = PRODUCTS.filter(
+  const relatedProducts = products.filter(
     (p) => p.category === product.category && p.id !== product.id
   ).slice(0, 4);
 

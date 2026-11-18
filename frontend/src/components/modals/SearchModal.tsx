@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { X, Search, ArrowRight, Tag } from 'lucide-react';
 import { useUI } from '../../context/UIContext';
-import { PRODUCTS } from '../../data/products';
+import { useProducts } from '../../context/ProductContext';
 import { formatINR } from '../../utils/pricing';
 import { SafeImage } from '../common/SafeImage';
 
 export const SearchModal: React.FC = () => {
+  const { products } = useProducts();
   const { isSearchOpen, setIsSearchOpen } = useUI();
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ export const SearchModal: React.FC = () => {
   if (!isSearchOpen) return null;
 
   const filteredProducts = query.trim()
-    ? PRODUCTS.filter(
+    ? products.filter(
         (p) =>
           p.name.toLowerCase().includes(query.toLowerCase()) ||
           p.category.toLowerCase().includes(query.toLowerCase()) ||

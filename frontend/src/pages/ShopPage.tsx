@@ -1,10 +1,11 @@
 import React, { useState, useMemo } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
-import { PRODUCTS } from '../data/products';
+import { useProducts } from '../context/ProductContext';
 import { ProductCard } from '../components/common/ProductCard';
 import { SlidersHorizontal, ChevronRight, X, RotateCcw } from 'lucide-react';
 
 export const ShopPage: React.FC = () => {
+  const { products } = useProducts();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const selectedCategory = searchParams.get('category') || 'All';
@@ -26,7 +27,7 @@ export const ShopPage: React.FC = () => {
 
   // Filtering Logic
   const filteredProducts = useMemo(() => {
-    return PRODUCTS.filter((product) => {
+    return products.filter((product) => {
       // Category match
       if (selectedCategory !== 'All' && product.category !== selectedCategory) {
         return false;
