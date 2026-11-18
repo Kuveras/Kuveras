@@ -142,7 +142,7 @@ export const ShopPage: React.FC = () => {
               {(selectedCategory !== 'All' || selectedOccasion !== 'All' || budgetParam !== 'All' || searchQuery) && (
                 <button
                   onClick={resetAllFilters}
-                  className="text-[11px] text-[#8B0000] hover:underline flex items-center gap-1 font-semibold"
+                  className="text-[11px] text-[#0B5D3B] hover:underline flex items-center gap-1 font-semibold"
                 >
                   <RotateCcw className="w-3 h-3" /> Reset
                 </button>
@@ -301,7 +301,7 @@ export const ShopPage: React.FC = () => {
                         setIsMobileFilterOpen(false);
                       }}
                       className={`block w-full text-left px-3 py-1.5 text-xs ${
-                        budgetParam === b.value ? 'font-bold text-[#8B0000]' : 'text-[#7A736E]'
+                        budgetParam === b.value ? 'font-bold text-[#0B5D3B]' : 'text-[#7A736E]'
                       }`}
                     >
                       {b.label}

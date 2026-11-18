@@ -43,11 +43,11 @@ interface SectionCardProps {
 
 const accentMap = {
   maroon: {
-    border: 'border-[#7A1010]/30',
-    iconBg: 'bg-[#7A1010]/10',
-    iconText: 'text-[#7A1010]',
-    numText: 'text-[#7A1010]/15',
-    tag: 'bg-[#7A1010]/10 text-[#7A1010]'
+    border: 'border-[#0B5D3B]/30',
+    iconBg: 'bg-[#0B5D3B]/10',
+    iconText: 'text-[#0B5D3B]',
+    numText: 'text-[#0B5D3B]/15',
+    tag: 'bg-[#0B5D3B]/10 text-[#0B5D3B]'
   },
   gold: {
     border: 'border-[#C89B3C]/40',
@@ -92,8 +92,8 @@ const Bullet: React.FC<{ children: React.ReactNode; icon?: React.ElementType; hi
   icon: Icon = CheckCircle2,
   highlight = false,
 }) => (
-  <div className={`flex items-start gap-2.5 ${highlight ? 'bg-[#FAF0F0] border border-[#7A1010]/20 p-3 text-[#171512]' : ''}`}>
-    <Icon className={`w-4 h-4 mt-0.5 flex-shrink-0 ${highlight ? 'text-[#7A1010]' : 'text-[#0B5D3B]'}`} />
+  <div className={`flex items-start gap-2.5 ${highlight ? 'bg-[#F0F8F4] border border-[#0B5D3B]/20 p-3 text-[#171512]' : ''}`}>
+    <Icon className={`w-4 h-4 mt-0.5 flex-shrink-0 ${highlight ? 'text-[#0B5D3B]' : 'text-[#0B5D3B]'}`} />
     <span className={highlight ? 'font-medium text-xs sm:text-sm' : 'text-xs sm:text-sm'}>{children}</span>
   </div>
 );
@@ -131,7 +131,7 @@ export const RentInfoPage: React.FC = () => {
       {/* ══════════════════════════════════
           HERO BANNER - Sophisticated Deep Maroon & Gold
       ══════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#540808] via-[#7A1010] to-[#540808] text-white">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#06452F] via-[#0B5D3B] to-[#06452F] text-white">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(200,155,60,0.18)_0%,_transparent_70%)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C89B3C]/80 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C89B3C]/60 to-transparent" />
@@ -194,9 +194,9 @@ export const RentInfoPage: React.FC = () => {
       {/* ══════════════════════════════════
           LOCATIONS & HIGHLIGHTS BAR
       ══════════════════════════════════ */}
-      <div className="bg-[#FAF0F0] border-b border-[#7A1010]/20 py-3 text-[#7A1010]">
+      <div className="bg-[#F0F8F4] border-b border-[#0B5D3B]/20 py-3 text-[#0B5D3B]">
         <div className="max-w-6xl mx-auto px-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-semibold uppercase tracking-wider">
-          <span className="flex items-center gap-1.5 text-[#7A1010] font-bold">
+          <span className="flex items-center gap-1.5 text-[#0B5D3B] font-bold">
             <MapPin className="w-3.5 h-3.5 text-[#C89B3C]" />
             Free Doorstep Delivery:
           </span>
@@ -232,7 +232,7 @@ export const RentInfoPage: React.FC = () => {
         {/* 3 Steps Overview */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           <div className="bg-[#FFFFFF] border border-[#E8E1D8] p-6 text-center shadow-xs">
-            <div className="w-12 h-12 rounded-full bg-[#FAF0F0] border border-[#7A1010]/20 flex items-center justify-center mx-auto text-[#7A1010] font-serif text-xl font-bold mb-4">
+            <div className="w-12 h-12 rounded-full bg-[#F0F8F4] border border-[#0B5D3B]/20 flex items-center justify-center mx-auto text-[#0B5D3B] font-serif text-xl font-bold mb-4">
               1
             </div>
             <h4 className="font-serif text-lg font-bold text-[#171512] mb-2">Day 1: Doorstep Delivery</h4>
@@ -255,7 +255,7 @@ export const RentInfoPage: React.FC = () => {
           </div>
 
           <div className="bg-[#FFFFFF] border border-[#E8E1D8] p-6 text-center shadow-xs">
-            <div className="w-12 h-12 rounded-full bg-[#FAF0F0] border border-[#7A1010]/20 flex items-center justify-center mx-auto text-[#7A1010] font-serif text-xl font-bold mb-4">
+            <div className="w-12 h-12 rounded-full bg-[#F0F8F4] border border-[#0B5D3B]/20 flex items-center justify-center mx-auto text-[#0B5D3B] font-serif text-xl font-bold mb-4">
               3
             </div>
             <h4 className="font-serif text-lg font-bold text-[#171512] mb-2">Day 3: Hassle-Free Pickup</h4>
@@ -318,7 +318,7 @@ export const RentInfoPage: React.FC = () => {
           <div className="overflow-x-auto">
             <table className="w-full text-xs sm:text-sm border-collapse min-w-[500px]">
               <thead>
-                <tr className="bg-[#7A1010] text-white">
+                <tr className="bg-[#0B5D3B] text-white">
                   <th className="text-left px-4 py-3 uppercase tracking-wider font-semibold">Particulars</th>
                   <th className="text-right px-4 py-3 uppercase tracking-wider font-semibold">Selling Price</th>
                   <th className="text-right px-4 py-3 uppercase tracking-wider font-semibold">Formula</th>
@@ -330,7 +330,7 @@ export const RentInfoPage: React.FC = () => {
                   <td className="px-4 py-3 font-medium text-[#171512]">Jewellery Rental (3-Day Window)</td>
                   <td className="px-4 py-3 text-right text-[#171512] font-semibold">{formatINR(EXAMPLE_SELLING_PRICE)}</td>
                   <td className="px-4 py-3 text-right text-[#0B5D3B] font-bold">30% OF SELLING</td>
-                  <td className="px-4 py-3 text-right font-bold text-[#7A1010] text-base">{formatINR(EXAMPLE_RENTAL_PRICE)}</td>
+                  <td className="px-4 py-3 text-right font-bold text-[#0B5D3B] text-base">{formatINR(EXAMPLE_RENTAL_PRICE)}</td>
                 </tr>
                 <tr className="bg-[#FFFFFF]">
                   <td className="px-4 py-3 font-medium text-[#171512]">Doorstep Delivery &amp; Pickup (Delhi NCR)</td>
@@ -338,7 +338,7 @@ export const RentInfoPage: React.FC = () => {
                   <td className="px-4 py-3 text-right text-[#6F675E]">—</td>
                   <td className="px-4 py-3 text-right font-bold text-[#0B5D3B]">FREE</td>
                 </tr>
-                <tr className="bg-[#FAF0F0]">
+                <tr className="bg-[#F0F8F4]">
                   <td className="px-4 py-3 font-medium text-[#171512]">Refundable Security Deposit</td>
                   <td className="px-4 py-3 text-right text-[#6F675E]">Per Product</td>
                   <td className="px-4 py-3 text-right text-[#6F675E]">Collateral</td>
@@ -350,8 +350,8 @@ export const RentInfoPage: React.FC = () => {
         </SectionCard>
 
         {/* ── 6. Contact & Concierge ── */}
-        <div className="bg-gradient-to-r from-[#FAF0F0] via-[#FAF7F0] to-[#FAF0F0] border-2 border-[#C89B3C]/50 p-8 sm:p-10 text-center space-y-4 shadow-sm">
-          <span className="text-xs font-sans font-semibold uppercase tracking-[0.25em] text-[#7A1010] block">
+        <div className="bg-gradient-to-r from-[#F0F8F4] via-[#FAF7F0] to-[#F0F8F4] border-2 border-[#C89B3C]/50 p-8 sm:p-10 text-center space-y-4 shadow-sm">
+          <span className="text-xs font-sans font-semibold uppercase tracking-[0.25em] text-[#0B5D3B] block">
             NEED ASSISTANCE OR CUSTOM DATES?
           </span>
           <h3 className="font-serif text-2xl sm:text-3xl text-[#171512] font-normal">
@@ -372,7 +372,7 @@ export const RentInfoPage: React.FC = () => {
             </a>
             <a
               href="tel:+918810461628"
-              className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#171512] hover:bg-[#7A1010] text-white text-xs font-bold uppercase tracking-widest transition-colors shadow-md"
+              className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#171512] hover:bg-[#0B5D3B] text-white text-xs font-bold uppercase tracking-widest transition-colors shadow-md"
             >
               <Phone className="w-4 h-4" />
               <span>Call +91 88104 61628</span>

@@ -101,7 +101,7 @@ export const QuickViewModal: React.FC = () => {
               className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.04]"
             />
             {quickViewProduct.discount > 0 && (
-              <span className="absolute top-3 left-3 bg-[#8B0000] text-white text-xs font-bold uppercase px-2.5 py-1 tracking-wider pointer-events-none z-10">
+              <span className="absolute top-3 left-3 bg-[#0B5D3B] text-white text-xs font-bold uppercase px-2.5 py-1 tracking-wider pointer-events-none z-10">
                 {quickViewProduct.discount}% OFF
               </span>
             )}
@@ -210,12 +210,12 @@ export const QuickViewModal: React.FC = () => {
                 onClick={handleWishlistToggle}
                 className={`p-3 border transition-colors ${
                   isWishlisted
-                    ? 'border-[#8B0000] bg-[#8B0000]/10 text-[#8B0000]'
+                    ? 'border-[#0B5D3B] bg-[#0B5D3B]/10 text-[#0B5D3B]'
                     : 'border-[#E8E2D9] hover:border-[#111111] text-[#1A1A1A]'
                 }`}
                 title="Save to Wishlist"
               >
-                <Heart className={`w-4 h-4 ${isWishlisted ? 'fill-[#8B0000]' : ''}`} />
+                <Heart className={`w-4 h-4 ${isWishlisted ? 'fill-[#0B5D3B]' : ''}`} />
               </button>
             </div>
 

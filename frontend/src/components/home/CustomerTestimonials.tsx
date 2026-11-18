@@ -8,7 +8,7 @@ export const CustomerTestimonials: React.FC = () => {
     <section className="py-16 sm:py-20 bg-gradient-to-b from-[#FFFDF8] via-[#FAF7F0] to-[#FFFDF8] border-b border-[#E8E1D8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#FAF0F0] border border-[#7A1010]/20 text-[#7A1010] text-[11px] font-sans font-bold uppercase tracking-[0.25em] rounded-full">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#F0F8F4] border border-[#0B5D3B]/20 text-[#0B5D3B] text-[11px] font-sans font-bold uppercase tracking-[0.25em] rounded-full">
             <Sparkles className="w-3.5 h-3.5 text-[#C89B3C]" />
             <span>Real Patron Reviews</span>
           </div>
@@ -26,7 +26,7 @@ export const CustomerTestimonials: React.FC = () => {
               key={t.id}
               className="bg-[#FFFFFF] border border-[#E8E1D8] p-6 sm:p-7 shadow-xs flex flex-col justify-between hover:border-[#C89B3C] hover:shadow-md transition-all duration-300 relative group"
             >
-              <div className="absolute top-0 right-0 w-16 h-16 bg-[#FAF0F0] rounded-bl-full pointer-events-none -z-0 opacity-50 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute top-0 right-0 w-16 h-16 bg-[#F0F8F4] rounded-bl-full pointer-events-none -z-0 opacity-50 group-hover:opacity-100 transition-opacity" />
 
               <div className="relative z-10">
                 <Quote className="w-8 h-8 text-[#C89B3C]/40 mb-3" />

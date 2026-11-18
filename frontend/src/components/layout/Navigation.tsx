@@ -91,12 +91,12 @@ export const Navigation: React.FC = () => {
                   <Link
                     to={item.path}
                     className={`group relative h-full flex items-center gap-1 transition-colors duration-180 cursor-pointer whitespace-nowrap ${
-                      isActive ? 'text-[#7A1010] font-semibold' : 'text-[#171512] hover:text-[#7A1010]'
+                      isActive ? 'text-[#0B5D3B] font-semibold' : 'text-[#171512] hover:text-[#0B5D3B]'
                     }`}
                   >
                     <span>{item.label}</span>
                     <span
-                      className={`absolute bottom-0 left-0 w-full h-[2px] bg-[#7A1010] transition-transform duration-250 ease-out origin-left ${
+                      className={`absolute bottom-0 left-0 w-full h-[2px] bg-[#0B5D3B] transition-transform duration-250 ease-out origin-left ${
                         isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                       }`}
                     />
@@ -118,12 +118,12 @@ export const Navigation: React.FC = () => {
                   aria-haspopup="true"
                   onClick={() => handleItemClick(item.id as MegaMenuType, item.path)}
                   className={`group relative h-full flex items-center gap-1 transition-colors duration-180 cursor-pointer whitespace-nowrap ${
-                    isActive ? 'text-[#7A1010] font-semibold' : 'text-[#171512] hover:text-[#7A1010]'
+                    isActive ? 'text-[#0B5D3B] font-semibold' : 'text-[#171512] hover:text-[#0B5D3B]'
                   }`}
                 >
                   <span>{item.label}</span>
                   <span
-                    className={`absolute bottom-0 left-0 w-full h-[2px] bg-[#7A1010] transition-transform duration-250 ease-out origin-left ${
+                    className={`absolute bottom-0 left-0 w-full h-[2px] bg-[#0B5D3B] transition-transform duration-250 ease-out origin-left ${
                       isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                     }`}
                   />

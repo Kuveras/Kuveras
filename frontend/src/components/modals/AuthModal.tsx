@@ -63,7 +63,7 @@ export const AuthModal: React.FC = () => {
             <div className="pt-4 space-y-2">
               <button
                 onClick={handleLogout}
-                className="w-full py-2.5 bg-[#8B0000] text-white text-xs uppercase tracking-widest font-semibold hover:bg-[#660000] transition-colors"
+                className="w-full py-2.5 bg-[#0B5D3B] text-white text-xs uppercase tracking-widest font-semibold hover:bg-[#06452F] transition-colors"
               >
                 Sign Out
               </button>

@@ -58,7 +58,7 @@ export const MobileMenu: React.FC = () => {
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="p-1.5 text-[#171512] hover:text-[#7A1010] transition-colors rounded-full cursor-pointer"
+              className="p-1.5 text-[#171512] hover:text-[#0B5D3B] transition-colors rounded-full cursor-pointer"
               aria-label="Close menu"
             >
               <X className="w-5 h-5 stroke-[1.5]" />
@@ -66,8 +66,8 @@ export const MobileMenu: React.FC = () => {
           </div>
 
           {/* Slogan pill in mobile menu */}
-          <div className="px-4 py-2 bg-[#FAF0F0] border-b border-[#7A1010]/20 text-center">
-            <span className="text-[10px] font-serif italic text-[#7A1010]">
+          <div className="px-4 py-2 bg-[#F0F8F4] border-b border-[#0B5D3B]/20 text-center">
+            <span className="text-[10px] font-serif italic text-[#0B5D3B]">
               "Crafted for Eternal Elegance"
             </span>
           </div>
@@ -79,11 +79,11 @@ export const MobileMenu: React.FC = () => {
               <button
                 type="button"
                 onClick={() => toggleSection('jewellery')}
-                className="w-full flex items-center justify-between text-left py-2 text-xs font-semibold text-[#171512] hover:text-[#7A1010] cursor-pointer"
+                className="w-full flex items-center justify-between text-left py-2 text-xs font-semibold text-[#171512] hover:text-[#0B5D3B] cursor-pointer"
               >
                 <span>All Jewellery</span>
                 {openSection === 'jewellery' ? (
-                  <Minus className="w-4 h-4 text-[#7A1010] stroke-[1.5]" />
+                  <Minus className="w-4 h-4 text-[#0B5D3B] stroke-[1.5]" />
                 ) : (
                   <Plus className="w-4 h-4 text-[#6F675E] stroke-[1.5]" />
                 )}
@@ -95,7 +95,7 @@ export const MobileMenu: React.FC = () => {
                       key={cat}
                       type="button"
                       onClick={() => handleNav(`/shop?category=${encodeURIComponent(cat)}`)}
-                      className="block py-1.5 hover:text-[#7A1010] text-left w-full cursor-pointer"
+                      className="block py-1.5 hover:text-[#0B5D3B] text-left w-full cursor-pointer"
                     >
                       {cat}
                     </button>
@@ -103,7 +103,7 @@ export const MobileMenu: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => handleNav('/shop')}
-                    className="block py-1.5 font-semibold text-[#7A1010] text-left w-full uppercase text-[10px] tracking-widest cursor-pointer"
+                    className="block py-1.5 font-semibold text-[#0B5D3B] text-left w-full uppercase text-[10px] tracking-widest cursor-pointer"
                   >
                     View All Collections →
                   </button>
@@ -116,14 +116,14 @@ export const MobileMenu: React.FC = () => {
               <button
                 type="button"
                 onClick={() => toggleSection('bridal')}
-                className="w-full flex items-center justify-between text-left py-2 text-xs font-semibold text-[#171512] hover:text-[#7A1010] cursor-pointer"
+                className="w-full flex items-center justify-between text-left py-2 text-xs font-semibold text-[#171512] hover:text-[#0B5D3B] cursor-pointer"
               >
                 <span className="flex items-center gap-1.5">
                   <Sparkles className="w-3.5 h-3.5 text-[#C89B3C]" />
                   <span>Bridal Suite</span>
                 </span>
                 {openSection === 'bridal' ? (
-                  <Minus className="w-4 h-4 text-[#7A1010] stroke-[1.5]" />
+                  <Minus className="w-4 h-4 text-[#0B5D3B] stroke-[1.5]" />
                 ) : (
                   <Plus className="w-4 h-4 text-[#6F6860] stroke-[1.5]" />
                 )}
@@ -135,7 +135,7 @@ export const MobileMenu: React.FC = () => {
                       key={item}
                       type="button"
                       onClick={() => handleNav('/shop?category=Bridal')}
-                      className="block py-1.5 hover:text-[#7A1010] text-left w-full cursor-pointer"
+                      className="block py-1.5 hover:text-[#0B5D3B] text-left w-full cursor-pointer"
                     >
                       {item}
                     </button>
@@ -149,11 +149,11 @@ export const MobileMenu: React.FC = () => {
               <button
                 type="button"
                 onClick={() => toggleSection('temple')}
-                className="w-full flex items-center justify-between text-left py-2 text-xs font-semibold text-[#171512] hover:text-[#7A1010] cursor-pointer"
+                className="w-full flex items-center justify-between text-left py-2 text-xs font-semibold text-[#171512] hover:text-[#0B5D3B] cursor-pointer"
               >
                 <span>Temple Art</span>
                 {openSection === 'temple' ? (
-                  <Minus className="w-4 h-4 text-[#7A1010] stroke-[1.5]" />
+                  <Minus className="w-4 h-4 text-[#0B5D3B] stroke-[1.5]" />
                 ) : (
                   <Plus className="w-4 h-4 text-[#6F6860] stroke-[1.5]" />
                 )}
@@ -165,7 +165,7 @@ export const MobileMenu: React.FC = () => {
                       key={item}
                       type="button"
                       onClick={() => handleNav('/shop?category=Temple')}
-                      className="block py-1.5 hover:text-[#7A1010] text-left w-full cursor-pointer"
+                      className="block py-1.5 hover:text-[#0B5D3B] text-left w-full cursor-pointer"
                     >
                       {item}
                     </button>
@@ -179,11 +179,11 @@ export const MobileMenu: React.FC = () => {
               <button
                 type="button"
                 onClick={() => toggleSection('bracelets')}
-                className="w-full flex items-center justify-between text-left py-2 text-xs font-semibold text-[#171512] hover:text-[#7A1010] cursor-pointer"
+                className="w-full flex items-center justify-between text-left py-2 text-xs font-semibold text-[#171512] hover:text-[#0B5D3B] cursor-pointer"
               >
                 <span>Bracelets</span>
                 {openSection === 'bracelets' ? (
-                  <Minus className="w-4 h-4 text-[#7A1010] stroke-[1.5]" />
+                  <Minus className="w-4 h-4 text-[#0B5D3B] stroke-[1.5]" />
                 ) : (
                   <Plus className="w-4 h-4 text-[#6F6860] stroke-[1.5]" />
                 )}
@@ -195,7 +195,7 @@ export const MobileMenu: React.FC = () => {
                       key={item}
                       type="button"
                       onClick={() => handleNav('/shop?category=Bracelets')}
-                      className="block py-1.5 hover:text-[#7A1010] text-left w-full cursor-pointer"
+                      className="block py-1.5 hover:text-[#0B5D3B] text-left w-full cursor-pointer"
                     >
                       {item}
                     </button>
@@ -208,7 +208,7 @@ export const MobileMenu: React.FC = () => {
             <button
               type="button"
               onClick={() => handleNav('/rent-info')}
-              className="flex items-center gap-2 w-full text-left py-3 text-xs font-semibold text-[#7A1010] hover:text-[#540808] cursor-pointer"
+              className="flex items-center gap-2 w-full text-left py-3 text-xs font-semibold text-[#0B5D3B] hover:text-[#06452F] cursor-pointer"
             >
               <ShieldCheck className="w-4 h-4 text-[#C89B3C] stroke-[1.5]" />
               <span>Rental Guide &amp; Policies</span>
@@ -218,7 +218,7 @@ export const MobileMenu: React.FC = () => {
             <button
               type="button"
               onClick={() => handleNav('/about')}
-              className="block w-full text-left py-3 text-xs font-semibold text-[#171512] hover:text-[#7A1010] cursor-pointer"
+              className="block w-full text-left py-3 text-xs font-semibold text-[#171512] hover:text-[#0B5D3B] cursor-pointer"
             >
               About Kuveras
             </button>
@@ -227,7 +227,7 @@ export const MobileMenu: React.FC = () => {
             <button
               type="button"
               onClick={() => handleNav('/faqs')}
-              className="flex items-center gap-2 w-full text-left py-3 text-xs font-semibold text-[#171512] hover:text-[#7A1010] cursor-pointer"
+              className="flex items-center gap-2 w-full text-left py-3 text-xs font-semibold text-[#171512] hover:text-[#0B5D3B] cursor-pointer"
             >
               <HelpCircle className="w-4 h-4 text-[#6F6860] stroke-[1.5]" />
               <span>FAQs &amp; Help</span>
@@ -271,7 +271,7 @@ export const MobileMenu: React.FC = () => {
               }}
               className="flex items-center gap-1.5 text-[#171512] cursor-pointer"
             >
-              <Heart className="w-4 h-4 stroke-[1.5] text-[#7A1010]" />
+              <Heart className="w-4 h-4 stroke-[1.5] text-[#0B5D3B]" />
               <span>Wishlist ({wishlistCount})</span>
             </button>
 

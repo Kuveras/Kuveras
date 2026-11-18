@@ -47,7 +47,7 @@ export const OfferBar: React.FC = () => {
     <div
       role="region"
       aria-label="Promotional Offers & Brand Highlights"
-      className="w-full bg-[#7A1010] text-[#FFFDF8] h-[34px] sm:h-[38px] flex items-center justify-center overflow-hidden relative z-40 px-4 border-b border-[#540808]"
+      className="w-full bg-[#0B5D3B] text-[#FFFDF8] h-[34px] sm:h-[38px] flex items-center justify-center overflow-hidden relative z-40 px-4 border-b border-[#06452F]"
     >
       <div className="max-w-7xl mx-auto w-full text-center flex items-center justify-center overflow-hidden h-full">
         {prefersReducedMotion ? (

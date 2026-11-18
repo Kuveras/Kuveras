@@ -80,7 +80,7 @@ export const CartDrawer: React.FC = () => {
               <p className="text-xs text-[#171512] font-medium flex items-center gap-1.5">
                 <Truck className="w-4 h-4 text-[#C89B3C]" />
                 <span>
-                  Add <strong className="text-[#7A1010]">{formatINR(amountNeededForFreeShipping)}</strong> more for <strong>FREE Express Shipping</strong>
+                  Add <strong className="text-[#0B5D3B]">{formatINR(amountNeededForFreeShipping)}</strong> more for <strong>FREE Express Shipping</strong>
                 </span>
               </p>
               <div className="w-full bg-[#EDE3D4] h-1.5 rounded-full overflow-hidden">
@@ -138,7 +138,7 @@ export const CartDrawer: React.FC = () => {
                       </h4>
                       <button
                         onClick={() => removeFromCart(item.product.id)}
-                        className="text-[#6F675E] hover:text-[#7A1010] p-1"
+                        className="text-[#6F675E] hover:text-[#0B5D3B] p-1"
                         aria-label="Remove item"
                       >
                         <Trash2 className="w-4 h-4" />
@@ -215,7 +215,7 @@ export const CartDrawer: React.FC = () => {
                   </div>
                   <button
                     onClick={removeCoupon}
-                    className="text-[#7A1010] font-bold text-xs hover:underline"
+                    className="text-[#0B5D3B] font-bold text-xs hover:underline"
                   >
                     Remove
                   </button>
@@ -238,7 +238,7 @@ export const CartDrawer: React.FC = () => {
                 </form>
               )}
               {couponError && (
-                <p className="text-[11px] text-[#7A1010] mt-1">{couponError}</p>
+                <p className="text-[11px] text-[#0B5D3B] mt-1">{couponError}</p>
               )}
             </div>
 
@@ -250,7 +250,7 @@ export const CartDrawer: React.FC = () => {
               </div>
 
               {discountAmount > 0 && (
-                <div className="flex justify-between text-[#7A1010] font-semibold">
+                <div className="flex justify-between text-[#0B5D3B] font-semibold">
                   <span>Coupon Savings</span>
                   <span>- {formatINR(discountAmount)}</span>
                 </div>

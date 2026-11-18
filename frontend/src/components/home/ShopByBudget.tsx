@@ -70,7 +70,7 @@ export const ShopByBudget: React.FC = () => {
                 <h3 className="font-serif text-2xl font-bold text-[#111111] tracking-wide mb-1">
                   {card.priceLabel}
                 </h3>
-                <p className="text-xs text-[#8B0000] font-semibold mb-4 leading-snug">
+                <p className="text-xs text-[#0B5D3B] font-semibold mb-4 leading-snug">
                   {card.offer}
                 </p>
               </div>

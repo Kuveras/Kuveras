@@ -172,7 +172,7 @@ export const HeroSection: React.FC = () => {
                 >
                   {/* Brand Identity Eyebrow */}
                   <div className="flex items-center gap-2">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#FAF0F0] border border-[#7A1010]/30 text-[#7A1010] text-[11px] font-sans font-bold tracking-[0.2em] uppercase rounded-full">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#F0F8F4] border border-[#0B5D3B]/30 text-[#0B5D3B] text-[11px] font-sans font-bold tracking-[0.2em] uppercase rounded-full">
                       <Sparkles className="w-3 h-3 text-[#C89B3C]" />
                       {slide.eyebrow}
                     </span>
@@ -190,7 +190,7 @@ export const HeroSection: React.FC = () => {
                   </h1>
 
                   {/* Slogan Subtitle */}
-                  <div className="text-xs sm:text-sm font-serif italic text-[#7A1010] tracking-wide font-medium flex items-center gap-2">
+                  <div className="text-xs sm:text-sm font-serif italic text-[#0B5D3B] tracking-wide font-medium flex items-center gap-2">
                     <span className="w-8 h-px bg-[#C89B3C]" />
                     <span>"{slide.tagline}"</span>
                   </div>
@@ -205,7 +205,7 @@ export const HeroSection: React.FC = () => {
                     {/* Rent Action */}
                     <Link
                       to={slide.rentCtaLink}
-                      className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 bg-[#7A1010] hover:bg-[#540808] text-white text-xs sm:text-sm font-sans font-bold uppercase tracking-[0.18em] transition-all duration-300 shadow-md group"
+                      className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 bg-[#0B5D3B] hover:bg-[#06452F] text-white text-xs sm:text-sm font-sans font-bold uppercase tracking-[0.18em] transition-all duration-300 shadow-md group"
                     >
                       <Repeat className="w-3.5 h-3.5 text-[#E7C982]" />
                       <span>{slide.rentCtaText}</span>
@@ -215,7 +215,7 @@ export const HeroSection: React.FC = () => {
                     {/* Buy Action */}
                     <Link
                       to={slide.buyCtaLink}
-                      className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 bg-[#FFFDF8] hover:bg-[#FAF7F0] border border-[#C89B3C] text-[#171512] hover:text-[#7A1010] text-xs sm:text-sm font-sans font-bold uppercase tracking-[0.18em] transition-all duration-300 shadow-xs group"
+                      className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 bg-[#FFFDF8] hover:bg-[#FAF7F0] border border-[#C89B3C] text-[#171512] hover:text-[#0B5D3B] text-xs sm:text-sm font-sans font-bold uppercase tracking-[0.18em] transition-all duration-300 shadow-xs group"
                     >
                       <ShoppingBag className="w-3.5 h-3.5 text-[#C89B3C]" />
                       <span>{slide.buyCtaText}</span>
@@ -233,7 +233,7 @@ export const HeroSection: React.FC = () => {
         type="button"
         onClick={prevSlide}
         aria-label="Previous slide"
-        className="absolute top-1/2 left-3 sm:left-6 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#C89B3C]/40 bg-[#FFFDF8]/90 text-[#171512] hover:bg-[#7A1010] hover:text-white hover:border-[#7A1010] transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
+        className="absolute top-1/2 left-3 sm:left-6 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#C89B3C]/40 bg-[#FFFDF8]/90 text-[#171512] hover:bg-[#0B5D3B] hover:text-white hover:border-[#0B5D3B] transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
       >
         <ChevronLeft className="w-5 h-5 stroke-[1.5]" />
       </button>
@@ -242,16 +242,16 @@ export const HeroSection: React.FC = () => {
         type="button"
         onClick={nextSlide}
         aria-label="Next slide"
-        className="absolute top-1/2 right-3 sm:right-6 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#C89B3C]/40 bg-[#FFFDF8]/90 text-[#171512] hover:bg-[#7A1010] hover:text-white hover:border-[#7A1010] transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
+        className="absolute top-1/2 right-3 sm:right-6 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#C89B3C]/40 bg-[#FFFDF8]/90 text-[#171512] hover:bg-[#0B5D3B] hover:text-white hover:border-[#0B5D3B] transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
       >
         <ChevronRight className="w-5 h-5 stroke-[1.5]" />
       </button>
 
       {/* Bottom Rent & Buy Quick Highlights Strip */}
-      <div className="relative z-20 bg-gradient-to-r from-[#FAF0F0] via-[#FFFDF8] to-[#FAF0F0] border-t border-[#E8E1D8] px-4 py-3 sm:py-3.5">
+      <div className="relative z-20 bg-gradient-to-r from-[#F0F8F4] via-[#FFFDF8] to-[#F0F8F4] border-t border-[#E8E1D8] px-4 py-3 sm:py-3.5">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4 text-xs">
           <div className="flex items-center gap-6 divide-x divide-[#E8E1D8]">
-            <div className="flex items-center gap-2 text-[#7A1010] font-semibold uppercase tracking-wider">
+            <div className="flex items-center gap-2 text-[#0B5D3B] font-semibold uppercase tracking-wider">
               <Repeat className="w-4 h-4 text-[#C89B3C]" />
               <span>Rent for Events: 30% Price · 3-Day Window</span>
             </div>
@@ -267,7 +267,7 @@ export const HeroSection: React.FC = () => {
 
           <div className="flex items-center gap-2">
             <span className="text-[#6F675E]">Slide</span>
-            <span className="font-bold text-[#7A1010]">0{currentIndex + 1}</span>
+            <span className="font-bold text-[#0B5D3B]">0{currentIndex + 1}</span>
             <span className="text-[#6F675E]">/ 0{HERO_SLIDES.length}</span>
           </div>
         </div>
