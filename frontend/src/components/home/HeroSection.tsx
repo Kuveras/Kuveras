@@ -24,7 +24,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     image: '/banners/banner-1-smrutiya-kundan.jpg',
     link: '/product/smrutiya-kundan-haar',
     alt: 'KUVERAS The Bridal Edit - Smrutiya Kundan Haar - A legacy, made yours.',
-    themeColor: '#200204',
+    themeColor: '#06452F',
   },
   {
     id: 'amritavasini',
@@ -35,7 +35,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     image: '/banners/banner-2-amritavasini.jpg',
     link: '/product/amritavasini',
     alt: 'KUVERAS The Signature Selection - Amritavasini Kundan Necklace - Heritage in every layer.',
-    themeColor: '#172818',
+    themeColor: '#06452F',
   },
   {
     id: 'nilaya-chandrika',
@@ -46,7 +46,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     image: '/banners/banner-3-nilaya-chandrika.jpg',
     link: '/product/nilaya-chandrika-set',
     alt: 'KUVERAS After Dark in Kuveras - Nilaya Chandrika Cubic Zirconia Set - Own the evening.',
-    themeColor: '#050505',
+    themeColor: '#081814',
   },
   {
     id: 'charulata-crimson',
@@ -57,7 +57,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     image: '/banners/banner-4-charulata-crimson.jpg',
     link: '/product/charulata-crimson-necklace',
     alt: 'KUVERAS The Gifting Edit - Charulata Crimson Necklace - Some gifts say everything.',
-    themeColor: '#14020E',
+    themeColor: '#06452F',
   },
   {
     id: 'keyura-mint',
@@ -68,7 +68,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     image: '/banners/banner-5-keyura-mint.jpg',
     link: '/product/keyura-mint-necklace',
     alt: 'KUVERAS Bestseller - Keyura Mint Cubic Zirconia Necklace - Your next signature.',
-    themeColor: '#021011',
+    themeColor: '#06452F',
   },
 ];
 

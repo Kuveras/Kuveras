@@ -39,18 +39,18 @@ async function fallbackClientFetch(): Promise<SheetSyncResponse | null> {
     const imagesByProductId: Record<string, string[]> = {};
 
     const aliasMap: Record<string, string> = {
-      'gulnaar pink necklace set': 'kuveras-3800',
-      'padmashri rose necklace set': 'kuveras-3796',
-      'midnight noir necklace set': 'kuveras-3793',
-      'silver bloom long set': 'kuveras-3792',
-      'mint cascade choker set': 'kuveras-3794',
-      'emerald baguette set': 'kuveras-3801',
-      'sapphire cascade long set': 'kuveras-3804',
-      'blush petal choker set': 'kuveras-3798',
-      'mint net choker set': 'kuveras-3805',
-      'rajwadi ruby choker set': 'kuveras-3795',
-      'heritage kundan collar set': 'kuveras-3790',
-      'nilaya panna drop set': 'kuveras-3797',
+      'gulnaar pink necklace set': 'kuveras-2937',
+      'padmashri rose necklace set': 'kuveras-sheet-02',
+      'midnight noir necklace set': 'kuveras-sheet-03',
+      'silver bloom long set': 'kuveras-sheet-04',
+      'mint cascade choker set': 'kuveras-sheet-05',
+      'emerald baguette set': 'kuveras-sheet-06',
+      'sapphire cascade long set': 'kuveras-sheet-07',
+      'blush petal choker set': 'kuveras-sheet-08',
+      'mint net choker set': 'kuveras-sheet-09',
+      'rajwadi ruby choker set': 'kuveras-sheet-10',
+      'heritage kundan collar set': 'kuveras-sheet-11',
+      'nilaya panna drop set': 'kuveras-sheet-12',
     };
 
     for (let i = 1; i < lines.length; i++) {

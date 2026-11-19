@@ -6,36 +6,33 @@ const SHEET_GID = process.env.GOOGLE_SHEETS_GID || '0';
 
 // Known alias map for spreadsheet products to KUVERAS product IDs / names
 const ALIAS_MAP = {
-  'gulnaar pink necklace set': 'kuveras-3800', // Ravya Gulnaar Set
-  'padmashri rose necklace set': 'kuveras-3796', // Charulata Crimson / Padmashri Rose Set
-  'midnight noir necklace set': 'kuveras-3793', // Rasira Crystal / Midnight Noir
-  'silver bloom long set': 'kuveras-3792', // Ruhaniya Silver Choker / Silver Bloom
-  'mint cascade choker set': 'kuveras-3794', // Keyura Mint Necklace / Mint Cascade
-  'emerald baguette set': 'kuveras-3801', // Aarunya Tara / Emerald Baguette
-  'sapphire cascade long set': 'kuveras-3804', // Ishvika Chandrakanta / Sapphire Cascade
-  'blush petal choker set': 'kuveras-3798', // Saanvika Tara / Blush Petal
-  'mint net choker set': 'kuveras-3805', // Meharika Tara / Mint Net
-  'rajwadi ruby choker set': 'kuveras-3795', // Kumudini Ruby Necklace / Rajwadi Ruby
-  'heritage kundan collar set': 'kuveras-3790', // Smrutiya Kundan Haar / Heritage Kundan
-  'nilaya panna drop set': 'kuveras-3797', // Nilaya Chandrika / Nilaya Panna Drop
-  // Also support direct name mappings
-  'ravya gulnaar set': 'kuveras-3800',
-  'meharika tara set': 'kuveras-3805',
-  'ishvika chandrakanta set': 'kuveras-3804',
-  'aarunya tara set': 'kuveras-3801',
-  'saanvika tara set': 'kuveras-3798',
-  'nilaya chandrika set': 'kuveras-3797',
-  'charulata crimson necklace': 'kuveras-3796',
-  'kumudini ruby necklace': 'kuveras-3795',
-  'keyura mint necklace': 'kuveras-3794',
-  'rasira crystal necklace': 'kuveras-3793',
-  'ruhaniya silver choker': 'kuveras-3792',
-  'smrutiya kundan haar': 'kuveras-3790',
+  'gulnaar pink necklace set': 'kuveras-2937',
+  'padmashri rose necklace set': 'kuveras-sheet-02',
+  'midnight noir necklace set': 'kuveras-sheet-03',
+  'silver bloom long set': 'kuveras-sheet-04',
+  'mint cascade choker set': 'kuveras-sheet-05',
+  'emerald baguette set': 'kuveras-sheet-06',
+  'sapphire cascade long set': 'kuveras-sheet-07',
+  'blush petal choker set': 'kuveras-sheet-08',
+  'mint net choker set': 'kuveras-sheet-09',
+  'rajwadi ruby choker set': 'kuveras-sheet-10',
+  'heritage kundan collar set': 'kuveras-sheet-11',
+  'nilaya panna drop set': 'kuveras-sheet-12',
+  // Verified aliases and direct ID mapping
+  'kuveras-2937': 'kuveras-2937',
+  'kuveras-sheet-02': 'kuveras-sheet-02',
+  'kuveras-sheet-03': 'kuveras-sheet-03',
+  'kuveras-sheet-04': 'kuveras-sheet-04',
+  'kuveras-sheet-05': 'kuveras-sheet-05',
+  'kuveras-sheet-06': 'kuveras-sheet-06',
+  'kuveras-sheet-07': 'kuveras-sheet-07',
+  'kuveras-sheet-08': 'kuveras-sheet-08',
+  'kuveras-sheet-09': 'kuveras-sheet-09',
+  'kuveras-sheet-10': 'kuveras-sheet-10',
+  'kuveras-sheet-11': 'kuveras-sheet-11',
+  'kuveras-sheet-12': 'kuveras-sheet-12',
   'rosé elegance cz set': 'kuveras-2937',
-  'rose elegance cz set': 'kuveras-2937',
-  'midnight sapphire cubic zirconia choker set': 'kuveras-3081',
-  'sitara rang – emerald & ruby set': 'kuveras-3075',
-  'sharvani petalwork set': 'kuveras-3329'
+  'rose elegance cz set': 'kuveras-2937'
 };
 
 // In-memory cache
