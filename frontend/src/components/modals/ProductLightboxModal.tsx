@@ -340,7 +340,7 @@ export const ProductLightboxModal: React.FC<ProductLightboxModalProps> = ({
             title="Click to toggle magnification power"
           >
             <ZoomIn className="w-3.5 h-3.5 text-[#D4AF37]" />
-            <span className="font-medium tracking-wider">{zoomScale.toFixed(1)}x Zoom</span>
+            <span className="font-medium tracking-wider">{(zoomScale || 2.2).toFixed(1)}x Zoom</span>
           </button>
 
           {/* Reset Zoom Button (when zoomed) */}

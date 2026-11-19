@@ -9,11 +9,13 @@ interface StarRatingProps {
 }
 
 export const StarRating: React.FC<StarRatingProps> = ({
-  rating,
+  rating = 4.8,
   count,
   showCount = true,
   size = 'sm',
 }) => {
+  const safeRating = typeof rating === 'number' && !isNaN(rating) ? rating : 4.8;
+  const safeCount = typeof count === 'number' && !isNaN(count) ? count : undefined;
   const iconSize = size === 'sm' ? 'w-3.5 h-3.5' : 'w-4 h-4';
 
   return (
@@ -23,9 +25,9 @@ export const StarRating: React.FC<StarRatingProps> = ({
           <Star
             key={star}
             className={`${iconSize} ${
-              star <= Math.floor(rating)
+              star <= Math.floor(safeRating)
                 ? 'fill-[#D4AF37] text-[#D4AF37]'
-                : star - rating < 1
+                : star - safeRating < 1
                 ? 'fill-[#D4AF37]/50 text-[#D4AF37]'
                 : 'text-gray-300'
             }`}
@@ -34,7 +36,7 @@ export const StarRating: React.FC<StarRatingProps> = ({
       </div>
       {showCount && (
         <span className="text-xs text-[#7A736E] font-sans">
-          {rating.toFixed(1)} {count !== undefined && `(${count})`}
+          {safeRating.toFixed(1)} {safeCount !== undefined && `(${safeCount})`}
         </span>
       )}
     </div>
