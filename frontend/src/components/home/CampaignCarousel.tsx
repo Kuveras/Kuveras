@@ -7,20 +7,44 @@ interface Slide {
   image: string;
   alt: string;
   link: string;
+  title: string;
 }
 
 const CAMPAIGN_SLIDES: Slide[] = [
   {
     id: 1,
-    image: '/banner-slide-1.jpg',
-    alt: 'KUVERAS Tradition Meets Tomorrow Royal Couple Campaign',
-    link: '/shop',
+    image: '/banners/banner-1-smrutiya-kundan.jpg',
+    alt: 'KUVERAS The Bridal Edit - Smrutiya Kundan Haar',
+    link: '/product/smrutiya-kundan-haar',
+    title: 'Smrutiya Kundan Haar',
   },
   {
     id: 2,
-    image: '/banner-slide-2.jpg',
-    alt: 'KUVERAS Authentic Heritage Signature Box Campaign',
-    link: '/shop?category=Bridal%20Jewellery',
+    image: '/banners/banner-2-amritavasini.jpg',
+    alt: 'KUVERAS The Signature Selection - Amritavasini Kundan Necklace',
+    link: '/product/amritavasini',
+    title: 'Amritavasini',
+  },
+  {
+    id: 3,
+    image: '/banners/banner-3-nilaya-chandrika.jpg',
+    alt: 'KUVERAS After Dark - Nilaya Chandrika Cubic Zirconia Set',
+    link: '/product/nilaya-chandrika-set',
+    title: 'Nilaya Chandrika Set',
+  },
+  {
+    id: 4,
+    image: '/banners/banner-4-charulata-crimson.jpg',
+    alt: 'KUVERAS The Gifting Edit - Charulata Crimson Necklace',
+    link: '/product/charulata-crimson-necklace',
+    title: 'Charulata Crimson Necklace',
+  },
+  {
+    id: 5,
+    image: '/banners/banner-5-keyura-mint.jpg',
+    alt: 'KUVERAS Bestseller - Keyura Mint Cubic Zirconia Necklace',
+    link: '/product/keyura-mint-necklace',
+    title: 'Keyura Mint Necklace',
   },
 ];
 
@@ -33,7 +57,7 @@ export const CampaignCarousel: React.FC = () => {
 
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % CAMPAIGN_SLIDES.length);
-    }, 5000);
+    }, 5500);
 
     return () => clearInterval(interval);
   }, [isAutoPlaying]);
@@ -58,19 +82,26 @@ export const CampaignCarousel: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative w-full rounded-lg overflow-hidden border border-[#E7C982]/30 shadow-2xl bg-[#000000]">
-          {/* Main Carousel Aspect Ratio Box */}
-          <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] md:aspect-[16/8.5] max-h-[640px] flex items-center justify-center">
+          {/* Main Carousel with exact banner aspect ratio 1024:506 */}
+          <div
+            className="relative w-full overflow-hidden flex items-center justify-center"
+            style={{ aspectRatio: '1024 / 506' }}
+          >
             {CAMPAIGN_SLIDES.map((slide, index) => (
               <Link
                 key={slide.id}
                 to={slide.link}
                 className={`absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out ${
-                  index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                  index === currentSlide ? 'opacity-100 z-10 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'
                 }`}
               >
                 <img
                   src={slide.image}
                   alt={slide.alt}
+                  width={1024}
+                  height={506}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
                   className="w-full h-full object-contain sm:object-cover object-center bg-black"
                 />
               </Link>
@@ -81,7 +112,7 @@ export const CampaignCarousel: React.FC = () => {
               type="button"
               onClick={handlePrev}
               aria-label="Previous Slide"
-              className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-[#0A0D0B]/60 hover:bg-[#0B5D3B] text-[#E7C982] border border-[#E7C982]/50 backdrop-blur-md flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-xl focus:outline-none"
+              className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-[#0A0D0B]/60 hover:bg-[#0B5D3B] text-[#E7C982] border border-[#E7C982]/50 backdrop-blur-md flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-xl focus:outline-none cursor-pointer"
             >
               <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
@@ -91,7 +122,7 @@ export const CampaignCarousel: React.FC = () => {
               type="button"
               onClick={handleNext}
               aria-label="Next Slide"
-              className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-[#0A0D0B]/60 hover:bg-[#0B5D3B] text-[#E7C982] border border-[#E7C982]/50 backdrop-blur-md flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-xl focus:outline-none"
+              className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-[#0A0D0B]/60 hover:bg-[#0B5D3B] text-[#E7C982] border border-[#E7C982]/50 backdrop-blur-md flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-xl focus:outline-none cursor-pointer"
             >
               <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
@@ -102,7 +133,7 @@ export const CampaignCarousel: React.FC = () => {
                 type="button"
                 onClick={() => setIsAutoPlaying(!isAutoPlaying)}
                 aria-label={isAutoPlaying ? "Pause carousel" : "Play carousel"}
-                className="text-[#E7C982] hover:text-white transition-colors p-0.5"
+                className="text-[#E7C982] hover:text-white transition-colors p-0.5 focus:outline-none cursor-pointer"
               >
                 {isAutoPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
               </button>
@@ -113,8 +144,8 @@ export const CampaignCarousel: React.FC = () => {
                 <button
                   key={slide.id}
                   onClick={() => setCurrentSlide(idx)}
-                  aria-label={`Go to slide ${idx + 1}`}
-                  className={`h-2 rounded-full transition-all duration-300 ${
+                  aria-label={`Go to slide ${idx + 1}: ${slide.title}`}
+                  className={`h-2 rounded-full transition-all duration-300 focus:outline-none cursor-pointer ${
                     idx === currentSlide
                       ? 'w-6 sm:w-8 bg-[#E7C982]'
                       : 'w-2 bg-[#FFFDF8]/40 hover:bg-[#FFFDF8]/70'
