@@ -48,7 +48,7 @@ export const AboutPage: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Banner Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#F0F8F4] border border-[#0B5D3B]/20 text-[#0B5D3B] text-[11px] font-sans font-semibold uppercase tracking-[0.25em] rounded-full">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#FAF0F0] border border-[#7A1010]/20 text-[#7A1010] text-[11px] font-sans font-semibold uppercase tracking-[0.25em] rounded-full">
             <Sparkles className="w-3.5 h-3.5 text-[#C89B3C]" />
             <span>Crafted for Eternal Elegance</span>
             <Sparkles className="w-3.5 h-3.5 text-[#C89B3C]" />
@@ -56,7 +56,7 @@ export const AboutPage: React.FC = () => {
 
           <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-[#171512] font-normal leading-tight">
             Where Every Jewel <br />
-            <span className="italic text-[#0B5D3B]">Carries a Legacy</span>
+            <span className="italic text-[#7A1010]">Carries a Legacy</span>
           </h1>
 
           <p className="font-sans text-sm sm:text-base text-[#6F675E] leading-relaxed max-w-2xl mx-auto">
@@ -84,8 +84,8 @@ export const AboutPage: React.FC = () => {
                 And quietly, at the very soul of Kuveras, is <strong>Kamini</strong> — a name, a mother, a guiding light. The "K" in Kuveras is a silent tribute to her quiet strength and timeless grace. This brand is as much a gift to her legacy as it is to discerning brides and patrons across the globe.
               </p>
             </div>
-            <div className="pt-2 flex flex-wrap gap-4 text-xs font-semibold text-[#0B5D3B] uppercase tracking-wider">
-              <span className="flex items-center gap-1.5 bg-[#F0F8F4] px-3 py-1.5 border border-[#0B5D3B]/20">
+            <div className="pt-2 flex flex-wrap gap-4 text-xs font-semibold text-[#7A1010] uppercase tracking-wider">
+              <span className="flex items-center gap-1.5 bg-[#FAF0F0] px-3 py-1.5 border border-[#7A1010]/20">
                 <ShieldCheck className="w-4 h-4 text-[#C89B3C]" /> Authentic 22K Gold Polish
               </span>
               <span className="flex items-center gap-1.5 bg-[#FAF7F0] px-3 py-1.5 border border-[#C89B3C]/30 text-[#2B2723]">
@@ -102,7 +102,7 @@ export const AboutPage: React.FC = () => {
                 alt="Kuveras Sacred Geometry & Heritage"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#06452F]/90 via-[#06452F]/50 to-transparent p-6 text-white">
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#540808]/90 via-[#540808]/50 to-transparent p-6 text-white">
                 <span className="text-[10px] tracking-[0.25em] uppercase text-[#E7C982] block mb-1">CRAFTED FOR ETERNITY</span>
                 <p className="font-serif text-lg">Heirloom Craftsmanship Rooted in Vedic Grace</p>
               </div>
@@ -111,12 +111,12 @@ export const AboutPage: React.FC = () => {
         </div>
 
         {/* Sacred Geometry Section: The Kubera Yantra */}
-        <div className="mb-20 bg-gradient-to-br from-[#F0F8F4] via-[#FAF7F0] to-[#FFFDF8] border border-[#C89B3C]/40 p-8 sm:p-14 relative overflow-hidden shadow-xs">
+        <div className="mb-20 bg-gradient-to-br from-[#FAF0F0] via-[#FAF7F0] to-[#FFFDF8] border border-[#C89B3C]/40 p-8 sm:p-14 relative overflow-hidden shadow-xs">
           <div className="max-w-3xl mx-auto text-center space-y-5">
-            <div className="w-14 h-14 rounded-full bg-[#FFFFFF] border-2 border-[#C89B3C] flex items-center justify-center mx-auto text-[#0B5D3B] shadow-sm">
-              <Gem className="w-6 h-6 stroke-[1.5] text-[#0B5D3B]" />
+            <div className="w-14 h-14 rounded-full bg-[#FFFFFF] border-2 border-[#C89B3C] flex items-center justify-center mx-auto text-[#7A1010] shadow-sm">
+              <Gem className="w-6 h-6 stroke-[1.5] text-[#7A1010]" />
             </div>
-            <span className="text-xs font-sans font-semibold uppercase tracking-[0.25em] text-[#0B5D3B] block">
+            <span className="text-xs font-sans font-semibold uppercase tracking-[0.25em] text-[#7A1010] block">
               SACRED VEDIC GEOMETRY
             </span>
             <h2 className="font-serif text-2xl sm:text-4xl text-[#171512] font-normal">
@@ -160,14 +160,14 @@ export const AboutPage: React.FC = () => {
                     alt={item.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute top-4 left-4 bg-[#0B5D3B] text-white px-3.5 py-1 text-xs font-serif font-medium tracking-wider shadow-sm">
+                  <div className="absolute top-4 left-4 bg-[#7A1010] text-white px-3.5 py-1 text-xs font-serif font-medium tracking-wider shadow-sm">
                     {item.title}
                   </div>
                 </div>
 
                 <div className="p-7 sm:p-8 space-y-4">
                   <div>
-                    <h3 className="font-serif text-2xl font-normal text-[#171512] group-hover:text-[#0B5D3B] transition-colors">
+                    <h3 className="font-serif text-2xl font-normal text-[#171512] group-hover:text-[#7A1010] transition-colors">
                       {item.title}
                     </h3>
                     <p className="font-sans text-xs uppercase tracking-[0.18em] text-[#C89B3C] mt-1 font-semibold">
@@ -184,7 +184,7 @@ export const AboutPage: React.FC = () => {
               <div className="px-7 sm:px-8 pb-7 sm:pb-8 pt-2 flex items-center justify-between gap-4 border-t border-[#F3EEE6]">
                 <Link
                   to={`/shop?category=${item.categoryQuery}`}
-                  className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#0B5D3B] hover:bg-[#06452F] text-white text-xs font-sans font-semibold uppercase tracking-[0.18em] transition-colors cursor-pointer shadow-xs"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#7A1010] hover:bg-[#540808] text-white text-xs font-sans font-semibold uppercase tracking-[0.18em] transition-colors cursor-pointer shadow-xs"
                 >
                   <span>Shop {item.title}</span>
                   <ArrowRight className="w-3.5 h-3.5 text-white" />
@@ -192,7 +192,7 @@ export const AboutPage: React.FC = () => {
 
                 <Link
                   to="/rent-info"
-                  className="text-xs font-medium text-[#0B5D3B] hover:text-[#06452F] tracking-wide underline underline-offset-4"
+                  className="text-xs font-medium text-[#7A1010] hover:text-[#540808] tracking-wide underline underline-offset-4"
                 >
                   Rental Available
                 </Link>
@@ -202,7 +202,7 @@ export const AboutPage: React.FC = () => {
         </div>
 
         {/* Our Promise Banner */}
-        <div className="bg-gradient-to-r from-[#06452F] via-[#0B5D3B] to-[#06452F] text-[#FFFDF8] p-10 sm:p-16 border-2 border-[#C89B3C] text-center space-y-6 shadow-2xl relative overflow-hidden">
+        <div className="bg-gradient-to-r from-[#540808] via-[#7A1010] to-[#540808] text-[#FFFDF8] p-10 sm:p-16 border-2 border-[#C89B3C] text-center space-y-6 shadow-2xl relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(200,155,60,0.15)_0%,_transparent_70%)] pointer-events-none" />
           <span className="text-xs font-sans font-semibold uppercase tracking-[0.25em] text-[#E7C982] block">
             OUR SOLEMN COMMITMENT

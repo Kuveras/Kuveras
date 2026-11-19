@@ -135,7 +135,7 @@ export const StoreLocatorModal: React.FC<StoreLocatorModalProps> = ({
                     )}%20boutique.`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#0B5D3B] hover:bg-[#06452F] text-white text-xs font-medium uppercase tracking-wider transition-colors rounded-[2px]"
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#7A1010] hover:bg-[#540808] text-white text-xs font-medium uppercase tracking-wider transition-colors rounded-[2px]"
                   >
                     <MessageSquare className="w-3.5 h-3.5" />
                     <span>WhatsApp Concierge</span>

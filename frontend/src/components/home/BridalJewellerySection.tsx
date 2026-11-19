@@ -12,14 +12,14 @@ export const BridalJewellerySection: React.FC = () => {
   ).slice(0, 4);
 
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-b from-[#FFFDF8] via-[#F0F8F4]/50 to-[#FFFDF8] border-b border-[#E8E1D8] relative overflow-hidden">
+    <section className="py-16 sm:py-20 bg-gradient-to-b from-[#FFFDF8] via-[#FAF0F0]/50 to-[#FFFDF8] border-b border-[#E8E1D8] relative overflow-hidden">
       {/* Decorative filigree glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-40 bg-[radial-gradient(ellipse_at_top,_rgba(200,155,60,0.12)_0%,_transparent_70%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#F0F8F4] border border-[#0B5D3B]/30 text-[#0B5D3B] text-[11px] font-sans font-bold uppercase tracking-[0.25em] rounded-full">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#FAF0F0] border border-[#7A1010]/30 text-[#7A1010] text-[11px] font-sans font-bold uppercase tracking-[0.25em] rounded-full">
             <Crown className="w-3.5 h-3.5 text-[#C89B3C]" />
             <span>The Royal Bridal Suite</span>
             <Sparkles className="w-3.5 h-3.5 text-[#C89B3C]" />
@@ -27,7 +27,7 @@ export const BridalJewellerySection: React.FC = () => {
 
           <h2 className="font-serif text-3xl sm:text-5xl text-[#171512] font-normal leading-tight">
             Crafted for Your Most <br />
-            <span className="italic text-[#0B5D3B]">Sacred Moments</span>
+            <span className="italic text-[#7A1010]">Sacred Moments</span>
           </h2>
 
           <p className="font-sans text-xs sm:text-sm md:text-base text-[#6F675E] leading-relaxed max-w-2xl mx-auto">
@@ -38,7 +38,7 @@ export const BridalJewellerySection: React.FC = () => {
         {/* Bridal Editorial Feature Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-14 items-center">
           {/* Left Column: Bridal Banner Card */}
-          <div className="lg:col-span-5 bg-gradient-to-br from-[#06452F] to-[#0B5D3B] text-white p-8 sm:p-10 border-2 border-[#C89B3C]/50 shadow-xl flex flex-col justify-between h-full relative overflow-hidden">
+          <div className="lg:col-span-5 bg-gradient-to-br from-[#540808] to-[#7A1010] text-white p-8 sm:p-10 border-2 border-[#C89B3C]/50 shadow-xl flex flex-col justify-between h-full relative overflow-hidden">
             <div className="absolute -right-8 -bottom-8 w-48 h-48 bg-[#C89B3C]/10 rounded-full blur-2xl pointer-events-none" />
 
             <div className="space-y-4 relative z-10">
@@ -99,7 +99,7 @@ export const BridalJewellerySection: React.FC = () => {
         <div className="text-center">
           <Link
             to="/shop?category=Bridal"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#0B5D3B] hover:bg-[#06452F] text-white text-xs font-bold uppercase tracking-[0.2em] transition-colors shadow-md"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#7A1010] hover:bg-[#540808] text-white text-xs font-bold uppercase tracking-[0.2em] transition-colors shadow-md"
           >
             <span>Explore Complete Bridal Collection</span>
             <ArrowRight className="w-4 h-4" />

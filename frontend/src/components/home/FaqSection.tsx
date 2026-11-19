@@ -63,7 +63,7 @@ export const FaqSection: React.FC = () => {
             <div className="pt-4">
               <Link
                 to="/faqs"
-                className="inline-flex items-center gap-2 text-xs sm:text-sm font-sans font-semibold uppercase tracking-[0.18em] text-[#0B5D3B] hover:text-[#C89B3C] transition-colors cursor-pointer group"
+                className="inline-flex items-center gap-2 text-xs sm:text-sm font-sans font-semibold uppercase tracking-[0.18em] text-[#7A1010] hover:text-[#C89B3C] transition-colors cursor-pointer group"
               >
                 <span>VIEW ALL FAQS</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

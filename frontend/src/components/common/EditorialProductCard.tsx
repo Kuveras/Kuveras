@@ -61,7 +61,7 @@ export const EditorialProductCard: React.FC<EditorialProductCardProps> = ({
         {/* Badges */}
         <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10 pointer-events-none">
           {product.discount > 0 && (
-            <span className="bg-[#0B5D3B] text-white text-[10px] font-semibold uppercase px-2 py-0.5 tracking-widest shadow-xs">
+            <span className="bg-[#7A1010] text-white text-[10px] font-semibold uppercase px-2 py-0.5 tracking-widest shadow-xs">
               {product.discount}% OFF
             </span>
           )}

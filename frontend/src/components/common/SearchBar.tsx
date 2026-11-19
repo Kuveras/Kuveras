@@ -272,12 +272,12 @@ export const SearchBar: React.FC<SearchBarProps> = ({
             title="Voice search"
             className={`p-2 rounded-full transition-all ${
               isListening
-                ? 'text-[#0B5D3B] bg-[#0B5D3B]/10 animate-pulse ring-2 ring-[#0B5D3B]/30'
+                ? 'text-[#7A1010] bg-[#7A1010]/10 animate-pulse ring-2 ring-[#7A1010]/30'
                 : 'text-[#756D65] hover:text-[#C89B3C] hover:bg-[#FAF7F0]'
             }`}
           >
             {isListening ? (
-              <MicOff className="w-5 h-5 sm:w-6 sm:h-6 text-[#0B5D3B]" />
+              <MicOff className="w-5 h-5 sm:w-6 sm:h-6 text-[#7A1010]" />
             ) : (
               <Mic className="w-5 h-5 sm:w-6 sm:h-6" />
             )}

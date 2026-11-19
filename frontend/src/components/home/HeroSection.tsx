@@ -24,7 +24,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     image: '/banners/banner-1-smrutiya-kundan.jpg',
     link: '/product/smrutiya-kundan-haar',
     alt: 'KUVERAS The Bridal Edit - Smrutiya Kundan Haar - A legacy, made yours.',
-    themeColor: '#06452F',
+    themeColor: '#540808',
   },
   {
     id: 'amritavasini',
@@ -35,7 +35,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     image: '/banners/banner-2-amritavasini.jpg',
     link: '/product/amritavasini',
     alt: 'KUVERAS The Signature Selection - Amritavasini Kundan Necklace - Heritage in every layer.',
-    themeColor: '#06452F',
+    themeColor: '#540808',
   },
   {
     id: 'nilaya-chandrika',
@@ -57,7 +57,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     image: '/banners/banner-4-charulata-crimson.jpg',
     link: '/product/charulata-crimson-necklace',
     alt: 'KUVERAS The Gifting Edit - Charulata Crimson Necklace - Some gifts say everything.',
-    themeColor: '#06452F',
+    themeColor: '#540808',
   },
   {
     id: 'keyura-mint',
@@ -68,7 +68,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     image: '/banners/banner-5-keyura-mint.jpg',
     link: '/product/keyura-mint-necklace',
     alt: 'KUVERAS Bestseller - Keyura Mint Cubic Zirconia Necklace - Your next signature.',
-    themeColor: '#06452F',
+    themeColor: '#540808',
   },
 ];
 
@@ -176,7 +176,7 @@ export const HeroSection: React.FC = () => {
               prevSlide();
             }}
             aria-label="Previous slide"
-            className="absolute top-1/2 left-3 sm:left-6 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full border border-[#E7C982]/50 bg-[#0A0D0B]/60 text-[#E7C982] hover:bg-[#0B5D3B] hover:text-white hover:border-[#0B5D3B] backdrop-blur-md transition-all duration-300 flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 cursor-pointer focus:outline-none"
+            className="absolute top-1/2 left-3 sm:left-6 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full border border-[#E7C982]/50 bg-[#0A0D0B]/60 text-[#E7C982] hover:bg-[#7A1010] hover:text-white hover:border-[#7A1010] backdrop-blur-md transition-all duration-300 flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 cursor-pointer focus:outline-none"
           >
             <ChevronLeft className="w-5 h-5 stroke-[2]" />
           </button>
@@ -189,7 +189,7 @@ export const HeroSection: React.FC = () => {
               nextSlide();
             }}
             aria-label="Next slide"
-            className="absolute top-1/2 right-3 sm:right-6 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full border border-[#E7C982]/50 bg-[#0A0D0B]/60 text-[#E7C982] hover:bg-[#0B5D3B] hover:text-white hover:border-[#0B5D3B] backdrop-blur-md transition-all duration-300 flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 cursor-pointer focus:outline-none"
+            className="absolute top-1/2 right-3 sm:right-6 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full border border-[#E7C982]/50 bg-[#0A0D0B]/60 text-[#E7C982] hover:bg-[#7A1010] hover:text-white hover:border-[#7A1010] backdrop-blur-md transition-all duration-300 flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 cursor-pointer focus:outline-none"
           >
             <ChevronRight className="w-5 h-5 stroke-[2]" />
           </button>
@@ -237,18 +237,18 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* ─── Bottom Rent & Buy Trust Highlights Strip ─── */}
-      <div className="relative z-20 bg-gradient-to-r from-[#F0F8F4] via-[#FFFDF8] to-[#F0F8F4] border-t border-[#E8E1D8] px-4 py-3 sm:py-3.5">
+      <div className="relative z-20 bg-gradient-to-r from-[#FAF0F0] via-[#FFFDF8] to-[#FAF0F0] border-t border-[#E8E1D8] px-4 py-3 sm:py-3.5">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4 text-xs">
           <div className="flex items-center gap-6 divide-x divide-[#E8E1D8]">
             <Link
               to="/rent-info"
-              className="flex items-center gap-2 text-[#0B5D3B] hover:text-[#06452F] font-semibold uppercase tracking-wider transition-colors"
+              className="flex items-center gap-2 text-[#7A1010] hover:text-[#540808] font-semibold uppercase tracking-wider transition-colors"
             >
               <Repeat className="w-4 h-4 text-[#C89B3C]" />
               <span>Rent for Events: 30% Price · 3-Day Window</span>
             </Link>
-            <div className="hidden sm:flex items-center gap-2 pl-6 text-[#0B5D3B] font-semibold uppercase tracking-wider">
-              <ShieldCheck className="w-4 h-4 text-[#0B5D3B]" />
+            <div className="hidden sm:flex items-center gap-2 pl-6 text-[#7A1010] font-semibold uppercase tracking-wider">
+              <ShieldCheck className="w-4 h-4 text-[#7A1010]" />
               <span>100% Medical UV-C Sanitization &amp; Doorstep Delivery</span>
             </div>
             <div className="hidden lg:flex items-center gap-2 pl-6 text-[#171512] font-semibold uppercase tracking-wider">
@@ -260,7 +260,7 @@ export const HeroSection: React.FC = () => {
           <div className="flex items-center gap-2 text-xs">
             <span className="text-[#6F675E]">{currentSlide.eyebrow}</span>
             <span className="text-[#E8E1D8]">•</span>
-            <span className="font-serif italic font-semibold text-[#0B5D3B]">
+            <span className="font-serif italic font-semibold text-[#7A1010]">
               {currentSlide.productName}
             </span>
           </div>

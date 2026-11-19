@@ -30,7 +30,7 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-40 bg-[#FFFFFF] border-t-2 border-t-[#0B5D3B] shadow-sm">
+      <header className="sticky top-0 z-40 bg-[#FFFFFF] border-t-2 border-t-[#7A1010] shadow-sm">
         {/* TIER 1: Top Promotional Offer Bar */}
         <OfferBar />
 
@@ -43,7 +43,7 @@ export const Header: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setIsMobileMenuOpen(true)}
-                className="lg:hidden p-2 text-[#171512] hover:text-[#0B5D3B] transition-colors focus:outline-none cursor-pointer"
+                className="lg:hidden p-2 text-[#171512] hover:text-[#7A1010] transition-colors focus:outline-none cursor-pointer"
                 aria-label="Open mobile menu"
               >
                 <Menu className="w-6 h-6" />
@@ -74,7 +74,7 @@ export const Header: React.FC = () => {
                 onClick={() => setIsExploreCollectionsOpen(true)}
                 aria-label="Explore Collections"
                 title="Explore Collections"
-                className="p-1.5 text-[#6F675E] hover:text-[#0B5D3B] active:text-[#C89B3C] transition-colors focus:outline-none cursor-pointer"
+                className="p-1.5 text-[#6F675E] hover:text-[#7A1010] active:text-[#C89B3C] transition-colors focus:outline-none cursor-pointer"
               >
                 <Gem className="w-[20px] h-[20px] sm:w-[22px] sm:h-[22px]" />
               </button>
@@ -85,7 +85,7 @@ export const Header: React.FC = () => {
                 onClick={() => setIsStoreLocatorOpen(true)}
                 aria-label="Find a Store"
                 title="Find a Store"
-                className="p-1.5 text-[#6F675E] hover:text-[#0B5D3B] active:text-[#C89B3C] transition-colors focus:outline-none cursor-pointer"
+                className="p-1.5 text-[#6F675E] hover:text-[#7A1010] active:text-[#C89B3C] transition-colors focus:outline-none cursor-pointer"
               >
                 <Store className="w-[20px] h-[20px] sm:w-[22px] sm:h-[22px]" />
               </button>
@@ -96,11 +96,11 @@ export const Header: React.FC = () => {
                 onClick={() => setIsWishlistOpen(true)}
                 aria-label={`Wishlist (${wishlistCount} items)`}
                 title="Wishlist"
-                className="relative p-1.5 text-[#6F675E] hover:text-[#0B5D3B] active:text-[#C89B3C] transition-colors focus:outline-none cursor-pointer"
+                className="relative p-1.5 text-[#6F675E] hover:text-[#7A1010] active:text-[#C89B3C] transition-colors focus:outline-none cursor-pointer"
               >
                 <Heart className="w-[20px] h-[20px] sm:w-[22px] sm:h-[22px]" />
                 {wishlistCount > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 min-w-[17px] h-[17px] px-1 bg-[#0B5D3B] text-[#FFFFFF] text-[10px] font-bold rounded-full flex items-center justify-center border border-white">
+                  <span className="absolute -top-0.5 -right-0.5 min-w-[17px] h-[17px] px-1 bg-[#7A1010] text-[#FFFFFF] text-[10px] font-bold rounded-full flex items-center justify-center border border-white">
                     {wishlistCount}
                   </span>
                 )}
@@ -112,7 +112,7 @@ export const Header: React.FC = () => {
                 onClick={() => setIsAuthOpen(true)}
                 aria-label="My Account"
                 title={user ? `My Account (${user.name})` : "My Account"}
-                className="p-1.5 text-[#6F675E] hover:text-[#0B5D3B] active:text-[#C89B3C] transition-colors focus:outline-none flex items-center gap-1.5 cursor-pointer"
+                className="p-1.5 text-[#6F675E] hover:text-[#7A1010] active:text-[#C89B3C] transition-colors focus:outline-none flex items-center gap-1.5 cursor-pointer"
               >
                 <UserRound className="w-[20px] h-[20px] sm:w-[22px] sm:h-[22px]" />
               </button>
@@ -123,11 +123,11 @@ export const Header: React.FC = () => {
                 onClick={() => setIsCartOpen(true)}
                 aria-label={`Shopping Bag (${totalItemCount} items)`}
                 title="Shopping Bag"
-                className="relative p-1.5 text-[#6F675E] hover:text-[#0B5D3B] active:text-[#C89B3C] transition-colors focus:outline-none cursor-pointer"
+                className="relative p-1.5 text-[#6F675E] hover:text-[#7A1010] active:text-[#C89B3C] transition-colors focus:outline-none cursor-pointer"
               >
                 <ShoppingBag className="w-[20px] h-[20px] sm:w-[22px] sm:h-[22px]" />
                 {totalItemCount > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 min-w-[17px] h-[17px] px-1 bg-[#0B5D3B] text-[#FFFFFF] text-[10px] font-bold rounded-full flex items-center justify-center border border-white font-sans">
+                  <span className="absolute -top-0.5 -right-0.5 min-w-[17px] h-[17px] px-1 bg-[#7A1010] text-[#FFFFFF] text-[10px] font-bold rounded-full flex items-center justify-center border border-white font-sans">
                     {totalItemCount}
                   </span>
                 )}

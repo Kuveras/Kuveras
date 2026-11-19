@@ -155,7 +155,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
                 onClick={() => setAllJewelleryTab('category')}
                 className={`w-full text-left px-3.5 py-2.5 rounded-lg text-xs font-sans font-semibold transition-all cursor-pointer flex items-center justify-between ${
                   allJewelleryTab === 'category'
-                    ? 'bg-[#FFFDF8] text-[#0B5D3B] shadow-2xs border-l-3 border-l-[#C89B3C]'
+                    ? 'bg-[#FFFDF8] text-[#7A1010] shadow-2xs border-l-3 border-l-[#C89B3C]'
                     : 'text-[#2B2723] hover:text-[#C89B3C] hover:bg-[#FFFDF8]'
                 }`}
               >
@@ -169,7 +169,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
                 onClick={() => setAllJewelleryTab('price')}
                 className={`w-full text-left px-3.5 py-2.5 rounded-lg text-xs font-sans font-semibold transition-all cursor-pointer flex items-center justify-between ${
                   allJewelleryTab === 'price'
-                    ? 'bg-[#FFFDF8] text-[#0B5D3B] shadow-2xs border-l-3 border-l-[#C89B3C]'
+                    ? 'bg-[#FFFDF8] text-[#7A1010] shadow-2xs border-l-3 border-l-[#C89B3C]'
                     : 'text-[#2B2723] hover:text-[#C89B3C] hover:bg-[#FFFDF8]'
                 }`}
               >
@@ -183,7 +183,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
                 onClick={() => setAllJewelleryTab('occasion')}
                 className={`w-full text-left px-3.5 py-2.5 rounded-lg text-xs font-sans font-semibold transition-all cursor-pointer flex items-center justify-between ${
                   allJewelleryTab === 'occasion'
-                    ? 'bg-[#FFFDF8] text-[#0B5D3B] shadow-2xs border-l-3 border-l-[#C89B3C]'
+                    ? 'bg-[#FFFDF8] text-[#7A1010] shadow-2xs border-l-3 border-l-[#C89B3C]'
                     : 'text-[#2B2723] hover:text-[#C89B3C] hover:bg-[#FFFDF8]'
                 }`}
               >
@@ -202,7 +202,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
                     <span>Explore Jewellery Categories</span>
                     <button
                       onClick={() => handleNavigate('/shop')}
-                      className="text-[11px] font-sans font-semibold text-[#0B5D3B] hover:text-[#C89B3C] uppercase tracking-widest cursor-pointer"
+                      className="text-[11px] font-sans font-semibold text-[#7A1010] hover:text-[#C89B3C] uppercase tracking-widest cursor-pointer"
                     >
                       View All Products →
                     </button>
@@ -323,7 +323,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
         {menuType === 'bridal' && (
           <div className="grid grid-cols-4 gap-8 font-sans">
             <div>
-              <h4 className="font-serif text-sm text-[#0B5D3B] uppercase tracking-[0.16em] pb-2 border-b border-[#E8E1D8] mb-3 font-semibold">
+              <h4 className="font-serif text-sm text-[#7A1010] uppercase tracking-[0.16em] pb-2 border-b border-[#E8E1D8] mb-3 font-semibold">
                 Bridal Categories
               </h4>
               <ul className="space-y-2 text-xs text-[#2B2723]">
@@ -342,7 +342,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
             </div>
 
             <div>
-              <h4 className="font-serif text-sm text-[#0B5D3B] uppercase tracking-[0.16em] pb-2 border-b border-[#E8E1D8] mb-3 font-semibold">
+              <h4 className="font-serif text-sm text-[#7A1010] uppercase tracking-[0.16em] pb-2 border-b border-[#E8E1D8] mb-3 font-semibold">
                 Bridal Style &amp; Heritage
               </h4>
               <ul className="space-y-2 text-xs text-[#2B2723]">
@@ -361,7 +361,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
             </div>
 
             <div>
-              <h4 className="font-serif text-sm text-[#0B5D3B] uppercase tracking-[0.16em] pb-2 border-b border-[#E8E1D8] mb-3 font-semibold">
+              <h4 className="font-serif text-sm text-[#7A1010] uppercase tracking-[0.16em] pb-2 border-b border-[#E8E1D8] mb-3 font-semibold">
                 Craftsmanship &amp; Styles
               </h4>
               <ul className="space-y-2 text-xs text-[#2B2723]">
@@ -409,7 +409,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
         {menuType === 'temple' && (
           <div className="grid grid-cols-4 gap-8 font-sans">
             <div className="col-span-2">
-              <h4 className="font-serif text-sm text-[#0B5D3B] uppercase tracking-[0.16em] pb-2 border-b border-[#E8E1D8] mb-3 font-semibold">
+              <h4 className="font-serif text-sm text-[#7A1010] uppercase tracking-[0.16em] pb-2 border-b border-[#E8E1D8] mb-3 font-semibold">
                 Temple Collections
               </h4>
               <div className="grid grid-cols-2 gap-2 text-xs text-[#2B2723]">
@@ -466,7 +466,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
         {menuType === 'bracelets' && (
           <div className="grid grid-cols-4 gap-8 font-sans">
             <div className="col-span-2">
-              <h4 className="font-serif text-sm text-[#0B5D3B] uppercase tracking-[0.16em] pb-2 border-b border-[#E8E1D8] mb-3 font-semibold">
+              <h4 className="font-serif text-sm text-[#7A1010] uppercase tracking-[0.16em] pb-2 border-b border-[#E8E1D8] mb-3 font-semibold">
                 Bracelet &amp; Bangle Categories
               </h4>
               <div className="grid grid-cols-2 gap-2 text-xs text-[#2B2723]">
@@ -523,7 +523,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
         {menuType === 'rent' && (
           <div className="max-w-2xl mx-auto font-sans bg-[#FFFDF8] border border-[#E8E1D8] rounded-xl p-6 flex items-center justify-between gap-6">
             <div className="space-y-1.5 flex-1">
-              <div className="flex items-center gap-2 text-[#0B5D3B]">
+              <div className="flex items-center gap-2 text-[#7A1010]">
                 <ShieldCheck className="w-5 h-5 stroke-[1.5]" />
                 <span className="text-xs font-semibold uppercase tracking-wider">3-Day Luxury Jewellery Rental</span>
               </div>
@@ -535,7 +535,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
             <button
               type="button"
               onClick={() => handleNavigate('/rent-info')}
-              className="px-5 py-3 bg-[#0B5D3B] hover:bg-[#075235] text-white text-xs font-sans font-semibold uppercase tracking-widest rounded-lg transition-colors shrink-0 flex items-center gap-2 cursor-pointer"
+              className="px-5 py-3 bg-[#7A1010] hover:bg-[#540808] text-white text-xs font-sans font-semibold uppercase tracking-widest rounded-lg transition-colors shrink-0 flex items-center gap-2 cursor-pointer"
             >
               <span>View Rental Collection</span>
               <ArrowRight className="w-4 h-4" />

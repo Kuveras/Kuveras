@@ -109,7 +109,7 @@ export const FaqPage: React.FC = () => {
 
         {/* Header */}
         <div className="text-center space-y-3 mb-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#F0F8F4] border border-[#0B5D3B]/20 text-[#0B5D3B] text-[11px] font-sans font-semibold uppercase tracking-[0.25em] rounded-full">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#FAF0F0] border border-[#7A1010]/20 text-[#7A1010] text-[11px] font-sans font-semibold uppercase tracking-[0.25em] rounded-full">
             <HelpCircle className="w-3.5 h-3.5 text-[#C89B3C]" />
             <span>Customer Concierge &amp; FAQ</span>
           </div>
@@ -147,7 +147,7 @@ export const FaqPage: React.FC = () => {
               onClick={() => setActiveCategory(cat.id as any)}
               className={`px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${
                 activeCategory === cat.id
-                  ? 'bg-[#0B5D3B] text-white shadow-xs'
+                  ? 'bg-[#7A1010] text-white shadow-xs'
                   : 'bg-[#FFFFFF] border border-[#E8E1D8] text-[#6F675E] hover:border-[#C89B3C] hover:text-[#171512]'
               }`}
             >
@@ -163,7 +163,7 @@ export const FaqPage: React.FC = () => {
               <p className="text-sm text-[#6F675E]">No questions found matching "{searchQuery}".</p>
               <button
                 onClick={() => { setSearchQuery(''); setActiveCategory('all'); }}
-                className="mt-3 text-xs font-bold uppercase text-[#0B5D3B] hover:underline"
+                className="mt-3 text-xs font-bold uppercase text-[#7A1010] hover:underline"
               >
                 Clear Search
               </button>
@@ -186,20 +186,20 @@ export const FaqPage: React.FC = () => {
                   >
                     <span
                       className={`font-serif text-lg sm:text-xl font-normal transition-colors ${
-                        isOpen ? 'text-[#0B5D3B] font-medium' : 'text-[#171512] group-hover:text-[#0B5D3B]'
+                        isOpen ? 'text-[#7A1010] font-medium' : 'text-[#171512] group-hover:text-[#7A1010]'
                       }`}
                     >
                       {faq.question}
                     </span>
                     <ChevronDown
                       className={`w-5 h-5 shrink-0 ml-4 transition-transform duration-300 ${
-                        isOpen ? 'transform rotate-180 text-[#0B5D3B]' : 'text-[#6F675E] group-hover:text-[#0B5D3B]'
+                        isOpen ? 'transform rotate-180 text-[#7A1010]' : 'text-[#6F675E] group-hover:text-[#7A1010]'
                       }`}
                     />
                   </button>
 
                   {isOpen && (
-                    <div className="px-5 sm:px-6 pb-6 pt-1 font-sans text-sm text-[#6F675E] leading-relaxed border-t border-[#F0F8F4] animate-fade-in">
+                    <div className="px-5 sm:px-6 pb-6 pt-1 font-sans text-sm text-[#6F675E] leading-relaxed border-t border-[#FAF0F0] animate-fade-in">
                       {faq.answer}
                     </div>
                   )}
@@ -210,8 +210,8 @@ export const FaqPage: React.FC = () => {
         </div>
 
         {/* WhatsApp Assistance Banner */}
-        <div className="mt-14 bg-gradient-to-r from-[#F0F8F4] via-[#FAF7F0] to-[#F0F8F4] border-2 border-[#C89B3C]/50 p-8 text-center space-y-4 shadow-sm">
-          <span className="text-[11px] font-sans font-semibold uppercase tracking-[0.2em] text-[#0B5D3B] block">
+        <div className="mt-14 bg-gradient-to-r from-[#FAF0F0] via-[#FAF7F0] to-[#FAF0F0] border-2 border-[#C89B3C]/50 p-8 text-center space-y-4 shadow-sm">
+          <span className="text-[11px] font-sans font-semibold uppercase tracking-[0.2em] text-[#7A1010] block">
             STILL HAVE QUESTIONS?
           </span>
           <h3 className="font-serif text-2xl sm:text-3xl text-[#171512] font-normal">
@@ -232,7 +232,7 @@ export const FaqPage: React.FC = () => {
             </a>
             <a
               href="tel:+918810461628"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#171512] hover:bg-[#0B5D3B] text-white text-xs font-bold uppercase tracking-widest transition-colors shadow-md"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#171512] hover:bg-[#7A1010] text-white text-xs font-bold uppercase tracking-widest transition-colors shadow-md"
             >
               <Phone className="w-4 h-4" />
               <span>CALL CONCIERGE</span>

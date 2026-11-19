@@ -26,7 +26,7 @@ export const BrandStorySection: React.FC = () => {
 
           {/* Right Column: Story Copy */}
           <div className="lg:col-span-6 space-y-6">
-            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#0B5D3B] block">
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#7A1010] block">
               Our Brand Legacy
             </span>
 

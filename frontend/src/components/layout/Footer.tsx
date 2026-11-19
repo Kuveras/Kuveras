@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
           <div className="kv-footer-col kv-footer-brand">
             {/* Logo Emblem */}
             <div className="kv-brand-logo-area">
-              <KuverasLogo variant="emerald" className="w-36 sm:w-44 !items-start" />
+              <KuverasLogo variant="gold" className="w-36 sm:w-44 !items-start" />
             </div>
             <p className="kv-brand-tagline">
               Handcrafted Indian jewellery — jewels<br />
@@ -182,7 +182,7 @@ export const Footer: React.FC = () => {
           font-family: 'Jost', -apple-system, 'Segoe UI', sans-serif;
           font-weight: 300;
           line-height: 1.6;
-          background: linear-gradient(180deg, #0a5e38 0%, #06452f 40%, #053d28 100%);
+          background: linear-gradient(180deg, #3d0707 0%, #2b0404 40%, #1a0202 100%);
           color: #f6efe4;
           padding: 56px 0 0;
         }
@@ -487,7 +487,7 @@ export const Footer: React.FC = () => {
           border: none;
           border-radius: 4px;
           background: #e6c987;
-          color: #06452f;
+          color: #2b0404;
           font-family: 'Playfair Display', Georgia, serif;
           font-weight: 600;
           font-size: 1rem;

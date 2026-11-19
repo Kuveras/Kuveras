@@ -59,7 +59,7 @@ export const CartDrawer: React.FC = () => {
         {/* Header */}
         <div className="p-4 sm:p-5 border-b border-[#EDE3D4] flex items-center justify-between bg-[#FAF7F0]">
           <div className="flex items-center gap-2">
-            <ShoppingBag className="w-5 h-5 text-[#0B5D3B]" />
+            <ShoppingBag className="w-5 h-5 text-[#7A1010]" />
             <h3 className="font-serif text-xl font-bold uppercase tracking-wider text-[#171512]">
               Shopping Bag ({cart.reduce((acc, item) => acc + item.quantity, 0)})
             </h3>
@@ -80,7 +80,7 @@ export const CartDrawer: React.FC = () => {
               <p className="text-xs text-[#171512] font-medium flex items-center gap-1.5">
                 <Truck className="w-4 h-4 text-[#C89B3C]" />
                 <span>
-                  Add <strong className="text-[#0B5D3B]">{formatINR(amountNeededForFreeShipping)}</strong> more for <strong>FREE Express Shipping</strong>
+                  Add <strong className="text-[#7A1010]">{formatINR(amountNeededForFreeShipping)}</strong> more for <strong>FREE Express Shipping</strong>
                 </span>
               </p>
               <div className="w-full bg-[#EDE3D4] h-1.5 rounded-full overflow-hidden">
@@ -96,8 +96,8 @@ export const CartDrawer: React.FC = () => {
               </div>
             </div>
           ) : (
-            <p className="text-xs text-[#0B5D3B] font-semibold flex items-center gap-1.5">
-              <Truck className="w-4 h-4 text-[#0B5D3B]" />
+            <p className="text-xs text-[#7A1010] font-semibold flex items-center gap-1.5">
+              <Truck className="w-4 h-4 text-[#7A1010]" />
               <span>You have unlocked Complimentary Insured Express Shipping!</span>
             </p>
           )}
@@ -138,7 +138,7 @@ export const CartDrawer: React.FC = () => {
                       </h4>
                       <button
                         onClick={() => removeFromCart(item.product.id)}
-                        className="text-[#6F675E] hover:text-[#0B5D3B] p-1"
+                        className="text-[#6F675E] hover:text-[#7A1010] p-1"
                         aria-label="Remove item"
                       >
                         <Trash2 className="w-4 h-4" />
@@ -146,7 +146,7 @@ export const CartDrawer: React.FC = () => {
                     </div>
 
                     {item.isRental ? (
-                      <span className="inline-flex items-center gap-1 text-[10px] font-bold text-[#0B5D3B] bg-[#0B5D3B]/10 px-2 py-0.5 mt-1 border border-[#0B5D3B]/20">
+                      <span className="inline-flex items-center gap-1 text-[10px] font-bold text-[#7A1010] bg-[#7A1010]/10 px-2 py-0.5 mt-1 border border-[#7A1010]/20">
                         <ShieldCheck className="w-3 h-3" /> 3-Day Rental
                       </span>
                     ) : (
@@ -158,7 +158,7 @@ export const CartDrawer: React.FC = () => {
                     <div className="text-xs font-semibold text-[#171512] mt-1">
                       {item.isRental ? (
                         <span className="flex items-center gap-1.5 flex-wrap">
-                          <span className="text-[10px] font-bold text-[#0B5D3B] bg-[#0B5D3B]/10 px-1.5 py-0.5 tracking-wider">Rental (30%)</span>
+                          <span className="text-[10px] font-bold text-[#7A1010] bg-[#7A1010]/10 px-1.5 py-0.5 tracking-wider">Rental (30%)</span>
                           <span>{formatINR(item.product.rentalPrice)}</span>
                         </span>
                       ) : (
@@ -215,7 +215,7 @@ export const CartDrawer: React.FC = () => {
                   </div>
                   <button
                     onClick={removeCoupon}
-                    className="text-[#0B5D3B] font-bold text-xs hover:underline"
+                    className="text-[#7A1010] font-bold text-xs hover:underline"
                   >
                     Remove
                   </button>
@@ -238,7 +238,7 @@ export const CartDrawer: React.FC = () => {
                 </form>
               )}
               {couponError && (
-                <p className="text-[11px] text-[#0B5D3B] mt-1">{couponError}</p>
+                <p className="text-[11px] text-[#7A1010] mt-1">{couponError}</p>
               )}
             </div>
 
@@ -250,7 +250,7 @@ export const CartDrawer: React.FC = () => {
               </div>
 
               {discountAmount > 0 && (
-                <div className="flex justify-between text-[#0B5D3B] font-semibold">
+                <div className="flex justify-between text-[#7A1010] font-semibold">
                   <span>Coupon Savings</span>
                   <span>- {formatINR(discountAmount)}</span>
                 </div>

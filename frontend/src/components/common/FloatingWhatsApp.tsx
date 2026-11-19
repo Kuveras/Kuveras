@@ -8,7 +8,7 @@ export const FloatingWhatsApp: React.FC = () => {
 
   return (
     <div className="fixed bottom-6 right-6 z-40 flex items-center group">
-      <span className="hidden sm:inline-block mr-3 bg-[#06452F] text-[#FFFDF8] text-xs px-3 py-1.5 shadow-md border border-[#E7C982]/40 tracking-wider font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
+      <span className="hidden sm:inline-block mr-3 bg-[#540808] text-[#FFFDF8] text-xs px-3 py-1.5 shadow-md border border-[#E7C982]/40 tracking-wider font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
         Rent & Buy via WhatsApp
       </span>
       <a

@@ -69,7 +69,7 @@ export const CartPage: React.FC = () => {
                   <div className="flex items-center gap-2 text-[#111111]">
                     <Truck className="w-4 h-4 text-[#C5A059]" />
                     <span>
-                      Add <strong className="text-[#0B5D3B]">{formatINR(amountNeededForFreeShipping)}</strong> more to unlock <strong>FREE Express Shipping</strong>
+                      Add <strong className="text-[#7A1010]">{formatINR(amountNeededForFreeShipping)}</strong> more to unlock <strong>FREE Express Shipping</strong>
                     </span>
                   </div>
                 ) : (
@@ -95,7 +95,7 @@ export const CartPage: React.FC = () => {
                         <span className="text-sm font-bold text-[#111111]">
                           {item.isRental ? (
                             <span className="flex items-center gap-1.5 flex-wrap">
-                              <span className="text-[10px] font-bold text-[#0B5D3B] bg-[#0B5D3B]/10 px-1.5 py-0.5 tracking-wider">Rental (30%)</span>
+                              <span className="text-[10px] font-bold text-[#7A1010] bg-[#7A1010]/10 px-1.5 py-0.5 tracking-wider">Rental (30%)</span>
                               <span>{formatINR(item.product.rentalPrice)}</span>
                             </span>
                           ) : (
@@ -131,7 +131,7 @@ export const CartPage: React.FC = () => {
 
                       <button
                         onClick={() => removeFromCart(item.product.id)}
-                        className="text-[#7A736E] hover:text-[#0B5D3B]"
+                        className="text-[#7A736E] hover:text-[#7A1010]"
                       >
                         <Trash2 className="w-4 h-4" />
                       </button>
@@ -155,7 +155,7 @@ export const CartPage: React.FC = () => {
                       <Tag className="w-4 h-4 text-[#D4AF37]" />
                       <span>Code <strong>{activeCoupon.code}</strong> Applied</span>
                     </div>
-                    <button onClick={removeCoupon} className="text-[#0B5D3B] font-bold">
+                    <button onClick={removeCoupon} className="text-[#7A1010] font-bold">
                       Remove
                     </button>
                   </div>
@@ -185,7 +185,7 @@ export const CartPage: React.FC = () => {
                   <span className="text-[#111111] font-semibold">{formatINR(subtotal)}</span>
                 </div>
                 {discountAmount > 0 && (
-                  <div className="flex justify-between text-[#0B5D3B] font-semibold">
+                  <div className="flex justify-between text-[#7A1010] font-semibold">
                     <span>Discount</span>
                     <span>- {formatINR(discountAmount)}</span>
                   </div>

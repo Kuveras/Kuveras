@@ -32,7 +32,7 @@ export const WishlistDrawer: React.FC = () => {
         {/* Header */}
         <div className="p-4 sm:p-5 border-b border-[#E8E2D9] flex items-center justify-between bg-[#FFFDF9]">
           <div className="flex items-center gap-2">
-            <Heart className="w-5 h-5 text-[#0B5D3B] fill-[#0B5D3B]" />
+            <Heart className="w-5 h-5 text-[#7A1010] fill-[#7A1010]" />
             <h3 className="font-serif text-xl font-bold uppercase tracking-wider text-[#111111]">
               Wishlist ({wishlist.length})
             </h3>
@@ -50,8 +50,8 @@ export const WishlistDrawer: React.FC = () => {
         <div className="flex-1 overflow-y-auto p-4 sm:p-5 divide-y divide-[#E8E2D9]">
           {wishlist.length === 0 ? (
             <div className="h-full flex flex-col items-center justify-center text-center p-6 space-y-4">
-              <div className="w-16 h-16 rounded-full bg-[#FFFDF9] border border-[#E8E2D9] flex items-center justify-center text-[#0B5D3B]">
-                <Heart className="w-8 h-8 text-[#0B5D3B]" />
+              <div className="w-16 h-16 rounded-full bg-[#FFFDF9] border border-[#E8E2D9] flex items-center justify-center text-[#7A1010]">
+                <Heart className="w-8 h-8 text-[#7A1010]" />
               </div>
               <p className="font-serif text-xl text-[#111111] font-semibold">Your Wishlist is Empty</p>
               <p className="text-xs text-[#7A736E] max-w-xs">
@@ -81,7 +81,7 @@ export const WishlistDrawer: React.FC = () => {
                       </h4>
                       <button
                         onClick={() => removeFromWishlist(product.id)}
-                        className="text-[#7A736E] hover:text-[#0B5D3B] p-1"
+                        className="text-[#7A736E] hover:text-[#7A1010] p-1"
                         aria-label="Remove from wishlist"
                       >
                         <Trash2 className="w-4 h-4" />
@@ -133,7 +133,7 @@ export const WishlistDrawer: React.FC = () => {
           <div className="p-4 bg-[#FFFDF9] border-t border-[#E8E2D9]">
             <button
               onClick={clearWishlist}
-              className="w-full py-2.5 border border-[#0B5D3B] text-[#0B5D3B] text-xs font-semibold uppercase tracking-wider hover:bg-[#0B5D3B] hover:text-white transition-colors"
+              className="w-full py-2.5 border border-[#7A1010] text-[#7A1010] text-xs font-semibold uppercase tracking-wider hover:bg-[#7A1010] hover:text-white transition-colors"
             >
               Clear Entire Wishlist
             </button>

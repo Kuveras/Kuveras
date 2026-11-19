@@ -62,14 +62,14 @@ export const CustomerGallerySection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#F0F8F4] border border-[#0B5D3B]/20 text-[#0B5D3B] text-[11px] font-sans font-bold uppercase tracking-[0.25em] rounded-full">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#FAF0F0] border border-[#7A1010]/20 text-[#7A1010] text-[11px] font-sans font-bold uppercase tracking-[0.25em] rounded-full">
             <Heart className="w-3.5 h-3.5 text-[#C89B3C] fill-[#C89B3C]" />
             <span>Real Kuveras Brides &amp; Patrons</span>
           </div>
 
           <h2 className="font-serif text-3xl sm:text-5xl text-[#171512] font-normal leading-tight">
             Moments That Become <br />
-            <span className="italic text-[#0B5D3B]">Cherished Memories</span>
+            <span className="italic text-[#7A1010]">Cherished Memories</span>
           </h2>
 
           <p className="font-sans text-xs sm:text-sm text-[#6F675E] leading-relaxed max-w-2xl mx-auto">
@@ -91,7 +91,7 @@ export const CustomerGallerySection: React.FC = () => {
                   alt={moment.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute top-3 left-3 bg-[#0B5D3B] text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 shadow-sm">
+                <div className="absolute top-3 left-3 bg-[#7A1010] text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 shadow-sm">
                   {moment.event}
                 </div>
                 <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-xs text-white text-[10px] font-semibold px-2 py-0.5">
@@ -116,7 +116,7 @@ export const CustomerGallerySection: React.FC = () => {
         </div>
 
         {/* Share your look banner */}
-        <div className="bg-[#F0F8F4] border border-[#0B5D3B]/20 p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <div className="bg-[#FAF0F0] border border-[#7A1010]/20 p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div className="space-y-1">
             <h4 className="font-serif text-xl font-bold text-[#171512]">
               Were You a Kuveras Bride or Celebrant?
@@ -129,7 +129,7 @@ export const CustomerGallerySection: React.FC = () => {
             href="https://wa.me/919910204680?text=Hi%20Kuveras!%20I%20would%20like%20to%20share%20my%20photos%20wearing%20Kuveras%20jewellery."
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#0B5D3B] hover:bg-[#06452F] text-white text-xs font-bold uppercase tracking-widest transition-colors shadow-sm shrink-0"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#7A1010] hover:bg-[#540808] text-white text-xs font-bold uppercase tracking-widest transition-colors shadow-sm shrink-0"
           >
             <MessageCircle className="w-4 h-4 text-[#E7C982]" />
             <span>Submit Photos on WhatsApp</span>

@@ -153,7 +153,7 @@ export const ProductDetailPage: React.FC = () => {
       title: 'Product Information & Jewellery Craftsmanship',
       content: (
         <div className="space-y-4 font-sans text-xs sm:text-sm text-[#6F675E] leading-relaxed">
-          <p className="text-[#0B5D3B] font-serif text-base font-semibold tracking-wide">
+          <p className="text-[#7A1010] font-serif text-base font-semibold tracking-wide">
             "KUVERAS — Jewellery that Carries a Legacy"
           </p>
           <p>{product.description}</p>
@@ -171,7 +171,7 @@ export const ProductDetailPage: React.FC = () => {
             ))}
           </div>
 
-          <div className="p-3 bg-[#F0F8F4] border border-[#0B5D3B]/20 text-xs text-[#0B5D3B] space-y-1">
+          <div className="p-3 bg-[#FAF0F0] border border-[#7A1010]/20 text-xs text-[#7A1010] space-y-1">
             <p className="font-semibold">Authenticity Guarantee:</p>
             <p className="text-[#171512]">
               Handcrafted in India with premium alloys, finished in authentic 22K Gold Tone Polish, AAA Cubic Zirconia crystals, and uncut Kundan/Polki work.
@@ -231,17 +231,17 @@ export const ProductDetailPage: React.FC = () => {
 
         {/* Breadcrumbs */}
         <div className="flex items-center gap-2 text-xs text-[#6F675E] mb-6 overflow-x-auto whitespace-nowrap">
-          <Link to="/" className="hover:text-[#0B5D3B]">
+          <Link to="/" className="hover:text-[#7A1010]">
             Home
           </Link>
           <ChevronRight className="w-3.5 h-3.5" />
-          <Link to="/shop" className="hover:text-[#0B5D3B]">
+          <Link to="/shop" className="hover:text-[#7A1010]">
             Shop
           </Link>
           <ChevronRight className="w-3.5 h-3.5" />
           <Link
             to={`/shop?category=${encodeURIComponent(product.category)}`}
-            className="hover:text-[#0B5D3B]"
+            className="hover:text-[#7A1010]"
           >
             {product.category}
           </Link>
@@ -281,11 +281,11 @@ export const ProductDetailPage: React.FC = () => {
               {/* Discount / Bestseller Badge */}
               <div className="absolute top-4 left-4 flex flex-col gap-1 z-10 pointer-events-none">
                 {product.discount > 0 && (
-                  <span className="bg-[#0B5D3B] text-white text-xs font-bold uppercase px-3 py-1 tracking-wider shadow-xs">
+                  <span className="bg-[#7A1010] text-white text-xs font-bold uppercase px-3 py-1 tracking-wider shadow-xs">
                     {product.discount}% OFF
                   </span>
                 )}
-                <span className="bg-[#FAF7F0] text-[#0B5D3B] border border-[#0B5D3B]/30 text-[10px] font-bold uppercase px-2.5 py-0.5 tracking-wider">
+                <span className="bg-[#FAF7F0] text-[#7A1010] border border-[#7A1010]/30 text-[10px] font-bold uppercase px-2.5 py-0.5 tracking-wider">
                   Rent &amp; Buy Available
                 </span>
               </div>
@@ -312,7 +312,7 @@ export const ProductDetailPage: React.FC = () => {
                       e.stopPropagation();
                       goPrev();
                     }}
-                    className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/90 hover:bg-[#0B5D3B] hover:text-white border border-[#E8E1D8] flex items-center justify-center shadow-md z-10 opacity-0 group-hover:opacity-100 transition-all duration-200 cursor-pointer"
+                    className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/90 hover:bg-[#7A1010] hover:text-white border border-[#E8E1D8] flex items-center justify-center shadow-md z-10 opacity-0 group-hover:opacity-100 transition-all duration-200 cursor-pointer"
                     aria-label="Previous image"
                   >
                     <ChevronLeft className="w-4 h-4" />
@@ -322,7 +322,7 @@ export const ProductDetailPage: React.FC = () => {
                       e.stopPropagation();
                       goNext();
                     }}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/90 hover:bg-[#0B5D3B] hover:text-white border border-[#E8E1D8] flex items-center justify-center shadow-md z-10 opacity-0 group-hover:opacity-100 transition-all duration-200 cursor-pointer"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/90 hover:bg-[#7A1010] hover:text-white border border-[#E8E1D8] flex items-center justify-center shadow-md z-10 opacity-0 group-hover:opacity-100 transition-all duration-200 cursor-pointer"
                     aria-label="Next image"
                   >
                     <ChevronRight className="w-4 h-4" />
@@ -340,14 +340,14 @@ export const ProductDetailPage: React.FC = () => {
                     onClick={() => setSelectedImageIndex(idx)}
                     className={`relative w-[70px] h-[86px] border-2 overflow-hidden shrink-0 transition-all duration-200 cursor-pointer ${
                       selectedImageIndex === idx
-                        ? 'border-[#0B5D3B] ring-1 ring-[#0B5D3B]'
+                        ? 'border-[#7A1010] ring-1 ring-[#7A1010]'
                         : 'border-[#E8E1D8] opacity-60 hover:opacity-100 hover:border-[#C89B3C]'
                     }`}
                     aria-label={`View angle ${idx + 1}`}
                   >
                     <SafeImage src={img} alt="" className="w-full h-full object-cover" />
                     {selectedImageIndex === idx && (
-                      <div className="absolute bottom-0 inset-x-0 h-1 bg-[#0B5D3B]" />
+                      <div className="absolute bottom-0 inset-x-0 h-1 bg-[#7A1010]" />
                     )}
                   </button>
                 ))}
@@ -365,7 +365,7 @@ export const ProductDetailPage: React.FC = () => {
                 </span>
                 <button
                   onClick={handleShare}
-                  className="text-xs text-[#6F675E] hover:text-[#0B5D3B] flex items-center gap-1 cursor-pointer"
+                  className="text-xs text-[#6F675E] hover:text-[#7A1010] flex items-center gap-1 cursor-pointer"
                   title="Share product"
                 >
                   <Share2 className="w-3.5 h-3.5" /> Share
@@ -378,14 +378,14 @@ export const ProductDetailPage: React.FC = () => {
               </h1>
 
               {/* Slogan Identity */}
-              <p className="text-xs font-serif italic text-[#0B5D3B] mb-3">
+              <p className="text-xs font-serif italic text-[#7A1010] mb-3">
                 "Crafted for Eternal Elegance • Jewellery that Carries a Legacy"
               </p>
 
               {/* Rating & Stock */}
               <div className="flex items-center gap-3 mb-4 border-b border-[#F3EEE6] pb-3">
                 <StarRating rating={product.rating} count={product.reviewCount} size="md" />
-                <span className="text-xs text-[#0B5D3B] font-semibold flex items-center gap-1">
+                <span className="text-xs text-[#7A1010] font-semibold flex items-center gap-1">
                   <CheckCircle2 className="w-3.5 h-3.5" /> In Stock ({product.stock} sets left)
                 </span>
               </div>
@@ -422,16 +422,16 @@ export const ProductDetailPage: React.FC = () => {
                     onClick={() => setShoppingMode('buy')}
                     className={`p-3.5 text-left border-2 transition-all cursor-pointer ${
                       shoppingMode === 'buy'
-                        ? 'border-[#0B5D3B] bg-[#F0F8F4]/60 shadow-xs'
+                        ? 'border-[#7A1010] bg-[#FAF0F0]/60 shadow-xs'
                         : 'border-[#E8E1D8] bg-[#FFFFFF] hover:border-[#C89B3C]'
                     }`}
                   >
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#0B5D3B]">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#7A1010]">
                         Option 1: Buy to Own
                       </span>
                       {shoppingMode === 'buy' && (
-                        <span className="w-2 h-2 rounded-full bg-[#0B5D3B]" />
+                        <span className="w-2 h-2 rounded-full bg-[#7A1010]" />
                       )}
                     </div>
                     <div className="font-sans text-xl font-bold text-[#171512]">
@@ -442,7 +442,7 @@ export const ProductDetailPage: React.FC = () => {
                         MRP {formatINR(product.price)}
                       </div>
                     )}
-                    <span className="text-[10px] text-[#0B5D3B] font-semibold block mt-1">
+                    <span className="text-[10px] text-[#7A1010] font-semibold block mt-1">
                       Heirloom to keep forever
                     </span>
                   </button>
@@ -453,19 +453,19 @@ export const ProductDetailPage: React.FC = () => {
                     onClick={() => setShoppingMode('rent')}
                     className={`p-3.5 text-left border-2 transition-all cursor-pointer ${
                       shoppingMode === 'rent'
-                        ? 'border-[#0B5D3B] bg-[#FAF7F0] shadow-xs'
+                        ? 'border-[#7A1010] bg-[#FAF7F0] shadow-xs'
                         : 'border-[#E8E1D8] bg-[#FFFFFF] hover:border-[#C89B3C]'
                     }`}
                   >
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#0B5D3B]">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#7A1010]">
                         Option 2: Rent (30%)
                       </span>
                       {shoppingMode === 'rent' && (
-                        <span className="w-2 h-2 rounded-full bg-[#0B5D3B]" />
+                        <span className="w-2 h-2 rounded-full bg-[#7A1010]" />
                       )}
                     </div>
-                    <div className="font-sans text-xl font-bold text-[#0B5D3B]">
+                    <div className="font-sans text-xl font-bold text-[#7A1010]">
                       {formatINR(product.rentalPrice)}
                     </div>
                     <div className="text-[10px] text-[#6F675E]">
@@ -508,7 +508,7 @@ export const ProductDetailPage: React.FC = () => {
                     <div className="flex items-center gap-3">
                       <button
                         onClick={handleAddToCart}
-                        className="flex-1 py-3.5 bg-[#0B5D3B] hover:bg-[#06452F] text-white text-xs font-bold uppercase tracking-widest transition-colors flex items-center justify-center gap-2 shadow-md cursor-pointer"
+                        className="flex-1 py-3.5 bg-[#7A1010] hover:bg-[#540808] text-white text-xs font-bold uppercase tracking-widest transition-colors flex items-center justify-center gap-2 shadow-md cursor-pointer"
                       >
                         <ShoppingBag className="w-4 h-4 text-[#E7C982]" />
                         <span>Add To Bag</span>
@@ -517,12 +517,12 @@ export const ProductDetailPage: React.FC = () => {
                         onClick={handleWishlistToggle}
                         className={`p-3.5 border transition-colors cursor-pointer ${
                           isWishlisted
-                            ? 'border-[#0B5D3B] bg-[#F0F8F4] text-[#0B5D3B]'
-                            : 'border-[#E8E1D8] hover:border-[#0B5D3B] text-[#171512]'
+                            ? 'border-[#7A1010] bg-[#FAF0F0] text-[#7A1010]'
+                            : 'border-[#E8E1D8] hover:border-[#7A1010] text-[#171512]'
                         }`}
                         title="Save to Wishlist"
                       >
-                        <Heart className={`w-5 h-5 ${isWishlisted ? 'fill-[#0B5D3B]' : ''}`} />
+                        <Heart className={`w-5 h-5 ${isWishlisted ? 'fill-[#7A1010]' : ''}`} />
                       </button>
                     </div>
 
@@ -535,9 +535,9 @@ export const ProductDetailPage: React.FC = () => {
                   </div>
                 </div>
               ) : (
-                <div className="space-y-4 bg-[#FAF7F0] p-4 border border-[#0B5D3B]/30">
+                <div className="space-y-4 bg-[#FAF7F0] p-4 border border-[#7A1010]/30">
                   <div className="space-y-1.5 text-xs text-[#6F675E]">
-                    <div className="flex items-center gap-2 text-[#0B5D3B] font-semibold">
+                    <div className="flex items-center gap-2 text-[#7A1010] font-semibold">
                       <Calendar className="w-4 h-4" />
                       <span>3-Day Rental: Day 1 Delivery · Day 2 Occasion · Day 3 Pickup</span>
                     </div>
@@ -570,7 +570,7 @@ export const ProductDetailPage: React.FC = () => {
                   <span>Doorstep Delivery Across Delhi NCR &amp; Insured Pan-India</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-[#0B5D3B]" />
+                  <ShieldCheck className="w-4 h-4 text-[#7A1010]" />
                   <span>100% UV-C Sterilization &amp; Authenticity Guaranteed</span>
                 </div>
               </div>
@@ -579,7 +579,7 @@ export const ProductDetailPage: React.FC = () => {
                 <a
                   href="#product-information"
                   onClick={handleScrollToProductInfo}
-                  className="text-xs font-semibold text-[#0B5D3B] hover:text-[#C89B3C] underline tracking-wider cursor-pointer"
+                  className="text-xs font-semibold text-[#7A1010] hover:text-[#C89B3C] underline tracking-wider cursor-pointer"
                 >
                   View Complete Specifications &amp; Rental Terms ↓
                 </a>
@@ -597,7 +597,7 @@ export const ProductDetailPage: React.FC = () => {
             <h2 className="font-serif text-2xl font-normal text-[#171512]">
               Product Details &amp; Rental Policies
             </h2>
-            <span className="text-xs font-sans text-[#0B5D3B] font-semibold uppercase tracking-wider">
+            <span className="text-xs font-sans text-[#7A1010] font-semibold uppercase tracking-wider">
               Jewellery that Carries a Legacy
             </span>
           </div>
@@ -618,7 +618,7 @@ export const ProductDetailPage: React.FC = () => {
               </div>
               <Link
                 to={`/shop?category=${encodeURIComponent(product.category)}`}
-                className="text-xs font-bold uppercase tracking-wider text-[#0B5D3B] hover:underline"
+                className="text-xs font-bold uppercase tracking-wider text-[#7A1010] hover:underline"
               >
                 View More {product.category}
               </Link>

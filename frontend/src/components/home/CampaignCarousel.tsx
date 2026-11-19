@@ -112,7 +112,7 @@ export const CampaignCarousel: React.FC = () => {
               type="button"
               onClick={handlePrev}
               aria-label="Previous Slide"
-              className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-[#0A0D0B]/60 hover:bg-[#0B5D3B] text-[#E7C982] border border-[#E7C982]/50 backdrop-blur-md flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-xl focus:outline-none cursor-pointer"
+              className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-[#0A0D0B]/60 hover:bg-[#7A1010] text-[#E7C982] border border-[#E7C982]/50 backdrop-blur-md flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-xl focus:outline-none cursor-pointer"
             >
               <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
@@ -122,7 +122,7 @@ export const CampaignCarousel: React.FC = () => {
               type="button"
               onClick={handleNext}
               aria-label="Next Slide"
-              className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-[#0A0D0B]/60 hover:bg-[#0B5D3B] text-[#E7C982] border border-[#E7C982]/50 backdrop-blur-md flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-xl focus:outline-none cursor-pointer"
+              className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-[#0A0D0B]/60 hover:bg-[#7A1010] text-[#E7C982] border border-[#E7C982]/50 backdrop-blur-md flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-xl focus:outline-none cursor-pointer"
             >
               <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
