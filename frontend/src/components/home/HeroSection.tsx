@@ -1,74 +1,83 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, Pause, Play, ShieldCheck, Repeat, Sparkles } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight, Sparkles, ShieldCheck, Repeat, ShoppingBag } from 'lucide-react';
 
-export interface HeroSlide {
+interface HeroSlide {
   id: string;
   eyebrow: string;
   headline: string;
   tagline: string;
-  productName: string;
-  image: string;
-  link: string;
-  alt: string;
-  themeColor: string;
+  description: string;
+  rentCtaText: string;
+  rentCtaLink: string;
+  buyCtaText: string;
+  buyCtaLink: string;
+  imageDesktop: string;
+  imageMobile: string;
+  position: 'left' | 'right';
+  badge?: string;
 }
 
-export const HERO_SLIDES: HeroSlide[] = [
+const HERO_SLIDES: HeroSlide[] = [
   {
-    id: 'smrutiya-kundan-haar',
-    eyebrow: 'THE BRIDAL EDIT',
-    headline: 'A legacy, made yours.',
-    tagline: 'Discover the beauty of Kuveras Kundan',
-    productName: 'Smrutiya Kundan Haar',
-    image: '/banners/banner-1-smrutiya-kundan.jpg',
-    link: '/product/smrutiya-kundan-haar',
-    alt: 'KUVERAS The Bridal Edit - Smrutiya Kundan Haar - A legacy, made yours.',
-    themeColor: '#540808',
+    id: 'bridal-heritage',
+    eyebrow: 'ROYAL BRIDAL SUITE',
+    headline: 'Crafted for\nEternal Elegance',
+    tagline: 'Jewellery that Carries a Legacy',
+    description: 'Adorn breathtaking Kundan & Polki bridal suites for your wedding day — available to Rent at 30% or Buy to cherish forever.',
+    rentCtaText: 'RENT FOR BRIDAL',
+    rentCtaLink: '/shop?category=Bridal',
+    buyCtaText: 'BUY & OWN HEIRLOOM',
+    buyCtaLink: '/shop?category=Bridal',
+    imageDesktop: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=2000&q=90',
+    imageMobile: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1000&q=90',
+    position: 'left',
+    badge: '3-Day Rental Available',
   },
   {
-    id: 'amritavasini',
-    eyebrow: 'THE SIGNATURE SELECTION',
-    headline: 'Heritage, in every layer.',
-    tagline: 'Meet Amritavasini. Cascading gold tones and rich detail',
-    productName: 'Amritavasini',
-    image: '/banners/banner-2-amritavasini.jpg',
-    link: '/product/amritavasini',
-    alt: 'KUVERAS The Signature Selection - Amritavasini Kundan Necklace - Heritage in every layer.',
-    themeColor: '#540808',
+    id: 'polki-legacy',
+    eyebrow: 'MUGHAL KUNDAN & POLKI',
+    headline: 'Jewellery that\nCarries a Legacy',
+    tagline: 'Where Heritage Meets Royalty',
+    description: 'Intricately set uncut gemstones and royal meenakari work crafted for memories that transcend generations.',
+    rentCtaText: 'EXPLORE RENTAL',
+    rentCtaLink: '/shop?category=Kundan',
+    buyCtaText: 'SHOP THE COLLECTION',
+    buyCtaLink: '/shop?category=Kundan',
+    imageDesktop: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=2000&q=90',
+    imageMobile: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1000&q=90',
+    position: 'right',
+    badge: 'Authentic 22K Polish',
   },
   {
-    id: 'nilaya-chandrika',
-    eyebrow: "AFTER DARK' IN KUVERAS",
-    headline: 'Own the evening.',
-    tagline: 'An expressive silhouette. Make an entrance in Nilaya Chandrika',
-    productName: 'Nilaya Chandrika Set',
-    image: '/banners/banner-3-nilaya-chandrika.jpg',
-    link: '/product/nilaya-chandrika-set',
-    alt: 'KUVERAS After Dark in Kuveras - Nilaya Chandrika Cubic Zirconia Set - Own the evening.',
-    themeColor: '#081814',
+    id: 'rajwadi-grandeur',
+    eyebrow: 'HERITAGE RAJWADI',
+    headline: 'Majesty,\nReimagined',
+    tagline: 'Crafted for Eternal Elegance',
+    description: 'Celebrate the royal spirit with antique-gold finishes and commanding silhouettes suited for modern gala evenings.',
+    rentCtaText: 'RENT THIS LOOK',
+    rentCtaLink: '/shop?category=Rajwadi',
+    buyCtaText: 'BUY RAJWADI',
+    buyCtaLink: '/shop?category=Rajwadi',
+    imageDesktop: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=2000&q=90',
+    imageMobile: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1000&q=90',
+    position: 'left',
+    badge: 'Doorstep Delivery Delhi NCR',
   },
   {
-    id: 'charulata-crimson',
-    eyebrow: 'FOR SOMEONE UNFORGETTABLE',
-    headline: 'Some gifts say everything.',
-    tagline: 'A little colour. A beautiful memory. Give her Charulata Crimson',
-    productName: 'Charulata Crimson Necklace',
-    image: '/banners/banner-4-charulata-crimson.jpg',
-    link: '/product/charulata-crimson-necklace',
-    alt: 'KUVERAS The Gifting Edit - Charulata Crimson Necklace - Some gifts say everything.',
-    themeColor: '#540808',
-  },
-  {
-    id: 'keyura-mint',
-    eyebrow: 'A KUVERAS BESTSELLER',
-    headline: 'Your next signature.',
-    tagline: 'Meet Keyura Mint. Refined sparkle, fresh colour and considered detail',
-    productName: 'Keyura Mint Necklace',
-    image: '/banners/banner-5-keyura-mint.jpg',
-    link: '/product/keyura-mint-necklace',
-    alt: 'KUVERAS Bestseller - Keyura Mint Cubic Zirconia Necklace - Your next signature.',
-    themeColor: '#540808',
+    id: 'temple-divinity',
+    eyebrow: 'SACRED TEMPLE ART',
+    headline: 'Divine Artistry,\nSacred Blessings',
+    tagline: 'Lord Kubera Inspired Prosperity',
+    description: 'Imbued with sacred motifs of wealth and protection, our Temple collection crowns every auspicious moment.',
+    rentCtaText: 'RENT TEMPLE SETS',
+    rentCtaLink: '/shop?category=Temple',
+    buyCtaText: 'BUY COLLECTION',
+    buyCtaLink: '/shop?category=Temple',
+    imageDesktop: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=2000&q=90',
+    imageMobile: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1000&q=90',
+    position: 'right',
+    badge: 'Sacred Vedic Motifs',
   },
 ];
 
@@ -78,12 +87,12 @@ export const HeroSection: React.FC = () => {
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Autoplay timer: advances slide every 5.5 seconds
+  // Autoplay
   useEffect(() => {
     if (isPaused) return;
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 5500);
+    }, 6000);
     return () => clearInterval(timer);
   }, [isPaused]);
 
@@ -111,142 +120,141 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      aria-label="Kuveras Luxury Jewellery Campaign Showcase"
+      aria-label="Kuveras Luxury Jewellery Showcase"
       tabIndex={0}
       onKeyDown={handleKeyDown}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
-      style={{ backgroundColor: currentSlide.themeColor }}
-      className="relative w-full overflow-hidden select-none outline-none border-b border-[#E8E1D8] transition-colors duration-700 ease-in-out"
+      className="relative w-full bg-[#FFFDF8] overflow-hidden select-none outline-none border-b border-[#E8E1D8]"
     >
-      {/* ─── Ambient Glow Backdrop for High-Res Displays ─── */}
-      <div
-        className="absolute inset-0 opacity-40 blur-3xl transition-all duration-1000 pointer-events-none"
-        style={{
-          background: `radial-gradient(circle at 50% 50%, ${currentSlide.themeColor} 0%, #000000 100%)`,
-        }}
-      />
-
-      {/* ─── Carousel Stage (Constrained to max width with exact 1024:506 banner aspect ratio) ─── */}
-      <div className="relative max-w-[1520px] mx-auto w-full">
-        <div
-          className="relative w-full overflow-hidden"
-          style={{ aspectRatio: '1024 / 506' }}
-        >
-          {HERO_SLIDES.map((slide, idx) => {
-            const isActive = idx === currentIndex;
-            return (
-              <div
-                key={slide.id}
-                className={`absolute inset-0 w-full h-full transition-all duration-700 ease-in-out ${
-                  isActive
-                    ? 'opacity-100 translate-x-0 z-10 pointer-events-auto'
-                    : 'opacity-0 translate-x-4 pointer-events-none z-0'
-                }`}
-              >
-                <Link
-                  to={slide.link}
-                  className="block w-full h-full relative cursor-pointer group"
-                  aria-label={slide.alt}
-                >
-                  <img
-                    src={slide.image}
-                    alt={slide.alt}
-                    width={1024}
-                    height={506}
-                    loading={idx === 0 ? 'eager' : 'lazy'}
-                    fetchPriority={idx === 0 ? 'high' : 'auto'}
-                    decoding="async"
-                    className="w-full h-full object-cover sm:object-contain object-center block group-hover:scale-[1.008] transition-transform duration-700 ease-out"
-                  />
-                  {/* Subtle luxury edge vignette */}
-                  <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-white/10" />
-                </Link>
-              </div>
-            );
-          })}
-
-          {/* ─── Left Arrow Control ─── */}
-          <button
-            type="button"
-            onClick={(e) => {
-              e.preventDefault();
-              prevSlide();
-            }}
-            aria-label="Previous slide"
-            className="absolute top-1/2 left-3 sm:left-6 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full border border-[#E7C982]/50 bg-[#0A0D0B]/60 text-[#E7C982] hover:bg-[#7A1010] hover:text-white hover:border-[#7A1010] backdrop-blur-md transition-all duration-300 flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 cursor-pointer focus:outline-none"
-          >
-            <ChevronLeft className="w-5 h-5 stroke-[2]" />
-          </button>
-
-          {/* ─── Right Arrow Control ─── */}
-          <button
-            type="button"
-            onClick={(e) => {
-              e.preventDefault();
-              nextSlide();
-            }}
-            aria-label="Next slide"
-            className="absolute top-1/2 right-3 sm:right-6 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full border border-[#E7C982]/50 bg-[#0A0D0B]/60 text-[#E7C982] hover:bg-[#7A1010] hover:text-white hover:border-[#7A1010] backdrop-blur-md transition-all duration-300 flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 cursor-pointer focus:outline-none"
-          >
-            <ChevronRight className="w-5 h-5 stroke-[2]" />
-          </button>
-
-          {/* ─── Floating Indicator Pill & Slide Counter ─── */}
-          <div className="absolute bottom-3 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5 sm:gap-3 bg-[#0A0D0B]/75 backdrop-blur-md px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full border border-[#E7C982]/40 shadow-2xl">
-            {/* Play / Pause Toggle */}
-            <button
-              type="button"
-              onClick={() => setIsPaused(!isPaused)}
-              aria-label={isPaused ? 'Resume autoplay' : 'Pause autoplay'}
-              className="text-[#E7C982] hover:text-white transition-colors p-0.5 focus:outline-none"
+      {/* ─── Hero Frame ─── */}
+      <div className="relative w-full h-[560px] sm:h-[620px] lg:h-[680px] overflow-hidden">
+        {HERO_SLIDES.map((slide, idx) => {
+          const isActive = idx === currentIndex;
+          return (
+            <div
+              key={slide.id}
+              className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-out ${
+                isActive ? 'opacity-100 translate-x-0 z-10 pointer-events-auto' : 'opacity-0 translate-x-6 pointer-events-none z-0'
+              }`}
             >
-              {isPaused ? <Play className="w-3.5 h-3.5" /> : <Pause className="w-3.5 h-3.5" />}
-            </button>
-
-            <div className="h-3 w-px bg-[#E7C982]/30" />
-
-            {/* Slide Dots */}
-            <div className="flex items-center gap-1.5 sm:gap-2">
-              {HERO_SLIDES.map((slide, idx) => (
-                <button
-                  key={slide.id}
-                  onClick={() => setCurrentIndex(idx)}
-                  aria-label={`Go to slide ${idx + 1}: ${slide.productName}`}
-                  className={`h-2 rounded-full transition-all duration-300 focus:outline-none ${
-                    idx === currentIndex
-                      ? 'w-6 sm:w-8 bg-[#E7C982] shadow-sm'
-                      : 'w-2 bg-white/40 hover:bg-white/70'
-                  }`}
+              {/* Background Photography */}
+              <picture className="w-full h-full block">
+                <source media="(max-width: 767px)" srcSet={slide.imageMobile} />
+                <img
+                  src={slide.imageDesktop}
+                  alt={slide.headline.replace('\n', ' ')}
+                  loading={idx === 0 ? 'eager' : 'lazy'}
+                  className="w-full h-full object-cover object-center transform scale-[1.02] transition-transform duration-1000 ease-out"
                 />
-              ))}
-            </div>
+              </picture>
 
-            <div className="h-3 w-px bg-[#E7C982]/30 hidden sm:block" />
+              {/* Editorial Warm Ivory & Blush Gradient Overlay */}
+              <div
+                className={`absolute inset-0 hidden lg:block ${
+                  slide.position === 'left'
+                    ? 'bg-gradient-to-r from-[#FFFDF8] via-[#FFFDF8]/85 to-transparent w-[62%]'
+                    : 'bg-gradient-to-l from-[#FFFDF8] via-[#FFFDF8]/85 to-transparent left-auto right-0 w-[62%]'
+                }`}
+              />
 
-            {/* Counter */}
-            <div className="hidden sm:flex items-center text-[11px] font-sans font-semibold tracking-wider text-[#E7C982]">
-              <span>0{currentIndex + 1}</span>
-              <span className="text-white/40 mx-1">/</span>
-              <span className="text-white/60">0{HERO_SLIDES.length}</span>
+              {/* Mobile Gradient Overlay */}
+              <div className="absolute inset-0 lg:hidden bg-gradient-to-t from-[#FFFDF8] via-[#FFFDF8]/90 to-black/20" />
+
+              {/* Content Box */}
+              <div className="relative max-w-[1360px] mx-auto h-full px-6 sm:px-10 lg:px-16 flex items-end lg:items-center pb-12 lg:pb-0">
+                <div
+                  className={`w-full max-w-xl text-[#171512] space-y-4 ${
+                    slide.position === 'right' ? 'ml-auto text-left' : 'mr-auto text-left'
+                  }`}
+                >
+                  {/* Brand Identity Eyebrow */}
+                  <div className="flex items-center gap-2">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#FAF0F0] border border-[#7A1010]/30 text-[#7A1010] text-[11px] font-sans font-bold tracking-[0.2em] uppercase rounded-full">
+                      <Sparkles className="w-3 h-3 text-[#C89B3C]" />
+                      {slide.eyebrow}
+                    </span>
+                    {slide.badge && (
+                      <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 bg-[#FAF7F0] border border-[#C89B3C]/40 text-[#9A7019] text-[10px] font-semibold uppercase tracking-wider">
+                        <ShieldCheck className="w-3 h-3 text-[#7A1010]" />
+                        {slide.badge}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Headline */}
+                  <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-[#171512] font-normal leading-[1.1] tracking-tight whitespace-pre-line">
+                    {slide.headline}
+                  </h1>
+
+                  {/* Slogan Subtitle */}
+                  <div className="text-xs sm:text-sm font-serif italic text-[#7A1010] tracking-wide font-medium flex items-center gap-2">
+                    <span className="w-8 h-px bg-[#C89B3C]" />
+                    <span>"{slide.tagline}"</span>
+                  </div>
+
+                  {/* Description */}
+                  <p className="font-sans text-xs sm:text-sm md:text-base text-[#6F675E] leading-relaxed max-w-lg">
+                    {slide.description}
+                  </p>
+
+                  {/* Dual Rent and Buy Showcase Actions */}
+                  <div className="pt-2 sm:pt-4 flex flex-wrap items-center gap-3">
+                    {/* Rent Action */}
+                    <Link
+                      to={slide.rentCtaLink}
+                      className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 bg-[#7A1010] hover:bg-[#540808] text-white text-xs sm:text-sm font-sans font-bold uppercase tracking-[0.18em] transition-all duration-300 shadow-md group"
+                    >
+                      <Repeat className="w-3.5 h-3.5 text-[#E7C982]" />
+                      <span>{slide.rentCtaText}</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+
+                    {/* Buy Action */}
+                    <Link
+                      to={slide.buyCtaLink}
+                      className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 bg-[#FFFDF8] hover:bg-[#FAF7F0] border border-[#C89B3C] text-[#171512] hover:text-[#7A1010] text-xs sm:text-sm font-sans font-bold uppercase tracking-[0.18em] transition-all duration-300 shadow-xs group"
+                    >
+                      <ShoppingBag className="w-3.5 h-3.5 text-[#C89B3C]" />
+                      <span>{slide.buyCtaText}</span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          );
+        })}
       </div>
 
-      {/* ─── Bottom Rent & Buy Trust Highlights Strip ─── */}
+      {/* Side Navigation Chevrons */}
+      <button
+        type="button"
+        onClick={prevSlide}
+        aria-label="Previous slide"
+        className="absolute top-1/2 left-3 sm:left-6 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#C89B3C]/40 bg-[#FFFDF8]/90 text-[#171512] hover:bg-[#7A1010] hover:text-white hover:border-[#7A1010] transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
+      >
+        <ChevronLeft className="w-5 h-5 stroke-[1.5]" />
+      </button>
+
+      <button
+        type="button"
+        onClick={nextSlide}
+        aria-label="Next slide"
+        className="absolute top-1/2 right-3 sm:right-6 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#C89B3C]/40 bg-[#FFFDF8]/90 text-[#171512] hover:bg-[#7A1010] hover:text-white hover:border-[#7A1010] transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
+      >
+        <ChevronRight className="w-5 h-5 stroke-[1.5]" />
+      </button>
+
+      {/* Bottom Rent & Buy Quick Highlights Strip */}
       <div className="relative z-20 bg-gradient-to-r from-[#FAF0F0] via-[#FFFDF8] to-[#FAF0F0] border-t border-[#E8E1D8] px-4 py-3 sm:py-3.5">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4 text-xs">
           <div className="flex items-center gap-6 divide-x divide-[#E8E1D8]">
-            <Link
-              to="/rent-info"
-              className="flex items-center gap-2 text-[#7A1010] hover:text-[#540808] font-semibold uppercase tracking-wider transition-colors"
-            >
+            <div className="flex items-center gap-2 text-[#7A1010] font-semibold uppercase tracking-wider">
               <Repeat className="w-4 h-4 text-[#C89B3C]" />
               <span>Rent for Events: 30% Price · 3-Day Window</span>
-            </Link>
+            </div>
             <div className="hidden sm:flex items-center gap-2 pl-6 text-[#7A1010] font-semibold uppercase tracking-wider">
               <ShieldCheck className="w-4 h-4 text-[#7A1010]" />
               <span>100% Medical UV-C Sanitization &amp; Doorstep Delivery</span>
@@ -257,12 +265,10 @@ export const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-2 text-xs">
-            <span className="text-[#6F675E]">{currentSlide.eyebrow}</span>
-            <span className="text-[#E8E1D8]">•</span>
-            <span className="font-serif italic font-semibold text-[#7A1010]">
-              {currentSlide.productName}
-            </span>
+          <div className="flex items-center gap-2">
+            <span className="text-[#6F675E]">Slide</span>
+            <span className="font-bold text-[#7A1010]">0{currentIndex + 1}</span>
+            <span className="text-[#6F675E]">/ 0{HERO_SLIDES.length}</span>
           </div>
         </div>
       </div>
