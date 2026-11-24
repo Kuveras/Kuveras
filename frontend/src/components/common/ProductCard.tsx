@@ -76,7 +76,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         {/* Discount / Category Badge */}
         <div className="absolute top-3 left-3 flex flex-col gap-1 z-10 pointer-events-none">
           {product.discount > 0 && (
-            <span className="bg-[#7A1010] text-[#FFFDF8] text-[11px] font-bold uppercase px-2.5 py-1 tracking-wider shadow-2xs">
+            <span className="bg-[#0B5D3B] text-white text-[11px] font-bold uppercase px-2.5 py-1 tracking-wider shadow-2xs">
               {product.discount}% OFF
             </span>
           )}
@@ -142,9 +142,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 </span>
               )}
             </div>
-            <div className="text-[11px] font-medium text-[#7A1010] flex items-center justify-center gap-1">
+            <div className="text-[11px] font-medium text-[#0B5D3B] flex items-center justify-center gap-1">
               <span className="text-[#6F675E]">Rent (30%):</span>
-              <span className="font-bold text-[#7A1010]">{formatINR(product.rentalPrice)}</span>
+              <span className="font-bold text-[#0B5D3B]">{formatINR(product.rentalPrice)}</span>
             </div>
           </div>
         </div>
@@ -173,7 +173,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               Rent Via WhatsApp
             </span>
             <span className="flex items-center gap-1.5 justify-center text-[10px]">
-              <span className="font-bold text-[#7A1010] bg-[#7A1010]/10 px-1.5 py-0.5 tracking-wider">30% RENTAL</span>
+              <span className="font-bold text-[#0B5D3B] bg-[#0B5D3B]/10 px-1.5 py-0.5 tracking-wider">30% RENTAL</span>
               <span className="font-bold text-xs">{formatINR(product.rentalPrice)}</span>
             </span>
           </a>

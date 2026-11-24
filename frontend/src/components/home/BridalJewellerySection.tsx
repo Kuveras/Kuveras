@@ -31,7 +31,7 @@ export const BridalJewellerySection: React.FC = () => {
           </h2>
 
           <p className="font-sans text-xs sm:text-sm md:text-base text-[#6F675E] leading-relaxed max-w-2xl mx-auto">
-            From majestic Kundan chokers to cascading Rani Haars and ornate Matha Pattis, adorn bridal masterpieces designed to carry generational heritage — available to <strong>Rent at 30%</strong> or <strong>Buy to Own</strong>.
+            From majestic Kundan chokers to cascading Rani Haars and ornate Matha Pattis, adorn bridal masterpieces designed to carry generational heritage — available to <strong className="text-[#0B5D3B]">Rent at 30%</strong> or <strong>Buy to Own</strong>.
           </p>
         </div>
 

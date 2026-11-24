@@ -158,7 +158,7 @@ export const CartDrawer: React.FC = () => {
                     <div className="text-xs font-semibold text-[#171512] mt-1">
                       {item.isRental ? (
                         <span className="flex items-center gap-1.5 flex-wrap">
-                          <span className="text-[10px] font-bold text-[#7A1010] bg-[#7A1010]/10 px-1.5 py-0.5 tracking-wider">Rental (30%)</span>
+                          <span className="text-[10px] font-bold text-[#0B5D3B] bg-[#0B5D3B]/10 px-1.5 py-0.5 tracking-wider">Rental (30%)</span>
                           <span>{formatINR(item.product.rentalPrice)}</span>
                         </span>
                       ) : (

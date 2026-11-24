@@ -125,7 +125,7 @@ export const SearchModal: React.FC = () => {
                       <span className="text-xs font-bold text-[#111111]">
                         {formatINR(product.salePrice)}
                       </span>
-                      <span className="text-[11px] font-semibold text-[#7A1010]">
+                      <span className="text-[11px] font-semibold text-[#0B5D3B]">
                         Rent (30%): {formatINR(product.rentalPrice)}
                       </span>
                     </div>

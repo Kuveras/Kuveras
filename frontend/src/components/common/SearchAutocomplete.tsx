@@ -126,7 +126,7 @@ export const SearchAutocomplete: React.FC<SearchAutocompleteProps> = ({
                         {formatINR(product.price)}
                       </span>
                     )}
-                    <span className="text-[10px] font-semibold text-[#7A1010] ml-1">
+                    <span className="text-[10px] font-semibold text-[#0B5D3B] ml-1">
                       Rent (30%): {formatINR(product.rentalPrice)}
                     </span>
                   </div>

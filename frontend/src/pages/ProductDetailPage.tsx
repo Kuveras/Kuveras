@@ -281,7 +281,7 @@ export const ProductDetailPage: React.FC = () => {
               {/* Discount / Bestseller Badge */}
               <div className="absolute top-4 left-4 flex flex-col gap-1 z-10 pointer-events-none">
                 {product.discount > 0 && (
-                  <span className="bg-[#7A1010] text-white text-xs font-bold uppercase px-3 py-1 tracking-wider shadow-xs">
+                  <span className="bg-[#0B5D3B] text-white text-xs font-bold uppercase px-3 py-1 tracking-wider shadow-xs">
                     {product.discount}% OFF
                   </span>
                 )}
@@ -458,14 +458,14 @@ export const ProductDetailPage: React.FC = () => {
                     }`}
                   >
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#7A1010]">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#0B5D3B]">
                         Option 2: Rent (30%)
                       </span>
                       {shoppingMode === 'rent' && (
-                        <span className="w-2 h-2 rounded-full bg-[#7A1010]" />
+                        <span className="w-2 h-2 rounded-full bg-[#0B5D3B]" />
                       )}
                     </div>
-                    <div className="font-sans text-xl font-bold text-[#7A1010]">
+                    <div className="font-sans text-xl font-bold text-[#0B5D3B]">
                       {formatINR(product.rentalPrice)}
                     </div>
                     <div className="text-[10px] text-[#6F675E]">

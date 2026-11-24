@@ -101,7 +101,7 @@ export const QuickViewModal: React.FC = () => {
               className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.04]"
             />
             {quickViewProduct.discount > 0 && (
-              <span className="absolute top-3 left-3 bg-[#7A1010] text-white text-xs font-bold uppercase px-2.5 py-1 tracking-wider pointer-events-none z-10">
+              <span className="absolute top-3 left-3 bg-[#0B5D3B] text-white text-xs font-bold uppercase px-2.5 py-1 tracking-wider pointer-events-none z-10">
                 {quickViewProduct.discount}% OFF
               </span>
             )}
@@ -160,7 +160,7 @@ export const QuickViewModal: React.FC = () => {
 
             {/* Rental Price banner */}
             <div className="flex items-center gap-2 mb-4 border-b border-[#F5F0EB] pb-3">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-[#7A1010] bg-[#7A1010]/10 px-2 py-0.5 border border-[#7A1010]/20">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-[#0B5D3B] bg-[#0B5D3B]/10 px-2 py-0.5 border border-[#0B5D3B]/20">
                 Rent (30%):
               </span>
               <span className="font-sans text-base font-bold text-[#111111]">

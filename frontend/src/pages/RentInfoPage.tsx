@@ -139,7 +139,9 @@ export const RentInfoPage: React.FC = () => {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center relative z-10">
           {/* Logo */}
           <div className="flex justify-center mb-6">
-            <KuverasLogo className="w-[120px] sm:w-[150px] brightness-0 invert" />
+            <Link to="/" className="inline-block hover:opacity-90 transition-opacity" aria-label="Kuveras Home">
+              <KuverasLogo className="w-[130px] sm:w-[160px] drop-shadow-[0_4px_16px_rgba(0,0,0,0.4)]" />
+            </Link>
           </div>
 
           {/* Eyebrow */}
@@ -329,7 +331,7 @@ export const RentInfoPage: React.FC = () => {
                 <tr className="bg-[#FAF7F0]">
                   <td className="px-4 py-3 font-medium text-[#171512]">Jewellery Rental (3-Day Window)</td>
                   <td className="px-4 py-3 text-right text-[#171512] font-semibold">{formatINR(EXAMPLE_SELLING_PRICE)}</td>
-                  <td className="px-4 py-3 text-right text-[#7A1010] font-bold">30% OF SELLING</td>
+                  <td className="px-4 py-3 text-right text-[#0B5D3B] font-bold">30% OF SELLING</td>
                   <td className="px-4 py-3 text-right font-bold text-[#7A1010] text-base">{formatINR(EXAMPLE_RENTAL_PRICE)}</td>
                 </tr>
                 <tr className="bg-[#FFFFFF]">
