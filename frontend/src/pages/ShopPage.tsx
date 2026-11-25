@@ -15,7 +15,7 @@ export const ShopPage: React.FC = () => {
   const [sortBy, setSortBy] = useState<'featured' | 'newest' | 'price-low' | 'price-high' | 'rating'>('featured');
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
 
-  const categories = ['All', 'Kundan', 'Rajwadi', 'Temple', 'Cubic Zirconia', 'Bridal', 'Matha Patti', 'Bracelets', 'Rani Haar', 'Choker'];
+  const categories = ['All', 'Kundan', 'Cubic Zirconia', 'Choker', 'Rajwadi', 'Temple', 'Earrings', 'Bracelets', 'Bangles', 'Rings', 'Bridal / Wedding'];
   const occasions = ['All', 'Daily Wear', 'Festive', 'Bridal', 'Party Wear', 'Office Wear', 'Date Night', 'Day Out'];
   const budgets = [
     { label: 'All Budgets', value: 'All' },

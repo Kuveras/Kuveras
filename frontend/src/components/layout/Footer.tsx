@@ -67,7 +67,7 @@ export const Footer: React.FC = () => {
             <h3 className="kv-heading">Collections</h3>
             <ul className="kv-clist">
               <li><Link to="/shop">All Jewellery</Link></li>
-              <li><Link to="/shop?category=Bridal">Bridal &amp; Wedding</Link></li>
+              <li><Link to="/shop?category=Bridal+%2F+Wedding">Bridal / Wedding</Link></li>
               <li><Link to="/shop?category=Kundan">Kundan Jewellery</Link></li>
               <li><Link to="/shop?category=Temple">Temple Jewellery</Link></li>
               <li><Link to="/shop?category=Cubic+Zirconia">Cubic Zirconia (CZ)</Link></li>

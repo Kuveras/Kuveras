@@ -24,29 +24,29 @@ const CATEGORY_ITEMS: CategoryItem[] = [
     image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=200&q=80',
   },
   {
-    name: 'Rajwadi',
-    path: '/shop?category=Rajwadi',
-    image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=200&q=80',
-  },
-  {
-    name: 'Temple Jewellery',
-    path: '/shop?category=Temple',
-    image: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=200&q=80',
-  },
-  {
     name: 'Cubic Zirconia',
     path: '/shop?category=Cubic+Zirconia',
     image: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=200&q=80',
   },
   {
-    name: 'Bridal / Wedding Jewellery',
-    path: '/shop?category=Bridal',
+    name: 'Choker',
+    path: '/shop?category=Choker',
     image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=200&q=80',
   },
   {
-    name: 'Matha Patti',
-    path: '/shop?category=Matha+Patti',
-    image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=200&q=80',
+    name: 'Rajwadi',
+    path: '/shop?category=Rajwadi',
+    image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=200&q=80',
+  },
+  {
+    name: 'Temple',
+    path: '/shop?category=Temple',
+    image: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=200&q=80',
+  },
+  {
+    name: 'Earrings',
+    path: '/shop?category=Earrings',
+    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=200&q=80',
   },
   {
     name: 'Bracelets',
@@ -54,38 +54,18 @@ const CATEGORY_ITEMS: CategoryItem[] = [
     image: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=200&q=80',
   },
   {
+    name: 'Bangles',
+    path: '/shop?category=Bangles',
+    image: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=200&q=80',
+  },
+  {
     name: 'Rings',
-    path: '/shop?category=Cubic+Zirconia',
+    path: '/shop?category=Rings',
     image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=200&q=80',
   },
   {
-    name: 'Earrings',
-    path: '/shop?category=Kundan',
-    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=200&q=80',
-  },
-  {
-    name: 'Choker Sets',
-    path: '/shop?category=Kundan',
-    image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=200&q=80',
-  },
-  {
-    name: 'Necklaces',
-    path: '/shop?category=Temple',
-    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=200&q=80',
-  },
-  {
-    name: 'Bangles',
-    path: '/shop?category=Bracelets',
-    image: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=200&q=80',
-  },
-  {
-    name: 'Pendants',
-    path: '/shop?category=Cubic+Zirconia',
-    image: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=200&q=80',
-  },
-  {
-    name: 'Jewellery Sets',
-    path: '/shop?category=Bridal',
+    name: 'Bridal / Wedding',
+    path: '/shop?category=Bridal+%2F+Wedding',
     image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=200&q=80',
   },
 ];
@@ -331,7 +311,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
                   <li key={item}>
                     <button
                       type="button"
-                      onClick={() => handleNavigate('/shop?category=Bridal')}
+                      onClick={() => handleNavigate('/shop?category=Bridal+%2F+Wedding')}
                       className="hover:text-[#C89B3C] hover:bg-[#FFFDF8] px-2 py-1 rounded transition-colors text-left w-full cursor-pointer"
                     >
                       {item}
@@ -350,7 +330,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
                   <li key={item}>
                     <button
                       type="button"
-                      onClick={() => handleNavigate('/shop?category=Bridal')}
+                      onClick={() => handleNavigate('/shop?category=Bridal+%2F+Wedding')}
                       className="hover:text-[#C89B3C] hover:bg-[#FFFDF8] px-2 py-1 rounded transition-colors text-left w-full cursor-pointer"
                     >
                       {item}
@@ -365,7 +345,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
                 Craftsmanship &amp; Styles
               </h4>
               <ul className="space-y-2 text-xs text-[#2B2723]">
-                {['Kundan', 'Temple Gold-tone', 'Cubic Zirconia'].map((item) => (
+                {['Kundan', 'Temple', 'Cubic Zirconia'].map((item) => (
                   <li key={item}>
                     <button
                       type="button"
@@ -381,7 +361,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
 
             {/* Right Promotional Card */}
             <div
-              onClick={() => handleNavigate('/shop?category=Bridal')}
+              onClick={() => handleNavigate('/shop?category=Bridal+%2F+Wedding')}
               className="group relative rounded-[14px] overflow-hidden border border-[#E8E1D8] shadow-sm cursor-pointer h-[240px] flex flex-col justify-end p-5 text-white"
             >
               <img

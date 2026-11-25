@@ -2,7 +2,7 @@ export interface Product {
   id: string;
   slug: string;
   name: string;
-  category: 'Kundan' | 'Rajwadi' | 'Temple' | 'Cubic Zirconia' | 'Bridal' | 'Matha Patti' | 'Bracelets' | 'Choker' | 'Rani Haar';
+  category: 'Kundan' | 'Cubic Zirconia' | 'Choker' | 'Rajwadi' | 'Temple' | 'Earrings' | 'Bracelets' | 'Bangles' | 'Rings' | 'Bridal / Wedding';
   subcategory?: string;
   occasion: 'Daily Wear' | 'Festive' | 'Bridal' | 'Party Wear' | 'Office Wear' | 'Date Night' | 'Day Out';
   price: number; // Original/Actual jewellery price INR

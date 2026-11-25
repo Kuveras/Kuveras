@@ -8,7 +8,7 @@ export const BridalJewellerySection: React.FC = () => {
   const { products } = useProducts();
   // Filter products for bridal or occasions
   const bridalProducts = products.filter(
-    (p) => p.category === 'Bridal' || p.category === 'Kundan' || p.tags.some(t => t.toLowerCase().includes('bridal'))
+    (p) => p.category === 'Bridal / Wedding' || p.category === 'Kundan' || p.tags.some(t => t.toLowerCase().includes('bridal'))
   ).slice(0, 4);
 
   return (
@@ -79,7 +79,7 @@ export const BridalJewellerySection: React.FC = () => {
                 <span>WhatsApp Bridal Concierge</span>
               </a>
               <Link
-                to="/shop?category=Bridal"
+                to="/shop?category=Bridal+%2F+Wedding"
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 border border-[#E7C982] text-white text-xs font-bold uppercase tracking-wider transition-colors"
               >
                 <span>View Bridal</span>
@@ -98,7 +98,7 @@ export const BridalJewellerySection: React.FC = () => {
         {/* View All Bridal Link */}
         <div className="text-center">
           <Link
-            to="/shop?category=Bridal"
+            to="/shop?category=Bridal+%2F+Wedding"
             className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#7A1010] hover:bg-[#540808] text-white text-xs font-bold uppercase tracking-[0.2em] transition-colors shadow-md"
           >
             <span>Explore Complete Bridal Collection</span>

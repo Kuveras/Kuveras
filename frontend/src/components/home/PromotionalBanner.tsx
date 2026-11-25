@@ -29,7 +29,7 @@ export const PromotionalBanner: React.FC = () => {
 
               <div className="pt-2 flex flex-wrap gap-4">
                 <Link
-                  to="/shop?category=Bridal"
+                  to="/shop?category=Bridal+%2F+Wedding"
                   className="px-8 py-3.5 bg-[#C89B3C] hover:bg-[#E7C982] text-[#171512] text-xs font-bold uppercase tracking-widest transition-colors flex items-center gap-2 shadow-md"
                 >
                   <span>EXPLORE COLLECTION</span>

@@ -34,7 +34,7 @@ export const SearchModal: React.FC = () => {
       )
     : [];
 
-  const popularTags = ['Kundan', 'Bridal', 'Temple', 'Rajwadi', 'Cubic Zirconia', 'Choker'];
+  const popularTags = ['Kundan', 'Bridal / Wedding', 'Temple', 'Rajwadi', 'Cubic Zirconia', 'Choker'];
 
   const handleSelectProduct = (slug: string) => {
     setIsSearchOpen(false);

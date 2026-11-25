@@ -65,7 +65,7 @@ export const Navigation: React.FC = () => {
 
   const navItems = [
     { id: 'jewellery', label: 'All Jewellery', path: '/shop' },
-    { id: 'bridal', label: 'Bridal Suite', path: '/shop?category=Bridal' },
+    { id: 'bridal', label: 'Bridal / Wedding', path: '/shop?category=Bridal+%2F+Wedding' },
     { id: 'temple', label: 'Temple', path: '/shop?category=Temple' },
     { id: 'bracelets', label: 'Bracelets', path: '/shop?category=Bracelets' },
     { id: 'rent', label: 'Rent Info & Policies', path: '/rent-info' },

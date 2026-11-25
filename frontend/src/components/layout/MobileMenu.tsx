@@ -90,7 +90,7 @@ export const MobileMenu: React.FC = () => {
               </button>
               {openSection === 'jewellery' && (
                 <div className="pl-3 py-2 space-y-2 text-xs normal-case tracking-normal text-[#6F675E]">
-                  {['Kundan', 'Rajwadi', 'Temple Jewellery', 'Cubic Zirconia', 'Bridal / Wedding Jewellery', 'Matha Patti', 'Bracelets', 'Rings', 'Earrings', 'Choker Sets'].map((cat) => (
+                  {['Kundan', 'Cubic Zirconia', 'Choker', 'Rajwadi', 'Temple', 'Earrings', 'Bracelets', 'Bangles', 'Rings', 'Bridal / Wedding'].map((cat) => (
                     <button
                       key={cat}
                       type="button"
@@ -134,7 +134,7 @@ export const MobileMenu: React.FC = () => {
                     <button
                       key={item}
                       type="button"
-                      onClick={() => handleNav('/shop?category=Bridal')}
+                      onClick={() => handleNav('/shop?category=Bridal+%2F+Wedding')}
                       className="block py-1.5 hover:text-[#7A1010] text-left w-full cursor-pointer"
                     >
                       {item}

@@ -48,7 +48,7 @@ const OCCASIONS: Occasion[] = [
     id: 'wedding',
     name: 'Wedding',
     subtitle: 'Royal Rajasthani Kundan & Heritage Polki Sets',
-    href: '/shop?category=Bridal',
+    href: '/shop?category=Bridal+%2F+Wedding',
     image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80',
     alt: 'Kuveras Bridal & Wedding Jewellery Collection',
   },
