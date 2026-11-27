@@ -38,10 +38,10 @@ export const BridalJewellerySection: React.FC = () => {
         {/* Bridal Editorial Feature Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-14 items-center">
           {/* Left Column: Bridal Banner Card */}
-          <div className="lg:col-span-5 w-full bg-gradient-to-br from-[#540808] to-[#7A1010] text-white p-6 sm:p-8 border-2 border-[#C89B3C]/50 shadow-xl flex flex-col justify-center relative overflow-hidden">
+          <div className="lg:col-span-5 w-full h-fit bg-gradient-to-br from-[#540808] to-[#7A1010] text-white p-6 sm:p-7 border-2 border-[#C89B3C]/50 shadow-xl flex flex-col justify-start relative overflow-hidden">
             <div className="absolute -right-8 -bottom-8 w-48 h-48 bg-[#C89B3C]/10 rounded-full blur-2xl pointer-events-none" />
 
-            <div className="space-y-4 relative z-10">
+            <div className="space-y-3 relative z-10">
               <span className="text-[11px] font-sans font-bold uppercase tracking-[0.25em] text-[#E7C982] block">
                 BRIDAL CONCIERGE SERVICE
               </span>
@@ -68,7 +68,7 @@ export const BridalJewellerySection: React.FC = () => {
               </div>
             </div>
 
-            <div className="pt-6 relative z-10 flex flex-col sm:flex-row items-stretch gap-3">
+            <div className="pt-5 relative z-10 flex flex-col sm:flex-row items-stretch gap-3">
               <a
                 href="https://wa.me/919910204680?text=Hi%20Kuveras!%20I%20would%20like%20to%20book%20a%20Bridal%20Jewellery%20Styling%20Consultation."
                 target="_blank"
