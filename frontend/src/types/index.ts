@@ -2,7 +2,7 @@ export interface Product {
   id: string;
   slug: string;
   name: string;
-  category: 'Kundan' | 'Cubic Zirconia' | 'Choker' | 'Rajwadi' | 'Temple' | 'Earrings' | 'Bracelets' | 'Bangles' | 'Rings' | 'Bridal / Wedding';
+  category: 'Kundan' | 'Cubic Zirconia' | 'Choker' | 'Rajwadi' | 'Temple' | 'Earrings' | 'Bracelets' | 'Bangles' | 'Rings' | 'Bridal / Wedding' | 'Necklace';
   subcategory?: string;
   occasion: 'Daily Wear' | 'Festive' | 'Bridal' | 'Party Wear' | 'Office Wear' | 'Date Night' | 'Day Out';
   price: number; // Original/Actual jewellery price INR

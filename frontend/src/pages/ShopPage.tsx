@@ -15,22 +15,39 @@ export const ShopPage: React.FC = () => {
   const [sortBy, setSortBy] = useState<'featured' | 'newest' | 'price-low' | 'price-high' | 'rating'>('featured');
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
 
-  const categories = ['All', 'Kundan', 'Cubic Zirconia', 'Choker', 'Rajwadi', 'Temple', 'Earrings', 'Bracelets', 'Bangles', 'Rings', 'Bridal / Wedding'];
+  const categories = ['All', 'Kundan', 'Cubic Zirconia', 'Choker', 'Rajwadi', 'Temple', 'Earrings', 'Bracelets', 'Bangles', 'Rings', 'Bridal / Wedding', 'Necklace'];
   const occasions = ['All', 'Daily Wear', 'Festive', 'Bridal', 'Party Wear', 'Office Wear', 'Date Night', 'Day Out'];
   const budgets = [
     { label: 'All Budgets', value: 'All' },
     { label: 'Under ₹3,000', value: 'under-3000' },
     { label: 'Under ₹4,500', value: 'under-4500' },
+    { label: 'Under ₹5,000', value: 'under-5000' },
     { label: 'Under ₹7,000', value: 'under-7000' },
+    { label: '₹5,000 – ₹10,000', value: '5000-10000' },
     { label: 'Under ₹10,000', value: 'under-10000' },
+    { label: '₹10,000 & above', value: 'above-10000' },
   ];
 
   // Filtering Logic
   const filteredProducts = useMemo(() => {
     return products.filter((product) => {
-      // Category match
-      if (selectedCategory !== 'All' && product.category !== selectedCategory) {
-        return false;
+      // Category match (supports multi-category attributes for Choker & Necklace)
+      if (selectedCategory !== 'All') {
+        if (selectedCategory === 'Necklace') {
+          const isNecklace =
+            product.category === 'Necklace' ||
+            (product.subcategory && product.subcategory.toLowerCase().includes('necklace')) ||
+            product.name.toLowerCase().includes('necklace');
+          if (!isNecklace) return false;
+        } else if (selectedCategory === 'Choker') {
+          const isChoker =
+            product.category === 'Choker' ||
+            (product.subcategory && product.subcategory.toLowerCase().includes('choker')) ||
+            product.name.toLowerCase().includes('choker');
+          if (!isChoker) return false;
+        } else if (product.category !== selectedCategory) {
+          return false;
+        }
       }
       // Occasion match
       if (selectedOccasion !== 'All' && product.occasion !== selectedOccasion) {
@@ -40,8 +57,12 @@ export const ShopPage: React.FC = () => {
       if (budgetParam !== 'All') {
         if (budgetParam === 'under-3000' && product.salePrice > 3000) return false;
         if (budgetParam === 'under-4500' && product.salePrice > 4500) return false;
+        if (budgetParam === 'under-5000' && product.salePrice > 5000) return false;
         if (budgetParam === 'under-7000' && product.salePrice > 7000) return false;
+        if (budgetParam === '5000-10000' && (product.salePrice < 5000 || product.salePrice > 10000)) return false;
         if (budgetParam === 'under-10000' && product.salePrice > 10000) return false;
+        if (budgetParam === '10000-20000' && (product.salePrice < 10000 || product.salePrice > 20000)) return false;
+        if (budgetParam === 'above-10000' && product.salePrice < 10000) return false;
       }
       // Search match
       if (searchQuery.trim()) {
@@ -59,7 +80,7 @@ export const ShopPage: React.FC = () => {
       if (sortBy === 'rating') return b.rating - a.rating;
       return (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
     });
-  }, [selectedCategory, selectedOccasion, budgetParam, searchQuery, sortBy]);
+  }, [products, selectedCategory, selectedOccasion, budgetParam, searchQuery, sortBy]);
 
   const setCategoryFilter = (cat: string) => {
     if (cat === 'All') searchParams.delete('category');

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
 
 export type MegaMenuType = 'jewellery' | 'bridal' | 'temple' | 'bracelets' | 'rent' | null;
@@ -68,13 +68,18 @@ const CATEGORY_ITEMS: CategoryItem[] = [
     path: '/shop?category=Bridal+%2F+Wedding',
     image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=200&q=80',
   },
+  {
+    name: 'Necklace',
+    path: '/shop?category=Necklace',
+    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=200&q=80',
+  },
 ];
 
 const PRICE_ITEMS = [
-  { label: 'Under ₹5,000', path: '/shop?budget=under-4500', desc: 'Everyday elegance & gifting' },
-  { label: '₹5,000 – ₹10,000', path: '/shop?budget=under-7000', desc: 'Festive & statement pieces' },
-  { label: '₹10,000 – ₹20,000', path: '/shop?budget=under-10000', desc: 'Grand bridal & heritage suites' },
-  { label: '₹20,000 & above', path: '/shop?filter=featured', desc: 'Royalty & heirloom collections' },
+  { label: 'Under ₹3,000', path: '/shop?budget=under-3000', desc: 'Everyday elegance & gifting' },
+  { label: 'Under ₹5,000', path: '/shop?budget=under-5000', desc: 'Contemporary & festive picks' },
+  { label: '₹5,000 – ₹10,000', path: '/shop?budget=5000-10000', desc: 'Festive & statement pieces' },
+  { label: '₹10,000 & above', path: '/shop?budget=above-10000', desc: 'Grand bridal & heritage suites' },
 ];
 
 const OCCASION_ITEMS = [
@@ -180,20 +185,21 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
                 <div>
                   <h4 className="font-serif text-base text-[#2B2723] font-normal mb-4 pb-2 border-b border-[#F3EEE6] flex items-center justify-between">
                     <span>Explore Jewellery Categories</span>
-                    <button
-                      onClick={() => handleNavigate('/shop')}
+                    <Link
+                      to="/shop"
+                      onClick={onClose}
                       className="text-[11px] font-sans font-semibold text-[#7A1010] hover:text-[#C89B3C] uppercase tracking-widest cursor-pointer"
                     >
                       View All Products →
-                    </button>
+                    </Link>
                   </h4>
 
                   <div className="grid grid-cols-3 gap-x-6 gap-y-3 max-h-[360px] overflow-y-auto pr-2 no-scrollbar">
                     {CATEGORY_ITEMS.map((item) => (
-                      <button
+                      <Link
                         key={item.name}
-                        type="button"
-                        onClick={() => handleNavigate(item.path)}
+                        to={item.path}
+                        onClick={onClose}
                         className="group flex items-center gap-3 p-2 rounded-lg hover:bg-[#FFFDF8] transition-all cursor-pointer text-left w-full"
                       >
                         <img
@@ -205,7 +211,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
                           {item.name}
                         </span>
                         <ArrowRight className="w-3.5 h-3.5 text-[#C89B3C] opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all shrink-0" />
-                      </button>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -214,16 +220,23 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
               {/* PRICE TAB CONTENT */}
               {allJewelleryTab === 'price' && (
                 <div>
-                  <h4 className="font-serif text-base text-[#2B2723] font-normal mb-4 pb-2 border-b border-[#F3EEE6]">
-                    Shop Jewellery By Budget Range
+                  <h4 className="font-serif text-base text-[#2B2723] font-normal mb-4 pb-2 border-b border-[#F3EEE6] flex items-center justify-between">
+                    <span>Shop Jewellery By Budget Range</span>
+                    <Link
+                      to="/shop"
+                      onClick={onClose}
+                      className="text-[11px] font-sans font-semibold text-[#7A1010] hover:text-[#C89B3C] uppercase tracking-widest cursor-pointer"
+                    >
+                      View All Products →
+                    </Link>
                   </h4>
                   <div className="grid grid-cols-2 gap-4">
                     {PRICE_ITEMS.map((p) => (
-                      <button
+                      <Link
                         key={p.label}
-                        type="button"
-                        onClick={() => handleNavigate(p.path)}
-                        className="group p-4 bg-[#FFFDF8] border border-[#E8E1D8] hover:border-[#C89B3C] rounded-xl text-left transition-all hover:shadow-xs cursor-pointer"
+                        to={p.path}
+                        onClick={onClose}
+                        className="group block p-4 bg-[#FFFDF8] border border-[#E8E1D8] hover:border-[#C89B3C] rounded-xl text-left transition-all hover:shadow-xs cursor-pointer"
                       >
                         <span className="font-serif text-base text-[#2B2723] group-hover:text-[#C89B3C] font-normal block mb-1">
                           {p.label}
@@ -231,7 +244,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
                         <span className="font-sans text-xs text-[#6F6860] block">
                           {p.desc}
                         </span>
-                      </button>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -240,21 +253,28 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
               {/* OCCASION TAB CONTENT */}
               {allJewelleryTab === 'occasion' && (
                 <div>
-                  <h4 className="font-serif text-base text-[#2B2723] font-normal mb-4 pb-2 border-b border-[#F3EEE6]">
-                    Curated Jewellery For Every Celebration
+                  <h4 className="font-serif text-base text-[#2B2723] font-normal mb-4 pb-2 border-b border-[#F3EEE6] flex items-center justify-between">
+                    <span>Curated Jewellery For Every Celebration</span>
+                    <Link
+                      to="/shop"
+                      onClick={onClose}
+                      className="text-[11px] font-sans font-semibold text-[#7A1010] hover:text-[#C89B3C] uppercase tracking-widest cursor-pointer"
+                    >
+                      View All Products →
+                    </Link>
                   </h4>
                   <div className="grid grid-cols-4 gap-3">
                     {OCCASION_ITEMS.map((o) => (
-                      <button
+                      <Link
                         key={o.label}
-                        type="button"
-                        onClick={() => handleNavigate(o.path)}
-                        className="group p-3 bg-[#FFFDF8] border border-[#E8E1D8] hover:border-[#C89B3C] hover:bg-[#FFFDF8] rounded-lg text-center transition-all cursor-pointer"
+                        to={o.path}
+                        onClick={onClose}
+                        className="group block p-3 bg-[#FFFDF8] border border-[#E8E1D8] hover:border-[#C89B3C] hover:bg-[#FFFDF8] rounded-lg text-center transition-all cursor-pointer"
                       >
                         <span className="font-serif text-sm text-[#2B2723] group-hover:text-[#C89B3C] font-normal block">
                           {o.label}
                         </span>
-                      </button>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -263,8 +283,9 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
 
             {/* RIGHT SIDEBAR PROMOTIONAL CARD */}
             <div className="w-[300px] shrink-0 border-l border-[#E8E1D8] pl-6">
-              <div
-                onClick={() => handleNavigate('/shop')}
+              <Link
+                to="/shop"
+                onClick={onClose}
                 className="group relative rounded-[14px] overflow-hidden border border-[#E8E1D8] shadow-sm cursor-pointer h-full min-h-[300px] flex flex-col justify-end p-5 text-white"
               >
                 <img
@@ -291,7 +312,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
                     </span>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
 
           </div>
@@ -301,40 +322,26 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
         {/* 2. BRIDAL MEGA MENU                                */}
         {/* ================================================== */}
         {menuType === 'bridal' && (
-          <div className="grid grid-cols-4 gap-8 font-sans">
+          <div className="grid grid-cols-3 gap-8 font-sans">
             <div>
               <h4 className="font-serif text-sm text-[#7A1010] uppercase tracking-[0.16em] pb-2 border-b border-[#E8E1D8] mb-3 font-semibold">
                 Bridal Categories
               </h4>
               <ul className="space-y-2 text-xs text-[#2B2723]">
-                {['Bridal Sets', 'Choker Sets', 'Rani Haar', 'Matha Patti'].map((item) => (
-                  <li key={item}>
-                    <button
-                      type="button"
-                      onClick={() => handleNavigate('/shop?category=Bridal+%2F+Wedding')}
-                      className="hover:text-[#C89B3C] hover:bg-[#FFFDF8] px-2 py-1 rounded transition-colors text-left w-full cursor-pointer"
+                {[
+                  { label: 'Bridal Sets', path: '/shop?category=Bridal+%2F+Wedding' },
+                  { label: 'Choker Sets', path: '/shop?category=Choker' },
+                  { label: 'Rani Haar', path: '/shop?category=Bridal+%2F+Wedding' },
+                  { label: 'Matha Patti', path: '/shop?category=Bridal+%2F+Wedding' },
+                ].map((item) => (
+                  <li key={item.label}>
+                    <Link
+                      to={item.path}
+                      onClick={onClose}
+                      className="block hover:text-[#C89B3C] hover:bg-[#FFFDF8] px-2 py-1 rounded transition-colors text-left w-full cursor-pointer"
                     >
-                      {item}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-serif text-sm text-[#7A1010] uppercase tracking-[0.16em] pb-2 border-b border-[#E8E1D8] mb-3 font-semibold">
-                Bridal Style &amp; Heritage
-              </h4>
-              <ul className="space-y-2 text-xs text-[#2B2723]">
-                {['Gujarati Bride', 'Rajasthani Bride', 'Marwari Bride', 'South Indian Bride'].map((item) => (
-                  <li key={item}>
-                    <button
-                      type="button"
-                      onClick={() => handleNavigate('/shop?category=Bridal+%2F+Wedding')}
-                      className="hover:text-[#C89B3C] hover:bg-[#FFFDF8] px-2 py-1 rounded transition-colors text-left w-full cursor-pointer"
-                    >
-                      {item}
-                    </button>
+                      {item.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -451,23 +458,23 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
               </h4>
               <div className="grid grid-cols-2 gap-2 text-xs text-[#2B2723]">
                 {[
-                  'Bracelets',
-                  'Bangles',
-                  'Gold-tone Bracelets',
-                  'Statement Bracelets',
-                  'Daily Wear Bracelets',
-                  'Tennis Bracelets',
-                  'Kada Bangles',
-                  'Kundan Bracelets',
+                  { label: 'Bracelets', path: '/shop?category=Bracelets' },
+                  { label: 'Bangles', path: '/shop?category=Bangles' },
+                  { label: 'Gold-tone Bracelets', path: '/shop?category=Bracelets' },
+                  { label: 'Statement Bracelets', path: '/shop?category=Bracelets' },
+                  { label: 'Daily Wear Bracelets', path: '/shop?category=Bracelets' },
+                  { label: 'Tennis Bracelets', path: '/shop?category=Bracelets' },
+                  { label: 'Kada Bangles', path: '/shop?category=Bangles' },
+                  { label: 'Kundan Bracelets', path: '/shop?category=Bracelets' },
                 ].map((item) => (
-                  <button
-                    key={item}
-                    type="button"
-                    onClick={() => handleNavigate('/shop?category=Bracelets')}
-                    className="hover:text-[#C89B3C] hover:bg-[#FFFDF8] px-2.5 py-1.5 rounded transition-colors text-left w-full cursor-pointer"
+                  <Link
+                    key={item.label}
+                    to={item.path}
+                    onClick={onClose}
+                    className="block hover:text-[#C89B3C] hover:bg-[#FFFDF8] px-2.5 py-1.5 rounded transition-colors text-left w-full cursor-pointer"
                   >
-                    {item}
-                  </button>
+                    {item.label}
+                  </Link>
                 ))}
               </div>
             </div>

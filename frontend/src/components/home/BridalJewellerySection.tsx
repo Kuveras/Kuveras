@@ -38,7 +38,7 @@ export const BridalJewellerySection: React.FC = () => {
         {/* Bridal Editorial Feature Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-14 items-center">
           {/* Left Column: Bridal Banner Card */}
-          <div className="lg:col-span-5 bg-gradient-to-br from-[#540808] to-[#7A1010] text-white p-8 sm:p-10 border-2 border-[#C89B3C]/50 shadow-xl flex flex-col justify-between h-full relative overflow-hidden">
+          <div className="lg:col-span-5 w-full bg-gradient-to-br from-[#540808] to-[#7A1010] text-white p-6 sm:p-8 border-2 border-[#C89B3C]/50 shadow-xl flex flex-col justify-center relative overflow-hidden">
             <div className="absolute -right-8 -bottom-8 w-48 h-48 bg-[#C89B3C]/10 rounded-full blur-2xl pointer-events-none" />
 
             <div className="space-y-4 relative z-10">
@@ -52,35 +52,35 @@ export const BridalJewellerySection: React.FC = () => {
                 Connect with our senior bridal stylists on WhatsApp. Share your lehenga or saree photos for customized jewellery pairing, doorstep delivery scheduling across Delhi NCR, and insured pan-India rentals.
               </p>
 
-              <div className="space-y-2 pt-2 text-xs text-[#F5EFE5]/90">
+              <div className="space-y-2 pt-1 text-xs text-[#F5EFE5]/90">
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-[#E7C982]" />
+                  <ShieldCheck className="w-4 h-4 text-[#E7C982] shrink-0" />
                   <span>100% Medical-grade UV-C Sanitized Sets</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-[#E7C982]" />
+                  <ShieldCheck className="w-4 h-4 text-[#E7C982] shrink-0" />
                   <span>3-Day Rental Window (Delivery, Event &amp; Pickup)</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-[#E7C982]" />
+                  <ShieldCheck className="w-4 h-4 text-[#E7C982] shrink-0" />
                   <span>100% Refundable Security Deposit</span>
                 </div>
               </div>
             </div>
 
-            <div className="pt-6 relative z-10 flex flex-col sm:flex-row gap-3">
+            <div className="pt-6 relative z-10 flex flex-col sm:flex-row items-stretch gap-3">
               <a
                 href="https://wa.me/919910204680?text=Hi%20Kuveras!%20I%20would%20like%20to%20book%20a%20Bridal%20Jewellery%20Styling%20Consultation."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-md"
+                className="inline-flex items-center justify-center gap-2 px-4 py-3 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-md whitespace-nowrap sm:flex-[1.4]"
               >
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="w-4 h-4 shrink-0" />
                 <span>WhatsApp Bridal Concierge</span>
               </a>
               <Link
                 to="/shop?category=Bridal+%2F+Wedding"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 border border-[#E7C982] text-white text-xs font-bold uppercase tracking-wider transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-4 py-3 bg-white/10 hover:bg-white/20 border border-[#E7C982] text-white text-xs font-bold uppercase tracking-wider transition-colors whitespace-nowrap sm:flex-1"
               >
                 <span>View Bridal</span>
               </Link>
