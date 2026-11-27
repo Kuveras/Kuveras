@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { ArrowRight, ShieldCheck } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Gem } from 'lucide-react';
 
 export type MegaMenuType = 'jewellery' | 'bridal' | 'temple' | 'bracelets' | 'rent' | null;
 
@@ -14,64 +14,69 @@ interface MegaMenuProps {
 interface CategoryItem {
   name: string;
   path: string;
-  image: string;
+  image?: string;
+  subcategories?: { name: string; path: string }[];
 }
 
 const CATEGORY_ITEMS: CategoryItem[] = [
   {
     name: 'Kundan',
     path: '/shop?category=Kundan',
-    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=200&q=80',
+    image: '/images/04/IMG_2195-scaled.jpg',
   },
   {
     name: 'Cubic Zirconia',
     path: '/shop?category=Cubic+Zirconia',
-    image: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=200&q=80',
+    image: '/images/05/IMG_2376-scaled-e1746799678318.jpg',
   },
   {
     name: 'Choker',
     path: '/shop?category=Choker',
-    image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=200&q=80',
+    image: '/images/04/IMG_2261-scaled.jpg',
   },
   {
     name: 'Rajwadi',
     path: '/shop?category=Rajwadi',
-    image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=200&q=80',
+    image: '/images/04/IMG_2149-scaled.jpg',
   },
   {
     name: 'Temple',
     path: '/shop?category=Temple',
-    image: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=200&q=80',
+    image: '/images/04/IMG_2046-scaled.jpg',
   },
   {
     name: 'Earrings',
     path: '/shop?category=Earrings',
-    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=200&q=80',
   },
   {
     name: 'Bracelets',
     path: '/shop?category=Bracelets',
-    image: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=200&q=80',
   },
   {
     name: 'Bangles',
     path: '/shop?category=Bangles',
-    image: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=200&q=80',
   },
   {
     name: 'Rings',
     path: '/shop?category=Rings',
-    image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=200&q=80',
   },
   {
     name: 'Bridal / Wedding',
     path: '/shop?category=Bridal+%2F+Wedding',
-    image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=200&q=80',
+    image: '/images/04/IMG_1897-scaled.jpg',
+  },
+  {
+    name: 'Head Jewellery',
+    path: '/shop?category=Head+Jewellery',
+    subcategories: [
+      { name: 'Matha Patti', path: '/shop?category=Head+Jewellery&subcategory=Matha+Patti' },
+      { name: 'Matha Tikka', path: '/shop?category=Head+Jewellery&subcategory=Matha+Tikka' },
+    ],
   },
   {
     name: 'Necklace',
     path: '/shop?category=Necklace',
-    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=200&q=80',
+    image: '/images/04/IMG_2105-scaled.jpg',
   },
 ];
 
@@ -194,24 +199,45 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
                     </Link>
                   </h4>
 
-                  <div className="grid grid-cols-3 gap-x-6 gap-y-3 max-h-[360px] overflow-y-auto pr-2 no-scrollbar">
+                  <div className="grid grid-cols-3 gap-x-6 gap-y-3 max-h-[380px] overflow-y-auto pr-2 no-scrollbar">
                     {CATEGORY_ITEMS.map((item) => (
-                      <Link
-                        key={item.name}
-                        to={item.path}
-                        onClick={onClose}
-                        className="group flex items-center gap-3 p-2 rounded-lg hover:bg-[#FFFDF8] transition-all cursor-pointer text-left w-full"
-                      >
-                        <img
-                          src={item.image}
-                          alt={item.name}
-                          className="w-10 h-10 rounded-full object-cover shrink-0 border border-[#E8E1D8] group-hover:scale-104 transition-transform duration-300"
-                        />
-                        <span className="font-serif text-sm text-[#2B2723] group-hover:text-[#C89B3C] font-normal flex-1 truncate transition-colors">
-                          {item.name}
-                        </span>
-                        <ArrowRight className="w-3.5 h-3.5 text-[#C89B3C] opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all shrink-0" />
-                      </Link>
+                      <div key={item.name} className="flex flex-col">
+                        <Link
+                          to={item.path}
+                          onClick={onClose}
+                          className="group flex items-center gap-3 p-2 rounded-lg hover:bg-[#FFFDF8] transition-all cursor-pointer text-left w-full"
+                        >
+                          {item.image ? (
+                            <img
+                              src={item.image}
+                              alt={item.name}
+                              className="w-10 h-10 rounded-full object-cover shrink-0 border border-[#E8E1D8] group-hover:scale-104 transition-transform duration-300"
+                            />
+                          ) : (
+                            <div className="w-10 h-10 rounded-full shrink-0 border border-[#C89B3C]/40 bg-[#FAF7F0] flex items-center justify-center text-[#7A1010] group-hover:border-[#C89B3C] transition-colors">
+                              <Gem className="w-4 h-4 text-[#C89B3C]" />
+                            </div>
+                          )}
+                          <span className="font-serif text-sm text-[#2B2723] group-hover:text-[#C89B3C] font-normal flex-1 truncate transition-colors">
+                            {item.name}
+                          </span>
+                          <ArrowRight className="w-3.5 h-3.5 text-[#C89B3C] opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all shrink-0" />
+                        </Link>
+                        {item.subcategories && (
+                          <div className="pl-[58px] pb-1 flex flex-wrap gap-x-3 gap-y-1">
+                            {item.subcategories.map((sub) => (
+                              <Link
+                                key={sub.name}
+                                to={sub.path}
+                                onClick={onClose}
+                                className="text-[11px] font-sans text-[#6F6860] hover:text-[#7A1010] hover:underline transition-colors"
+                              >
+                                {sub.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     ))}
                   </div>
                 </div>

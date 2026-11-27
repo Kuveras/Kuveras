@@ -9,13 +9,15 @@ export const ShopPage: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const selectedCategory = searchParams.get('category') || 'All';
+  const selectedSubcategory = searchParams.get('subcategory') || 'All';
   const selectedOccasion = searchParams.get('occasion') || 'All';
   const budgetParam = searchParams.get('budget') || 'All';
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState<'featured' | 'newest' | 'price-low' | 'price-high' | 'rating'>('featured');
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
 
-  const categories = ['All', 'Kundan', 'Cubic Zirconia', 'Choker', 'Rajwadi', 'Temple', 'Earrings', 'Bracelets', 'Bangles', 'Rings', 'Bridal / Wedding', 'Necklace'];
+  const categories = ['All', 'Kundan', 'Cubic Zirconia', 'Choker', 'Rajwadi', 'Temple', 'Earrings', 'Bracelets', 'Bangles', 'Rings', 'Bridal / Wedding', 'Head Jewellery', 'Necklace'];
+  const headJewellerySubcategories = ['All', 'Matha Patti', 'Matha Tikka'];
   const occasions = ['All', 'Daily Wear', 'Festive', 'Bridal', 'Party Wear', 'Office Wear', 'Date Night', 'Day Out'];
   const budgets = [
     { label: 'All Budgets', value: 'All' },
@@ -31,21 +33,23 @@ export const ShopPage: React.FC = () => {
   // Filtering Logic
   const filteredProducts = useMemo(() => {
     return products.filter((product) => {
-      // Category match (supports multi-category attributes for Choker & Necklace)
+      // Category match (supports multiple-category assignments)
       if (selectedCategory !== 'All') {
-        if (selectedCategory === 'Necklace') {
-          const isNecklace =
-            product.category === 'Necklace' ||
-            (product.subcategory && product.subcategory.toLowerCase().includes('necklace')) ||
-            product.name.toLowerCase().includes('necklace');
-          if (!isNecklace) return false;
-        } else if (selectedCategory === 'Choker') {
+        const hasMultiCat = product.categories?.includes(selectedCategory as typeof product.category);
+        if (selectedCategory === 'Choker') {
           const isChoker =
             product.category === 'Choker' ||
+            hasMultiCat ||
             (product.subcategory && product.subcategory.toLowerCase().includes('choker')) ||
             product.name.toLowerCase().includes('choker');
           if (!isChoker) return false;
-        } else if (product.category !== selectedCategory) {
+        } else if (product.category !== selectedCategory && !hasMultiCat) {
+          return false;
+        }
+      }
+      // Subcategory match (e.g. Matha Patti, Matha Tikka under Head Jewellery)
+      if (selectedSubcategory !== 'All') {
+        if ((product.subcategory || '').toLowerCase() !== selectedSubcategory.toLowerCase()) {
           return false;
         }
       }
@@ -68,7 +72,9 @@ export const ShopPage: React.FC = () => {
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase();
         const matchesName = product.name.toLowerCase().includes(q);
-        const matchesCat = product.category.toLowerCase().includes(q);
+        const matchesCat =
+          product.category.toLowerCase().includes(q) ||
+          (product.categories && product.categories.some((c) => c.toLowerCase().includes(q)));
         const matchesTag = product.tags.some((t) => t.toLowerCase().includes(q));
         if (!matchesName && !matchesCat && !matchesTag) return false;
       }
@@ -80,11 +86,18 @@ export const ShopPage: React.FC = () => {
       if (sortBy === 'rating') return b.rating - a.rating;
       return (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
     });
-  }, [products, selectedCategory, selectedOccasion, budgetParam, searchQuery, sortBy]);
+  }, [products, selectedCategory, selectedSubcategory, selectedOccasion, budgetParam, searchQuery, sortBy]);
 
   const setCategoryFilter = (cat: string) => {
     if (cat === 'All') searchParams.delete('category');
     else searchParams.set('category', cat);
+    if (cat !== 'Head Jewellery') searchParams.delete('subcategory');
+    setSearchParams(searchParams);
+  };
+
+  const setSubcategoryFilter = (sub: string) => {
+    if (sub === 'All') searchParams.delete('subcategory');
+    else searchParams.set('subcategory', sub);
     setSearchParams(searchParams);
   };
 
@@ -188,6 +201,24 @@ export const ShopPage: React.FC = () => {
                     >
                       {cat}
                     </button>
+                    {cat === 'Head Jewellery' && selectedCategory === 'Head Jewellery' && (
+                      <ul className="pl-4 mt-1.5 space-y-1 border-l border-[#E8E2D9] ml-3">
+                        {headJewellerySubcategories.map((sub) => (
+                          <li key={sub}>
+                            <button
+                              onClick={() => setSubcategoryFilter(sub)}
+                              className={`w-full text-left py-1 px-2.5 text-[11px] transition-colors cursor-pointer ${
+                                selectedSubcategory === sub
+                                  ? 'text-[#7A1010] font-bold bg-[#FAF0F0]'
+                                  : 'text-[#6F6860] hover:text-[#C89B3C]'
+                              }`}
+                            >
+                              {sub === 'All' ? 'All Head Jewellery' : sub}
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </li>
                 ))}
               </ul>

@@ -90,15 +90,30 @@ export const MobileMenu: React.FC = () => {
               </button>
               {openSection === 'jewellery' && (
                 <div className="pl-3 py-2 space-y-2 text-xs normal-case tracking-normal text-[#6F675E]">
-                  {['Kundan', 'Cubic Zirconia', 'Choker', 'Rajwadi', 'Temple', 'Earrings', 'Bracelets', 'Bangles', 'Rings', 'Bridal / Wedding', 'Necklace'].map((cat) => (
-                    <button
-                      key={cat}
-                      type="button"
-                      onClick={() => handleNav(`/shop?category=${encodeURIComponent(cat)}`)}
-                      className="block py-1.5 hover:text-[#7A1010] text-left w-full cursor-pointer"
-                    >
-                      {cat}
-                    </button>
+                  {['Kundan', 'Cubic Zirconia', 'Choker', 'Rajwadi', 'Temple', 'Earrings', 'Bracelets', 'Bangles', 'Rings', 'Bridal / Wedding', 'Head Jewellery', 'Necklace'].map((cat) => (
+                    <div key={cat}>
+                      <button
+                        type="button"
+                        onClick={() => handleNav(`/shop?category=${encodeURIComponent(cat)}`)}
+                        className="block py-1.5 hover:text-[#7A1010] text-left w-full cursor-pointer"
+                      >
+                        {cat}
+                      </button>
+                      {cat === 'Head Jewellery' && (
+                        <div className="pl-3 space-y-1 border-l border-[#E8E1D8] ml-1 my-1">
+                          {['Matha Patti', 'Matha Tikka'].map((sub) => (
+                            <button
+                              key={sub}
+                              type="button"
+                              onClick={() => handleNav(`/shop?category=Head+Jewellery&subcategory=${encodeURIComponent(sub)}`)}
+                              className="block py-1 text-[11px] text-[#6F675E] hover:text-[#7A1010] text-left w-full cursor-pointer"
+                            >
+                              {sub}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   ))}
                   <button
                     type="button"
