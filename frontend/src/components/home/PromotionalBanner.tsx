@@ -6,7 +6,7 @@ export const PromotionalBanner: React.FC = () => {
   return (
     <section className="py-16 bg-[#FFFDF8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative bg-[#540808] text-white border border-[#E7C982]/40 overflow-hidden shadow-2xl">
+        <div className="relative bg-[#06452F] text-white border border-[#E7C982]/40 overflow-hidden shadow-2xl">
           {/* Subtle Yantra Decorative Line */}
           <div className="absolute top-0 right-0 w-80 h-80 border border-[#E7C982]/10 rounded-full -mr-16 -mt-16 pointer-events-none" />
 
@@ -51,7 +51,7 @@ export const PromotionalBanner: React.FC = () => {
                 alt="Kuveras Bridal Jewellery Gift Campaign"
                 className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#540808] via-transparent to-transparent lg:w-1/2" />
+              <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#06452F] via-transparent to-transparent lg:w-1/2" />
             </div>
           </div>
         </div>
